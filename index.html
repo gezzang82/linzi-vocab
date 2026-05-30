@@ -47,6 +47,8 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
 .card-meaning{font-size:1.3rem;font-weight:700;color:#1e1b4b;text-align:center}
 .card-example{font-size:0.85rem;color:#4b5563;background:#f9fafb;border-radius:12px;padding:10px 14px;margin-top:12px;line-height:1.6;text-align:center;width:100%}
 .card-tip{font-size:0.8rem;color:#d97706;margin-top:8px;text-align:center}
+.tts-btn{background:none;border:none;cursor:pointer;font-size:1.1rem;padding:2px 6px;border-radius:8px;transition:background .2s}
+.tts-btn:hover{background:#e0e7ff}
 .card-actions{display:flex;gap:12px;padding:0 16px 24px;width:100%;max-width:420px;margin:0 auto}
 .btn-knew{flex:1;background:#10b981;color:white;border:none;border-radius:16px;padding:16px;font-size:1rem;font-weight:700;cursor:pointer}
 .btn-unknown{flex:1;background:#f3f4f6;color:#374151;border:none;border-radius:16px;padding:16px;font-size:1rem;font-weight:700;cursor:pointer}
@@ -119,12 +121,18 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
         <div class="card-face card-front">
           <div class="card-pos" id="fc-pos"></div>
           <div class="card-word" id="fc-word"></div>
-          <div class="card-pron" id="fc-pron"></div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <div class="card-pron" id="fc-pron"></div>
+            <button class="tts-btn" onclick="event.stopPropagation();speak('word')" title="발음 듣기">🔊</button>
+          </div>
           <div class="card-hint">👆 탭해서 뜻 확인</div>
         </div>
         <div class="card-face card-back">
           <div class="card-meaning" id="fc-meaning"></div>
-          <div class="card-example" id="fc-example"></div>
+          <div style="position:relative;width:100%">
+            <div class="card-example" id="fc-example"></div>
+            <button class="tts-btn" style="position:absolute;top:6px;right:6px" onclick="event.stopPropagation();speak('example')" title="예문 듣기">🔊</button>
+          </div>
           <div class="card-tip" id="fc-tip"></div>
         </div>
       </div>
@@ -164,8 +172,20 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
 </div>
 
 <script>
+// ── TTS ──
+function speak(type) {
+  if (!window.speechSynthesis) return;
+  const w = WORDS[cardIndex];
+  const text = type === 'word' ? w.word : w.example.replace('💬 ', '');
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'en-US';
+  utt.rate = type === 'word' ? 0.85 : 0.9;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utt);
+}
+
 // ── 데이터 ──
-const WORDS = [{"word": "deliberate", "pronunciation": "/dɪˈlɪbərət/", "pos": "adj/v", "meaning": "의도적인 / 심사숙고하다", "example": "Her choice of words was deliberate and careful.", "tip": "de+liber(저울) → 저울에 달아 신중히"}, {"word": "detrimental", "pronunciation": "/ˌdetrɪˈmentl/", "pos": "adj", "meaning": "해로운, 불리한", "example": "Lack of sleep is detrimental to your health.", "tip": "detri(손상) → 손상을 주는"}, {"word": "proactive", "pronunciation": "/ˌproʊˈæktɪv/", "pos": "adj", "meaning": "사전 예방적인, 주도적인", "example": "Be proactive rather than waiting for problems to arise.", "tip": "pro(앞에)+active → 문제 전에 행동하는"}, {"word": "scrutinize", "pronunciation": "/ˈskruːtənaɪz/", "pos": "v", "meaning": "면밀히 조사하다", "example": "The committee scrutinized every clause in the contract.", "tip": "scrutin(조사) → 꼼꼼히 검사하다"}, {"word": "empathy", "pronunciation": "/ˈempəθi/", "pos": "n", "meaning": "공감, 감정이입", "example": "Good teachers show empathy toward their students.", "tip": "em+pathy(감정) → 상대 감정 안으로 들어가기"}, {"word": "empower", "pronunciation": "/ɪmˈpaʊər/", "pos": "v", "meaning": "권한을 주다, 역량을 강화하다", "example": "Education empowers people to change their lives.", "tip": "em+power → 힘을 불어넣다"}, {"word": "concise", "pronunciation": "/kənˈsaɪs/", "pos": "adj", "meaning": "간결한, 명료한", "example": "Please write a concise summary of the report.", "tip": "con+cis(자르다) → 군더더기를 잘라낸"}, {"word": "rigorous", "pronunciation": "/ˈrɪɡərəs/", "pos": "adj", "meaning": "엄격한, 철저한", "example": "The program requires rigorous training and dedication.", "tip": "rigor(엄격함) → 철저하고 엄격한"}, {"word": "enhance", "pronunciation": "/ɪnˈhæns/", "pos": "v", "meaning": "향상시키다, 높이다", "example": "Regular reading enhances vocabulary and comprehension.", "tip": "en+hance(높이다) → 더 높이 올리다"}, {"word": "subtle", "pronunciation": "/ˈsʌtl/", "pos": "adj", "meaning": "미묘한, 은근한", "example": "There's a subtle difference between these two words.", "tip": "sub(아래) → 표면 아래에 있는"}];
+const WORDS = [{"word": "argue", "pronunciation": "/ˈɑːrɡjuː/", "pos": "v", "meaning": "주장하다, 논쟁하다", "example": "They argued about who should pay the bill.", "tip": "argue = 날카롭게 부딪히며 주장하다"}, {"word": "admit", "pronunciation": "/ədˈmɪt/", "pos": "v", "meaning": "인정하다, 고백하다", "example": "He admitted that he had made a mistake.", "tip": "ad+mit(보내다) → 안으로 들여보내다 = 인정"}, {"word": "confident", "pronunciation": "/ˈkɒnfɪdənt/", "pos": "adj", "meaning": "자신감 있는", "example": "She felt confident about her presentation.", "tip": "con+fide(믿다) → 자신을 믿는"}, {"word": "insist", "pronunciation": "/ɪnˈsɪst/", "pos": "v", "meaning": "주장하다, 고집하다", "example": "She insisted on paying for the meal herself.", "tip": "in+sist(서다) → 뜻 위에 굳건히 서다"}, {"word": "practice", "pronunciation": "/ˈpræktɪs/", "pos": "v/n", "meaning": "연습하다 / 연습", "example": "You need to practice speaking English every day.", "tip": "practical(실용적) → 실제로 해보는 것"}, {"word": "negotiate", "pronunciation": "/nɪˈɡoʊʃieɪt/", "pos": "v", "meaning": "협상하다", "example": "They negotiated the price for an hour.", "tip": "neg+otiate(일) → 조건을 두고 주고받다"}, {"word": "handle", "pronunciation": "/ˈhændl/", "pos": "v", "meaning": "다루다, 처리하다", "example": "She knows how to handle difficult students.", "tip": "손잡이(handle)를 잡고 능숙하게 다루다"}, {"word": "recommend", "pronunciation": "/ˌrekəˈmend/", "pos": "v", "meaning": "추천하다", "example": "I highly recommend this restaurant.", "tip": "re+commend(맡기다) → 강하게 맡겨 추천"}, {"word": "resign", "pronunciation": "/rɪˈzaɪn/", "pos": "v", "meaning": "사직하다, 辞职하다", "example": "He resigned from his position after 10 years.", "tip": "re+sign(서명) → 서명을 다시 → 그만두다"}, {"word": "give up", "pronunciation": "/ɡɪv ʌp/", "pos": "v", "meaning": "포기하다", "example": "Never give up on your dreams.", "tip": "give(주다)+up → 위로 넘겨버리다 = 포기"}];
 const TODAY = "2026-05-30";
 
 // ── localStorage helpers ──
