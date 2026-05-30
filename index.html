@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>📚 오늘의 영단어 0개</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f5f5f7;min-height:100vh}
+
+.screen{display:none;min-height:100vh;flex-direction:column}
+.screen.active{display:flex}
+
+/* ── 공통 헤더 ── */
+.top-bar{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:white;padding:14px 20px;position:sticky;top:0;z-index:10}
+.top-bar h1{font-size:1rem;font-weight:700}
+.top-bar .sub{font-size:0.78rem;opacity:.8;margin-top:2px}
+.progress-wrap{background:rgba(255,255,255,.25);border-radius:99px;height:5px;margin-top:8px}
+.progress-bar{background:white;border-radius:99px;height:5px;transition:width .4s}
+
+/* ── 진입 화면 ── */
+#screen-home{background:linear-gradient(160deg,#4f46e5,#7c3aed);color:white;align-items:center;padding:32px 24px 40px;gap:20px;overflow-y:auto}
+.home-logo{font-size:3rem;margin-bottom:-8px}
+.home-title{font-size:1.5rem;font-weight:900;letter-spacing:-.5px}
+.home-date{font-size:.8rem;opacity:.7}
+.streak-row{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border-radius:99px;padding:10px 20px}
+.streak-fire{font-size:1.4rem}
+.streak-num{font-size:1.6rem;font-weight:900}
+.streak-label{font-size:.8rem;opacity:.8}
+.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
+.home-card{background:rgba(255,255,255,.15);border-radius:16px;padding:16px;text-align:center}
+.home-card .val{font-size:1.6rem;font-weight:900}
+.home-card .lbl{font-size:.75rem;opacity:.75;margin-top:2px}
+.home-card.highlight{background:rgba(255,255,255,.25)}
+.week-dots{display:flex;gap:6px;justify-content:center}
+.week-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3)}
+.week-dot.done{background:white}
+.week-dot.today{background:#fbbf24;box-shadow:0 0 0 2px rgba(251,191,36,.4)}
+.btn-start{background:white;color:#4f46e5;border:none;border-radius:99px;padding:16px;font-size:1.1rem;font-weight:800;cursor:pointer;width:100%;margin-top:4px;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.btn-stats-link{background:none;border:2px solid rgba(255,255,255,.4);color:white;border-radius:99px;padding:10px;font-size:.85rem;font-weight:600;cursor:pointer;width:100%}
+
+/* ── 플래시카드 화면 ── */
+#screen-card{background:#f5f5f7}
+.card-counter{text-align:center;font-size:.82rem;color:#6b7280;padding:8px 0 4px}
+.card-area{flex:1;display:flex;align-items:center;justify-content:center;padding:12px 16px}
+.flashcard{width:100%;max-width:420px;height:300px;perspective:1200px;cursor:pointer}
+.flashcard-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
+.card-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;box-shadow:0 6px 28px rgba(79,70,229,.12)}
+.card-front{background:white}
+.card-back{background:white;transform:rotateY(180deg)}
+.card-pos{background:#e0e7ff;color:#4338ca;padding:3px 12px;border-radius:99px;font-size:.78rem;font-weight:700;margin-bottom:8px}
+.card-word{font-size:2rem;font-weight:900;color:#1e1b4b;text-align:center;line-height:1.1}
+.card-pron-row{display:flex;align-items:center;gap:6px;margin-top:8px}
+.card-pron{font-size:.85rem;color:#6b7280;font-style:italic}
+.card-hint-row{display:flex;align-items:center;gap:6px;margin-top:16px;color:#9ca3af;font-size:.82rem}
+.card-hint-pulse{animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.card-meaning{font-size:1.25rem;font-weight:700;color:#1e1b4b;text-align:center;line-height:1.3}
+.card-example-wrap{position:relative;width:100%;margin-top:10px}
+.card-example{font-size:.82rem;color:#4b5563;background:#f9fafb;border-radius:12px;padding:10px 36px 10px 12px;line-height:1.6;text-align:left}
+.card-tip{font-size:.78rem;color:#d97706;margin-top:8px;text-align:center}
+.tts-btn{background:none;border:none;cursor:pointer;font-size:1.1rem;padding:3px 6px;border-radius:8px}
+.tts-btn:active{background:#e0e7ff}
+
+/* ── 4단계 평가 버튼 ── */
+.grade-hint{text-align:center;font-size:.78rem;color:#9ca3af;padding:4px 0 8px}
+.grade-hint.need-flip{color:#ef4444;font-weight:600}
+.grade-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px 24px;width:100%;max-width:420px;margin:0 auto}
+.grade-btn{border:none;border-radius:14px;padding:13px 8px;font-size:.88rem;font-weight:700;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:2px}
+.grade-btn:disabled{opacity:.35;cursor:default}
+.grade-btn .g-emoji{font-size:1.2rem}
+.grade-btn.g0{background:#fee2e2;color:#991b1b}
+.grade-btn.g1{background:#fef3c7;color:#92400e}
+.grade-btn.g2{background:#d1fae5;color:#065f46}
+.grade-btn.g3{background:#dbeafe;color:#1e40af}
+.btn-back-row{display:flex;justify-content:center;padding:0 16px 4px}
+.btn-back{background:none;border:1.5px solid #d1d5db;color:#6b7280;border-radius:99px;padding:8px 20px;font-size:.82rem;cursor:pointer}
+
+/* ── 퀴즈 화면 ── */
+#screen-quiz{background:#f5f5f7}
+.quiz-type-badge{text-align:center;padding:8px 0 4px}
+.quiz-type-badge span{background:#e0e7ff;color:#4338ca;font-size:.75rem;font-weight:700;padding:3px 12px;border-radius:99px}
+.quiz-card{background:white;border-radius:24px;margin:8px 16px;padding:22px;box-shadow:0 3px 16px rgba(0,0,0,.07)}
+.quiz-prompt{font-size:.82rem;color:#9ca3af;text-align:center;margin-bottom:6px}
+.quiz-word{font-size:1.6rem;font-weight:900;color:#1e1b4b;text-align:center;margin-bottom:4px;line-height:1.2}
+.quiz-sub-text{font-size:.8rem;color:#9ca3af;text-align:center;margin-bottom:16px}
+.quiz-options{display:flex;flex-direction:column;gap:9px}
+.quiz-opt{background:#f3f4f6;border:2px solid transparent;border-radius:14px;padding:13px 16px;font-size:.92rem;cursor:pointer;text-align:left;color:#374151;transition:all .18s;line-height:1.4}
+.quiz-opt.correct{background:#d1fae5;border-color:#10b981;color:#065f46}
+.quiz-opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.quiz-opt:disabled{cursor:default}
+.quiz-feedback{text-align:center;font-size:.95rem;font-weight:700;min-height:26px;margin-top:10px}
+.quiz-feedback.ok{color:#10b981}
+.quiz-feedback.fail{color:#ef4444}
+.btn-next{width:calc(100% - 32px);margin:8px 16px 20px;background:#4f46e5;color:white;border:none;border-radius:16px;padding:15px;font-size:.95rem;font-weight:700;cursor:pointer;display:none}
+
+/* ── 통계 화면 ── */
+#screen-stats{background:#f5f5f7;overflow-y:auto}
+.stats-header{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:white;padding:20px;display:flex;justify-content:space-between;align-items:center}
+.stats-header h2{font-size:1.1rem;font-weight:700}
+.stats-close{background:rgba(255,255,255,.2);border:none;color:white;border-radius:99px;padding:6px 14px;font-size:.85rem;cursor:pointer}
+.stats-section{padding:16px}
+.stats-section h3{font-size:.85rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.stat-card{background:white;border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.stat-card .s-val{font-size:1.8rem;font-weight:900;color:#1e1b4b}
+.stat-card .s-lbl{font-size:.75rem;color:#6b7280;margin-top:2px}
+.stat-card .s-icon{font-size:1.2rem;margin-bottom:4px}
+.stat-card.accent{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:white}
+.stat-card.accent .s-val,.stat-card.accent .s-lbl{color:white}
+.week-bar-wrap{background:white;border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:16px}
+.week-bars{display:flex;align-items:flex-end;gap:6px;height:60px;margin-top:8px}
+.week-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px}
+.week-bar{width:100%;background:#e0e7ff;border-radius:4px 4px 0 0;min-height:2px;transition:height .4s}
+.week-bar.today{background:#4f46e5}
+.week-bar-label{font-size:.65rem;color:#9ca3af}
+.weak-list{background:white;border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.weak-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f3f4f6}
+.weak-item:last-child{border-bottom:none}
+.weak-word{font-weight:700;color:#1e1b4b;font-size:.9rem}
+.weak-meaning{font-size:.78rem;color:#6b7280}
+.weak-count{background:#fee2e2;color:#991b1b;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:99px}
+.mastery-bar-wrap{background:white;border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:16px}
+.mastery-bar{display:flex;height:12px;border-radius:99px;overflow:hidden;margin-top:8px;gap:2px}
+.mb-new{background:#e0e7ff}
+.mb-learning{background:#fbbf24}
+.mb-known{background:#34d399}
+.mb-master{background:#4f46e5}
+.mastery-legend{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap}
+.ml-item{display:flex;align-items:center;gap:4px;font-size:.72rem;color:#6b7280}
+.ml-dot{width:8px;height:8px;border-radius:50%}
+
+/* ── 완료 화면 ── */
+#screen-done{background:linear-gradient(160deg,#4f46e5,#7c3aed);color:white;align-items:center;padding:32px 24px 40px;gap:16px;overflow-y:auto}
+.done-emoji{font-size:4rem}
+.done-title{font-size:1.6rem;font-weight:900}
+.done-score{font-size:2.8rem;font-weight:900}
+.done-stats-box{background:rgba(255,255,255,.15);border-radius:20px;padding:16px;width:100%}
+.done-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:.9rem}
+.done-row:last-child{border-bottom:none}
+.wrong-section{width:100%;text-align:left}
+.wrong-section h3{font-size:.85rem;opacity:.8;margin-bottom:8px}
+.wrong-item{background:rgba(255,255,255,.12);border-radius:12px;padding:10px 14px;margin-bottom:7px}
+.wrong-item .wi-word{font-weight:700;font-size:.9rem}
+.wrong-item .wi-meaning{font-size:.78rem;opacity:.75;margin-top:2px}
+.done-actions{display:flex;flex-direction:column;gap:10px;width:100%}
+.btn-done-stats{background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.4);color:white;border-radius:99px;padding:12px;font-size:.9rem;font-weight:700;cursor:pointer}
+.done-note{font-size:.72rem;opacity:.6;text-align:center}
+
+/* ── 토스트 ── */
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:#1e1b4b;color:white;padding:10px 20px;border-radius:99px;font-size:.85rem;font-weight:600;opacity:0;transition:all .3s;pointer-events:none;z-index:100}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+
+<!-- ── 진입 화면 ── -->
+<div class="screen active" id="screen-home">
+  <div class="home-logo">📚</div>
+  <div class="home-title">린지단어장</div>
+  <div class="home-date">2026년 05월 30일 토요일</div>
+  <div class="streak-row">
+    <div class="streak-fire">🔥</div>
+    <div class="streak-num" id="streak-num">0</div>
+    <div class="streak-label">일 연속 학습</div>
+  </div>
+  <div class="home-grid">
+    <div class="home-card highlight">
+      <div class="val" id="home-master">0</div>
+      <div class="lbl">🏆 마스터 단어</div>
+    </div>
+    <div class="home-card">
+      <div class="val" id="home-review">0</div>
+      <div class="lbl">📌 복습 대기</div>
+    </div>
+    <div class="home-card">
+      <div class="val">0개</div>
+      <div class="lbl">🆕 오늘 단어</div>
+    </div>
+    <div class="home-card">
+      <div class="val" id="home-time">~5분</div>
+      <div class="lbl">⏱ 예상 시간</div>
+    </div>
+  </div>
+  <div style="width:100%">
+    <div style="font-size:.78rem;opacity:.7;text-align:center;margin-bottom:8px">이번 주</div>
+    <div class="week-dots" id="week-dots">
+      <div class="week-dot" id="wd-0"></div>
+      <div class="week-dot" id="wd-1"></div>
+      <div class="week-dot" id="wd-2"></div>
+      <div class="week-dot" id="wd-3"></div>
+      <div class="week-dot" id="wd-4"></div>
+      <div class="week-dot" id="wd-5"></div>
+      <div class="week-dot" id="wd-6"></div>
+    </div>
+  </div>
+  <button class="btn-start" onclick="startLearning()">학습 시작 →</button>
+  <button class="btn-stats-link" onclick="showScreen('screen-stats');renderStats()">📊 내 통계 보기</button>
+</div>
+
+<!-- ── 플래시카드 화면 ── -->
+<div class="screen" id="screen-card">
+  <div class="top-bar">
+    <h1>📚 📚 오늘의 영단어 0개</h1>
+    <div class="sub" id="card-sub">카드를 탭해서 뒤집어 보세요</div>
+    <div class="progress-wrap"><div class="progress-bar" id="card-progress" style="width:0%"></div></div>
+  </div>
+  <div class="card-counter" id="card-counter"></div>
+  <div class="card-area">
+    <div class="flashcard" id="flashcard" onclick="flipCard()">
+      <div class="flashcard-inner">
+        <div class="card-face card-front">
+          <div class="card-pos" id="fc-pos"></div>
+          <div class="card-word" id="fc-word"></div>
+          <div class="card-pron-row">
+            <div class="card-pron" id="fc-pron"></div>
+            <button class="tts-btn" onclick="event.stopPropagation();speakWord()" title="발음 듣기">🔊</button>
+          </div>
+          <div class="card-hint-row">
+            <span class="card-hint-pulse">👆</span>
+            <span>탭해서 뜻 확인</span>
+          </div>
+        </div>
+        <div class="card-face card-back">
+          <div class="card-meaning" id="fc-meaning"></div>
+          <div class="card-example-wrap">
+            <div class="card-example" id="fc-example"></div>
+            <button class="tts-btn" style="position:absolute;top:6px;right:6px" onclick="event.stopPropagation();speakExample()" title="예문 듣기">🔊</button>
+          </div>
+          <div class="card-tip" id="fc-tip"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-back-row"><button class="btn-back" id="btn-back" onclick="goBack()" style="display:none">← 이전 카드</button></div>
+  <div class="grade-hint" id="grade-hint">뒤집어서 뜻을 확인하세요</div>
+  <div class="grade-btns">
+    <button class="grade-btn g0" onclick="rateCard(0)" id="gb0" disabled>
+      <span class="g-emoji">😶</span>몰라요
+    </button>
+    <button class="grade-btn g1" onclick="rateCard(1)" id="gb1" disabled>
+      <span class="g-emoji">🤔</span>헷갈려요
+    </button>
+    <button class="grade-btn g2" onclick="rateCard(2)" id="gb2" disabled>
+      <span class="g-emoji">✅</span>알아요
+    </button>
+    <button class="grade-btn g3" onclick="rateCard(3)" id="gb3" disabled>
+      <span class="g-emoji">⚡</span>완벽해요
+    </button>
+  </div>
+</div>
+
+<!-- ── 퀴즈 화면 ── -->
+<div class="screen" id="screen-quiz">
+  <div class="top-bar">
+    <h1>⚡ 인터리빙 퀴즈</h1>
+    <div class="sub" id="quiz-sub"></div>
+    <div class="progress-wrap"><div class="progress-bar" id="quiz-progress" style="width:0%"></div></div>
+  </div>
+  <div class="quiz-type-badge"><span id="quiz-type-badge">단어 → 뜻</span></div>
+  <div class="quiz-card">
+    <div class="quiz-prompt" id="q-prompt"></div>
+    <div class="quiz-word" id="q-word"></div>
+    <div class="quiz-sub-text" id="q-subtext"></div>
+    <div class="quiz-options" id="q-options"></div>
+    <div class="quiz-feedback" id="q-feedback"></div>
+  </div>
+  <button class="btn-next" id="btn-next" onclick="nextQuiz()">다음 →</button>
+</div>
+
+<!-- ── 통계 화면 ── -->
+<div class="screen" id="screen-stats">
+  <div class="stats-header">
+    <h2>📊 나의 학습 통계</h2>
+    <button class="stats-close" onclick="showScreen('screen-home')">← 돌아가기</button>
+  </div>
+  <div class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card accent">
+        <div class="s-icon">🏆</div>
+        <div class="s-val" id="st-master">0</div>
+        <div class="s-lbl">마스터 단어</div>
+      </div>
+      <div class="stat-card">
+        <div class="s-icon">📖</div>
+        <div class="s-val" id="st-total">0</div>
+        <div class="s-lbl">총 학습 단어</div>
+      </div>
+      <div class="stat-card">
+        <div class="s-icon">🔥</div>
+        <div class="s-val" id="st-streak">0</div>
+        <div class="s-lbl">연속 학습일</div>
+      </div>
+      <div class="stat-card">
+        <div class="s-icon">📌</div>
+        <div class="s-val" id="st-review">0</div>
+        <div class="s-lbl">복습 예정</div>
+      </div>
+    </div>
+    <div class="mastery-bar-wrap">
+      <h3 style="font-size:.85rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.05em">마스터 진행률</h3>
+      <div class="mastery-bar" id="mastery-bar"></div>
+      <div class="mastery-legend">
+        <div class="ml-item"><div class="ml-dot" style="background:#e0e7ff"></div>새 단어</div>
+        <div class="ml-item"><div class="ml-dot" style="background:#fbbf24"></div>학습중</div>
+        <div class="ml-item"><div class="ml-dot" style="background:#34d399"></div>숙지</div>
+        <div class="ml-item"><div class="ml-dot" style="background:#4f46e5"></div>마스터</div>
+      </div>
+    </div>
+    <h3>이번 주 학습량</h3>
+    <div class="week-bar-wrap">
+      <div class="week-bars" id="week-bars"></div>
+    </div>
+    <h3>취약 단어 TOP 5</h3>
+    <div class="weak-list" id="weak-list"></div>
+  </div>
+</div>
+
+<!-- ── 완료 화면 ── -->
+<div class="screen" id="screen-done">
+  <div class="done-emoji" id="done-emoji">🎉</div>
+  <div class="done-title">오늘 완료!</div>
+  <div class="done-score" id="done-score"></div>
+  <div class="done-stats-box" id="done-stats"></div>
+  <div class="wrong-section" id="wrong-section" style="display:none">
+    <h3>틀린 단어</h3>
+    <div id="wrong-list"></div>
+  </div>
+  <div class="done-actions">
+    <button class="btn-done-stats" onclick="showScreen('screen-stats');renderStats()">📊 내 통계 보기</button>
+  </div>
+  <div class="done-note">틀린 단어는 SM-2 알고리즘으로 자동 복습 예약됩니다</div>
+</div>
+
+<script>
+// ════════════════════════════════
+// 데이터
+// ════════════════════════════════
+const WORDS = [];
+const ALL_WORDS = ALL_[];
+const TODAY = "2026-05-30";
+
+// ════════════════════════════════
+// localStorage 헬퍼
+// ════════════════════════════════
+const LS = {
+  get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+  set(k, v) { localStorage.setItem(k, JSON.stringify(v)); }
+};
+
+// ════════════════════════════════
+// 전체 단어 데이터 저장소 (핵심!)
+// ════════════════════════════════
+function getWordData() { return LS.get('word_data', {}); }
+function saveWordData(wd) { LS.set('word_data', wd); }
+
+function rateWordData(word, grade) {
+  // grade: 0=완전모름 1=헷갈려요 2=알아요 3=완벽해요
+  const wd = getWordData();
+  const now = Date.now();
+  if (!wd[word]) wd[word] = {
+    stability: 1, ease: 2.5, nextReview: TODAY,
+    totalSeen: 0, correctCount: 0, wrongCount: 0,
+    consecutiveCorrect: 0, firstSeen: TODAY, lastSeen: TODAY,
+    masteryLevel: 0, avgResponseTime: 0, seenCount: 0
+  };
+  const w = wd[word];
+  w.totalSeen++;
+  w.lastSeen = TODAY;
+
+  if (grade >= 2) {
+    w.correctCount++;
+    w.consecutiveCorrect++;
+    const mult = grade === 3 ? 2.2 : 1.5;
+    w.stability = Math.round(Math.max(1, w.stability * mult));
+    w.ease = Math.min(3.0, w.ease + 0.05);
+    if (w.consecutiveCorrect >= 5 && w.stability >= 14) w.masteryLevel = 3;
+    else if (w.consecutiveCorrect >= 3) w.masteryLevel = Math.max(w.masteryLevel, 2);
+    else w.masteryLevel = Math.max(w.masteryLevel, 1);
+  } else {
+    w.wrongCount++;
+    w.consecutiveCorrect = 0;
+    w.stability = Math.max(1, Math.round(w.stability * (grade === 1 ? 0.7 : 0.4)));
+    w.ease = Math.max(1.3, w.ease - 0.15);
+    w.masteryLevel = Math.max(0, w.masteryLevel - 1);
+  }
+  const d = new Date(); d.setDate(d.getDate() + w.stability);
+  w.nextReview = d.toISOString().slice(0, 10);
+  saveWordData(wd);
+}
+
+function getDueReviews() {
+  const wd = getWordData();
+  return Object.keys(wd).filter(w => wd[w].nextReview <= TODAY);
+}
+
+function getMasterCount() {
+  const wd = getWordData();
+  return Object.values(wd).filter(w => w.masteryLevel >= 3).length;
+}
+
+// ════════════════════════════════
+// Streak
+// ════════════════════════════════
+function updateStreak() {
+  let streak = LS.get('streak', 0);
+  const last = LS.get('last_study', '');
+  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  if (last === TODAY) return streak;
+  streak = (last === yesterday) ? streak + 1 : 1;
+  LS.set('streak', streak);
+  LS.set('last_study', TODAY);
+  // 일별 학습 기록
+  const daily = LS.get('daily_record', {});
+  daily[TODAY] = (daily[TODAY] || 0) + 1;
+  LS.set('daily_record', daily);
+  return streak;
+}
+
+// ════════════════════════════════
+// 전체 단어 풀 localStorage 저장
+// ════════════════════════════════
+(function syncAllWords() {
+  const stored = LS.get('all_words_pool', []);
+  const existingWords = new Set(stored.map(w => w.word));
+  const merged = [...stored];
+  ALL_WORDS.forEach(w => { if (!existingWords.has(w.word)) merged.push(w); });
+  LS.set('all_words_pool', merged);
+})();
+
+function getWordFromPool(word) {
+  const pool = LS.get('all_words_pool', []);
+  return pool.find(w => w.word === word) || WORDS.find(w => w.word === word);
+}
+
+// ════════════════════════════════
+// 화면 전환
+// ════════════════════════════════
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ════════════════════════════════
+// 토스트
+// ════════════════════════════════
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+// ════════════════════════════════
+// TTS
+// ════════════════════════════════
+function tts(text, rate = 0.9) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = rate;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+function speakWord() { tts(WORDS[cardIndex].word, 0.82); }
+function speakExample() { tts(WORDS[cardIndex].example, 0.88); }
+
+// ════════════════════════════════
+// 진입 화면 초기화
+// ════════════════════════════════
+(function initHome() {
+  const streak = updateStreak();
+  document.getElementById('streak-num').textContent = streak;
+  document.getElementById('home-master').textContent = getMasterCount();
+  const due = getDueReviews();
+  document.getElementById('home-review').textContent = due.length;
+  const estMin = Math.ceil((WORDS.length + due.length * 0.5) * 0.4);
+  document.getElementById('home-time').textContent = `~${estMin}분`;
+
+  // 이번 주 학습 점 표시
+  const daily = LS.get('daily_record', {});
+  const todayDate = new Date(TODAY);
+  const dow = todayDate.getDay(); // 0=일
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(todayDate);
+    d.setDate(d.getDate() - ((dow + 6 - i) % 7));
+    const ds = d.toISOString().slice(0, 10);
+    const el = document.getElementById(`wd-${i}`);
+    if (ds === TODAY) el.classList.add('today');
+    else if (daily[ds]) el.classList.add('done');
+  }
+})();
+
+// ════════════════════════════════
+// 플래시카드
+// ════════════════════════════════
+let cardIndex = 0;
+let isFlipped = false;
+let cardStartTime = 0;
+let gradeInSession = {}; // word → grade
+const QUIZ_INTERVAL = 3;
+
+function startLearning() {
+  showScreen('screen-card');
+  renderCard();
+}
+
+function renderCard() {
+  const w = WORDS[cardIndex];
+  document.getElementById('fc-pos').textContent = w.pos;
+  document.getElementById('fc-word').textContent = w.word;
+  document.getElementById('fc-pron').textContent = w.pronunciation;
+  document.getElementById('fc-meaning').textContent = w.meaning;
+  document.getElementById('fc-example').textContent = '💬 ' + w.example;
+  document.getElementById('fc-tip').textContent = '💡 ' + w.tip;
+  document.getElementById('card-counter').textContent = `${cardIndex + 1} / ${WORDS.length}`;
+  document.getElementById('card-progress').style.width = `${(cardIndex + 1) / WORDS.length * 100}%`;
+  document.getElementById('btn-back').style.display = cardIndex > 0 ? 'inline-block' : 'none';
+
+  // 뒤집기 초기화 + 버튼 비활성화
+  isFlipped = false;
+  document.getElementById('flashcard').classList.remove('flipped');
+  setGradeBtns(true); // disabled
+  document.getElementById('grade-hint').textContent = '뒤집어서 뜻을 확인하세요';
+  document.getElementById('grade-hint').className = 'grade-hint need-flip';
+  cardStartTime = Date.now();
+}
+
+function setGradeBtns(disabled) {
+  [0, 1, 2, 3].forEach(i => {
+    document.getElementById(`gb${i}`).disabled = disabled;
+  });
+}
+
+function flipCard() {
+  isFlipped = !isFlipped;
+  document.getElementById('flashcard').classList.toggle('flipped', isFlipped);
+  if (isFlipped) {
+    setGradeBtns(false);
+    document.getElementById('grade-hint').textContent = '얼마나 잘 알고 있나요?';
+    document.getElementById('grade-hint').className = 'grade-hint';
+    // 뒤집으면 자동 발음
+    setTimeout(() => tts(WORDS[cardIndex].word, 0.82), 200);
+  }
+}
+
+function goBack() {
+  if (cardIndex <= 0) return;
+  cardIndex--;
+  delete gradeInSession[WORDS[cardIndex].word];
+  renderCard();
+}
+
+function rateCard(grade) {
+  if (!isFlipped) return;
+  const word = WORDS[cardIndex].word;
+  const responseTime = Date.now() - cardStartTime;
+
+  // 응답 시간 저장
+  const wd = getWordData();
+  if (wd[word]) {
+    wd[word].avgResponseTime = wd[word].avgResponseTime
+      ? Math.round((wd[word].avgResponseTime * 0.7 + responseTime * 0.3))
+      : responseTime;
+    saveWordData(wd);
+  }
+
+  gradeInSession[word] = grade;
+  rateWordData(word, grade);
+  cardIndex++;
+
+  // 3단어마다 인터리빙 퀴즈
+  if (cardIndex < WORDS.length && cardIndex % QUIZ_INTERVAL === 0) {
+    const batch = WORDS.slice(cardIndex - QUIZ_INTERVAL, cardIndex);
+    startQuiz(batch, false);
+    return;
+  }
+  if (cardIndex >= WORDS.length) {
+    startQuiz(WORDS, true);
+    return;
+  }
+  renderCard();
+}
+
+// ════════════════════════════════
+// 퀴즈 (다방향)
+// ════════════════════════════════
+let quizBatch = [], quizIndex = 0, quizCorrect = 0, quizTotal = 0, isFinalQuiz = false;
+let currentQuizType = 'word2meaning';
+let quizStartTime = 0;
+
+function startQuiz(batch, isFinal) {
+  isFinalQuiz = isFinal;
+  quizBatch = isFinal
+    ? [...batch].sort(() => Math.random() - .5).slice(0, Math.min(5, batch.length))
+    : [...batch];
+  quizIndex = 0; quizCorrect = 0; quizTotal = quizBatch.length;
+  showScreen('screen-quiz');
+  renderQuiz();
+}
+
+function renderQuiz() {
+  const w = quizBatch[quizIndex];
+  // 퀴즈 타입 랜덤 (단어→뜻 / 뜻→단어 교대)
+  currentQuizType = quizIndex % 2 === 0 ? 'word2meaning' : 'meaning2word';
+  const isW2M = currentQuizType === 'word2meaning';
+
+  document.getElementById('quiz-type-badge').textContent = isW2M ? '단어 → 뜻' : '뜻 → 단어';
+  document.getElementById('quiz-sub').textContent = `${quizIndex + 1} / ${quizTotal} 문제`;
+  document.getElementById('quiz-progress').style.width = `${(quizIndex + 1) / quizTotal * 100}%`;
+  document.getElementById('q-feedback').textContent = '';
+  document.getElementById('q-feedback').className = 'quiz-feedback';
+  document.getElementById('btn-next').style.display = 'none';
+
+  if (isW2M) {
+    document.getElementById('q-prompt').textContent = '다음 단어의 뜻은?';
+    document.getElementById('q-word').textContent = w.word;
+    document.getElementById('q-subtext').textContent = w.pronunciation;
+  } else {
+    document.getElementById('q-prompt').textContent = '다음 뜻에 맞는 단어는?';
+    document.getElementById('q-word').textContent = w.meaning;
+    document.getElementById('q-subtext').textContent = '';
+  }
+
+  // 보기 생성
+  const pool = LS.get('all_words_pool', WORDS);
+  const others = pool.filter(x => x.word !== w.word).sort(() => Math.random() - .5).slice(0, 3);
+  const opts = [w, ...others].sort(() => Math.random() - .5);
+  const container = document.getElementById('q-options');
+  container.innerHTML = '';
+  opts.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = isW2M ? opt.meaning : opt.word;
+    btn.onclick = () => selectQuizAnswer(btn, w.word, opt.word, w.meaning, isW2M);
+    container.appendChild(btn);
+  });
+  quizStartTime = Date.now();
+}
+
+function selectQuizAnswer(btn, correctWord, chosenWord, correctMeaning, isW2M) {
+  document.querySelectorAll('.quiz-opt').forEach(b => b.disabled = true);
+  const fb = document.getElementById('q-feedback');
+  if (chosenWord === correctWord) {
+    btn.classList.add('correct');
+    fb.textContent = '✅ 정답!';
+    fb.className = 'quiz-feedback ok';
+    quizCorrect++;
+    rateWordData(correctWord, 2);
+    // 정답 후 예문 TTS
+    setTimeout(() => tts(getWordFromPool(correctWord)?.example || correctWord, 0.88), 400);
+  } else {
+    btn.classList.add('wrong');
+    fb.textContent = `❌ 오답 — 정답: ${isW2M ? correctMeaning : correctWord}`;
+    fb.className = 'quiz-feedback fail';
+    rateWordData(correctWord, 0);
+  }
+  document.getElementById('btn-next').style.display = 'block';
+}
+
+function nextQuiz() {
+  quizIndex++;
+  if (quizIndex >= quizTotal) {
+    isFinalQuiz ? showDone() : (() => { showScreen('screen-card'); renderCard(); })();
+    return;
+  }
+  renderQuiz();
+}
+
+// ════════════════════════════════
+// 완료 화면
+// ════════════════════════════════
+function showDone() {
+  showScreen('screen-done');
+  const pct = Math.round(quizCorrect / quizTotal * 100);
+  const emoji = pct >= 90 ? '🏆' : pct >= 70 ? '🎉' : pct >= 50 ? '👍' : '💪';
+  document.getElementById('done-emoji').textContent = emoji;
+  document.getElementById('done-score').textContent = `${quizCorrect}/${quizTotal}점 (${pct}%)`;
+
+  const wrongWords = Object.entries(gradeInSession).filter(([, g]) => g < 2).map(([w]) => w);
+  const correctWords = Object.entries(gradeInSession).filter(([, g]) => g >= 2).map(([w]) => w);
+
+  document.getElementById('done-stats').innerHTML = `
+    <div class="done-row"><span>정확도</span><strong>${pct}%</strong></div>
+    <div class="done-row"><span>알았어요 (2+3등급)</span><strong>${correctWords.length}개</strong></div>
+    <div class="done-row"><span>몰랐어요 (0+1등급)</span><strong>${wrongWords.length}개</strong></div>
+    <div class="done-row"><span>마스터 단어</span><strong>${getMasterCount()}개 🏆</strong></div>
+    <div class="done-row" style="border-bottom:none"><span>연속 학습</span><strong>${LS.get('streak', 0)}일 🔥</strong></div>
+  `;
+
+  if (wrongWords.length > 0) {
+    const ws = document.getElementById('wrong-section');
+    ws.style.display = 'block';
+    const wl = document.getElementById('wrong-list');
+    wl.innerHTML = '';
+    wrongWords.forEach(word => {
+      const w = getWordFromPool(word);
+      if (!w) return;
+      const div = document.createElement('div');
+      div.className = 'wrong-item';
+      div.innerHTML = `<div class="wi-word">${w.word} <span style="font-size:.75rem;color:rgba(255,255,255,.6)">${w.pronunciation}</span></div><div class="wi-meaning">${w.meaning}</div>`;
+      wl.appendChild(div);
+    });
+  }
+
+  // 마스터 달성 토스트
+  if (pct === 100) showToast('🏆 완벽해요! 오늘도 대단했어요!');
+  else if (pct >= 80) showToast('🔥 훌륭해요! 계속 이 페이스로!');
+}
+
+// ════════════════════════════════
+// 통계 화면
+// ════════════════════════════════
+function renderStats() {
+  const wd = getWordData();
+  const values = Object.values(wd);
+  const masterCount = values.filter(w => w.masteryLevel >= 3).length;
+  const knownCount = values.filter(w => w.masteryLevel === 2).length;
+  const learningCount = values.filter(w => w.masteryLevel === 1).length;
+  const totalSeen = values.length;
+  const dueCount = getDueReviews().length;
+
+  document.getElementById('st-master').textContent = masterCount;
+  document.getElementById('st-total').textContent = totalSeen;
+  document.getElementById('st-streak').textContent = LS.get('streak', 0);
+  document.getElementById('st-review').textContent = dueCount;
+
+  // 마스터 진행 바
+  const total = Math.max(totalSeen, 1);
+  document.getElementById('mastery-bar').innerHTML = `
+    <div class="mb-new" style="flex:${Math.max(total - masterCount - knownCount - learningCount, 0)}"></div>
+    <div class="mb-learning" style="flex:${learningCount}"></div>
+    <div class="mb-known" style="flex:${knownCount}"></div>
+    <div class="mb-master" style="flex:${masterCount}"></div>
+  `;
+
+  // 이번 주 바 차트
+  const daily = LS.get('daily_record', {});
+  const todayDate = new Date(TODAY);
+  const dayLabels = ['월', '화', '수', '목', '금', '토', '일'];
+  const barsEl = document.getElementById('week-bars');
+  barsEl.innerHTML = '';
+  let maxVal = 1;
+  const weekData = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(todayDate);
+    const dow = todayDate.getDay();
+    d.setDate(d.getDate() - ((dow + 6 - i) % 7));
+    const ds = d.toISOString().slice(0, 10);
+    const cnt = daily[ds] || 0;
+    weekData.push({ ds, cnt, label: dayLabels[i] });
+    if (cnt > maxVal) maxVal = cnt;
+  }
+  weekData.forEach(({ ds, cnt, label }) => {
+    const col = document.createElement('div');
+    col.className = 'week-bar-col';
+    const h = Math.round(cnt / maxVal * 52) + 'px';
+    col.innerHTML = `<div class="week-bar${ds === TODAY ? ' today' : ''}" style="height:${h}"></div><div class="week-bar-label">${label}</div>`;
+    barsEl.appendChild(col);
+  });
+
+  // 취약 단어 TOP 5
+  const sorted = Object.entries(wd)
+    .filter(([, w]) => w.wrongCount > 0)
+    .sort(([, a], [, b]) => b.wrongCount - a.wrongCount)
+    .slice(0, 5);
+  const weakEl = document.getElementById('weak-list');
+  if (sorted.length === 0) {
+    weakEl.innerHTML = '<div style="text-align:center;color:#9ca3af;padding:16px;font-size:.85rem">아직 틀린 단어가 없어요 🎉</div>';
+  } else {
+    weakEl.innerHTML = sorted.map(([word, data]) => {
+      const wObj = getWordFromPool(word);
+      return `<div class="weak-item">
+        <div><div class="weak-word">${word}</div><div class="weak-meaning">${wObj?.meaning || ''}</div></div>
+        <div class="weak-count">오답 ${data.wrongCount}회</div>
+      </div>`;
+    }).join('');
+  }
+}
+</script>
+</body>
+</html>
