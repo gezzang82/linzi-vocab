@@ -2,224 +2,400 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>📚 오늘의 영단어 10개 — 2026년 05월 30일</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>📚 오늘의 영단어 10개</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, 'Noto Sans KR', sans-serif; background: #f0f4ff; color: #222; }
-  header { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 24px 20px; text-align: center; }
-  header h1 { font-size: 1.5rem; margin-bottom: 4px; }
-  header p { font-size: 0.9rem; opacity: 0.85; }
-  .container { max-width: 700px; margin: 0 auto; padding: 20px 16px; }
-  .section-title { font-size: 1.1rem; font-weight: 700; color: #4f46e5; margin: 24px 0 12px; border-left: 4px solid #4f46e5; padding-left: 10px; }
-  .card { background: white; border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
-  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-  .num { background: #4f46e5; color: white; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
-  .word { font-size: 1.3rem; font-weight: 800; color: #1e1b4b; }
-  .pron { font-size: 0.8rem; color: #6b7280; font-style: italic; }
-  .pos-badge { background: #e0e7ff; color: #4338ca; padding: 2px 8px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
-  .meaning { font-size: 1rem; font-weight: 600; color: #374151; margin-bottom: 8px; }
-  .example { font-size: 0.9rem; color: #4b5563; background: #f9fafb; padding: 8px 12px; border-radius: 8px; margin-bottom: 8px; line-height: 1.5; }
-  .tip { font-size: 0.85rem; color: #d97706; background: #fffbeb; padding: 7px 12px; border-radius: 8px; }
-  .quiz-item { background: white; border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
-  .quiz-q { font-size: 1rem; font-weight: 600; margin-bottom: 12px; color: #1e1b4b; }
-  .options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .opt-btn { background: #f3f4f6; border: 2px solid transparent; border-radius: 10px; padding: 10px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; text-align: center; color: #374151; }
-  .opt-btn:hover { background: #e0e7ff; border-color: #4f46e5; }
-  .opt-btn.correct { background: #d1fae5; border-color: #10b981; color: #065f46; }
-  .opt-btn.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
-  .opt-btn:disabled { cursor: default; }
-  .quiz-result { margin-top: 8px; font-size: 0.85rem; font-weight: 600; min-height: 20px; }
-  .quiz-result.ok { color: #10b981; }
-  .quiz-result.fail { color: #ef4444; }
-  .score-box { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; border-radius: 16px; padding: 20px; text-align: center; margin-top: 20px; display: none; }
-  .score-box h3 { font-size: 1.3rem; margin-bottom: 6px; }
-  footer { text-align: center; padding: 30px 16px; font-size: 0.8rem; color: #9ca3af; }
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-height:100vh}
+
+/* ── 화면 전환 ── */
+.screen{display:none;min-height:100vh;flex-direction:column}
+.screen.active{display:flex}
+
+/* ── 공통 헤더 ── */
+.top-bar{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:white;padding:16px 20px}
+.top-bar h1{font-size:1.1rem;font-weight:700}
+.top-bar .sub{font-size:0.8rem;opacity:.8;margin-top:2px}
+.progress-wrap{background:rgba(255,255,255,.2);border-radius:99px;height:6px;margin-top:10px}
+.progress-bar{background:white;border-radius:99px;height:6px;transition:width .3s}
+
+/* ── 진입 화면 ── */
+#screen-home{background:linear-gradient(160deg,#4f46e5,#7c3aed);color:white;align-items:center;justify-content:center;text-align:center;padding:32px 24px;gap:24px}
+.streak-badge{font-size:3rem}
+.streak-num{font-size:2.5rem;font-weight:900}
+.streak-label{font-size:0.9rem;opacity:.8;margin-top:-8px}
+.home-stats{background:rgba(255,255,255,.15);border-radius:20px;padding:20px 32px;width:100%}
+.stat-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+.stat-row+.stat-row{border-top:1px solid rgba(255,255,255,.2)}
+.stat-label{font-size:0.9rem;opacity:.85}
+.stat-val{font-size:1rem;font-weight:700}
+.btn-start{background:white;color:#4f46e5;border:none;border-radius:99px;padding:16px 48px;font-size:1.1rem;font-weight:800;cursor:pointer;width:100%;margin-top:8px}
+
+/* ── 플래시카드 화면 ── */
+#screen-card{background:#f0f4ff;padding:0}
+.card-area{flex:1;display:flex;align-items:center;justify-content:center;padding:16px}
+.flashcard{width:100%;max-width:420px;height:320px;perspective:1000px;cursor:pointer}
+.flashcard-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
+.card-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;box-shadow:0 8px 32px rgba(79,70,229,.15)}
+.card-front{background:white}
+.card-back{background:white;transform:rotateY(180deg)}
+.card-word{font-size:2.2rem;font-weight:900;color:#1e1b4b;text-align:center}
+.card-pron{font-size:0.9rem;color:#6b7280;margin-top:6px}
+.card-pos{background:#e0e7ff;color:#4338ca;padding:3px 12px;border-radius:99px;font-size:0.8rem;font-weight:600;margin-top:10px}
+.card-hint{font-size:0.85rem;color:#9ca3af;margin-top:20px}
+.card-meaning{font-size:1.3rem;font-weight:700;color:#1e1b4b;text-align:center}
+.card-example{font-size:0.85rem;color:#4b5563;background:#f9fafb;border-radius:12px;padding:10px 14px;margin-top:12px;line-height:1.6;text-align:center;width:100%}
+.card-tip{font-size:0.8rem;color:#d97706;margin-top:8px;text-align:center}
+.card-actions{display:flex;gap:12px;padding:0 16px 24px;width:100%;max-width:420px;margin:0 auto}
+.btn-knew{flex:1;background:#10b981;color:white;border:none;border-radius:16px;padding:16px;font-size:1rem;font-weight:700;cursor:pointer}
+.btn-unknown{flex:1;background:#f3f4f6;color:#374151;border:none;border-radius:16px;padding:16px;font-size:1rem;font-weight:700;cursor:pointer}
+.card-counter{text-align:center;font-size:0.85rem;color:#6b7280;padding:8px 0}
+
+/* ── 인터리빙 퀴즈 화면 ── */
+#screen-quiz{background:#f0f4ff;padding:0}
+.quiz-card{background:white;border-radius:24px;margin:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.quiz-word{font-size:1.8rem;font-weight:900;color:#1e1b4b;text-align:center;margin-bottom:8px}
+.quiz-instruction{font-size:0.85rem;color:#9ca3af;text-align:center;margin-bottom:20px}
+.quiz-options{display:flex;flex-direction:column;gap:10px}
+.quiz-opt{background:#f3f4f6;border:2px solid transparent;border-radius:14px;padding:14px 18px;font-size:0.95rem;cursor:pointer;text-align:left;color:#374151;transition:all .2s}
+.quiz-opt.correct{background:#d1fae5;border-color:#10b981;color:#065f46}
+.quiz-opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.quiz-opt:disabled{cursor:default}
+.quiz-feedback{text-align:center;font-size:1rem;font-weight:700;min-height:28px;margin-top:12px}
+.quiz-feedback.ok{color:#10b981}
+.quiz-feedback.fail{color:#ef4444}
+.btn-next{width:calc(100% - 32px);margin:0 16px 24px;background:#4f46e5;color:white;border:none;border-radius:16px;padding:16px;font-size:1rem;font-weight:700;cursor:pointer;display:none}
+
+/* ── 완료 화면 ── */
+#screen-done{background:linear-gradient(160deg,#4f46e5,#7c3aed);color:white;align-items:center;justify-content:center;text-align:center;padding:32px 24px;gap:20px}
+.done-emoji{font-size:4rem}
+.done-title{font-size:1.8rem;font-weight:900}
+.done-score{font-size:3rem;font-weight:900;margin:-8px 0}
+.done-stats{background:rgba(255,255,255,.15);border-radius:20px;padding:20px;width:100%}
+.wrong-list{width:100%;text-align:left}
+.wrong-list h3{font-size:0.9rem;opacity:.8;margin-bottom:10px}
+.wrong-item{background:rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;margin-bottom:8px;font-size:0.9rem}
+.wrong-item span{opacity:.7;font-size:0.8rem;display:block;margin-top:2px}
+.btn-retry{background:white;color:#4f46e5;border:none;border-radius:99px;padding:14px 40px;font-size:1rem;font-weight:800;cursor:pointer}
 </style>
 </head>
 <body>
-<header>
-  <h1>📚 오늘의 영단어 10개</h1>
-  <p>2026년 05월 30일 토요일 · 린지단어장 📖</p>
-</header>
-<div class="container">
-  <div class="section-title">📚 오늘의 단어</div>
-  
-        <div class="card" id="card-1">
-          <div class="card-header">
-            <span class="num">1</span>
-            <h2 class="word">anticipate</h2>
-            <span class="pron">/ænˈtɪsɪpeɪt/</span>
-            <span class="pos-badge">v</span>
-          </div>
-          <div class="meaning">📖 예상하다, 기대하다</div>
-          <div class="example">💬 We didn't anticipate such a strong reaction.</div>
-          <div class="tip">💡 anti(앞에)+cip(잡다) → 미리 잡아두다</div>
+
+<!-- ── 진입 화면 ── -->
+<div class="screen active" id="screen-home">
+  <div class="streak-badge">🔥</div>
+  <div class="streak-num" id="streak-num">0</div>
+  <div class="streak-label">일 연속 학습</div>
+  <div class="home-stats">
+    <div class="stat-row">
+      <span class="stat-label">📌 복습 대기</span>
+      <span class="stat-val" id="review-count">0개</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">🆕 오늘 단어</span>
+      <span class="stat-val">10개</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">⏱ 예상 시간</span>
+      <span class="stat-val">약 5분</span>
+    </div>
+  </div>
+  <button class="btn-start" onclick="startLearning()">학습 시작 →</button>
+  <div style="font-size:.75rem;opacity:.6">2026년 05월 30일 토요일</div>
+</div>
+
+<!-- ── 플래시카드 화면 ── -->
+<div class="screen" id="screen-card">
+  <div class="top-bar">
+    <h1>📚 📚 오늘의 영단어 10개</h1>
+    <div class="sub" id="card-sub">카드를 탭해서 뒤집어 보세요</div>
+    <div class="progress-wrap"><div class="progress-bar" id="card-progress" style="width:0%"></div></div>
+  </div>
+  <div class="card-counter" id="card-counter"></div>
+  <div class="card-area">
+    <div class="flashcard" id="flashcard" onclick="flipCard()">
+      <div class="flashcard-inner">
+        <div class="card-face card-front">
+          <div class="card-pos" id="fc-pos"></div>
+          <div class="card-word" id="fc-word"></div>
+          <div class="card-pron" id="fc-pron"></div>
+          <div class="card-hint">👆 탭해서 뜻 확인</div>
         </div>
-        <div class="card" id="card-2">
-          <div class="card-header">
-            <span class="num">2</span>
-            <h2 class="word">emulate</h2>
-            <span class="pron">/ˈemjuleɪt/</span>
-            <span class="pos-badge">v</span>
-          </div>
-          <div class="meaning">📖 모방하다, 따라 하다</div>
-          <div class="example">💬 Students often emulate the behavior of their teachers.</div>
-          <div class="tip">💡 emul(경쟁하다) → 닮으려고 노력하다</div>
+        <div class="card-face card-back">
+          <div class="card-meaning" id="fc-meaning"></div>
+          <div class="card-example" id="fc-example"></div>
+          <div class="card-tip" id="fc-tip"></div>
         </div>
-        <div class="card" id="card-3">
-          <div class="card-header">
-            <span class="num">3</span>
-            <h2 class="word">reinforce</h2>
-            <span class="pron">/ˌriːɪnˈfɔːrs/</span>
-            <span class="pos-badge">v</span>
-          </div>
-          <div class="meaning">📖 강화하다, 보강하다</div>
-          <div class="example">💬 Positive feedback reinforces good behavior.</div>
-          <div class="tip">💡 re+in+force(힘) → 다시 힘을 넣다</div>
-        </div>
-        <div class="card" id="card-4">
-          <div class="card-header">
-            <span class="num">4</span>
-            <h2 class="word">forge</h2>
-            <span class="pron">/fɔːrdʒ/</span>
-            <span class="pos-badge">v</span>
-          </div>
-          <div class="meaning">📖 만들어내다, 구축하다</div>
-          <div class="example">💬 She forged strong relationships with her colleagues.</div>
-          <div class="tip">💡 대장간에서 쇠를 두드려 만드는 이미지</div>
-        </div>
-        <div class="card" id="card-5">
-          <div class="card-header">
-            <span class="num">5</span>
-            <h2 class="word">fluctuate</h2>
-            <span class="pron">/ˈflʌktʃueɪt/</span>
-            <span class="pos-badge">v</span>
-          </div>
-          <div class="meaning">📖 변동하다, 오르내리다</div>
-          <div class="example">💬 Stock prices fluctuate based on market conditions.</div>
-          <div class="tip">💡 fluctu(물결) → 물결처럼 오르내리다</div>
-        </div>
-        <div class="card" id="card-6">
-          <div class="card-header">
-            <span class="num">6</span>
-            <h2 class="word">trigger</h2>
-            <span class="pron">/ˈtrɪɡər/</span>
-            <span class="pos-badge">v/n</span>
-          </div>
-          <div class="meaning">📖 유발하다 / 방아쇠, 계기</div>
-          <div class="example">💬 Stress can trigger various health problems.</div>
-          <div class="tip">💡 방아쇠 → 반응을 일으키다</div>
-        </div>
-        <div class="card" id="card-7">
-          <div class="card-header">
-            <span class="num">7</span>
-            <h2 class="word">tedious</h2>
-            <span class="pron">/ˈtiːdiəs/</span>
-            <span class="pos-badge">adj</span>
-          </div>
-          <div class="meaning">📖 지루한, 단조로운</div>
-          <div class="example">💬 Data entry can be tedious but necessary.</div>
-          <div class="tip">💡 taedium(권태) → 지겨울 만큼 반복적인</div>
-        </div>
-        <div class="card" id="card-8">
-          <div class="card-header">
-            <span class="num">8</span>
-            <h2 class="word">resilient</h2>
-            <span class="pron">/rɪˈzɪliənt/</span>
-            <span class="pos-badge">adj</span>
-          </div>
-          <div class="meaning">📖 회복력이 있는, 탄력적인</div>
-          <div class="example">💬 Children are often more resilient than we think.</div>
-          <div class="tip">💡 resili(튀어오르다) → 역경에서 튀어오르는</div>
-        </div>
-        <div class="card" id="card-9">
-          <div class="card-header">
-            <span class="num">9</span>
-            <h2 class="word">leverage</h2>
-            <span class="pron">/ˈlevərɪdʒ/</span>
-            <span class="pos-badge">n/v</span>
-          </div>
-          <div class="meaning">📖 영향력 / 활용하다</div>
-          <div class="example">💬 We can leverage our experience to win new clients.</div>
-          <div class="tip">💡 lever(지렛대) → 작은 힘으로 큰 결과</div>
-        </div>
-        <div class="card" id="card-10">
-          <div class="card-header">
-            <span class="num">10</span>
-            <h2 class="word">cultivate</h2>
-            <span class="pron">/ˈkʌltɪveɪt/</span>
-            <span class="pos-badge">v</span>
-          </div>
-          <div class="meaning">📖 기르다, 계발하다</div>
-          <div class="example">💬 You should cultivate good study habits early on.</div>
-          <div class="tip">💡 cultiv(갈다) → 밭을 갈듯 능력을 키우다</div>
-        </div>
-  <div class="section-title">✏️ 미니 퀴즈 (5문제)</div>
-  
-        <div class="quiz-item" id="quiz-1">
-          <p class="quiz-q">Q1. <strong>emulate</strong>의 뜻은?</p>
-          <div class="options"><button class="opt-btn" onclick="checkAnswer(this, 'emulate', 'emulate')">모방하다, 따라 하다</button><button class="opt-btn" onclick="checkAnswer(this, 'emulate', 'forge')">만들어내다, 구축하다</button><button class="opt-btn" onclick="checkAnswer(this, 'emulate', 'anticipate')">예상하다, 기대하다</button><button class="opt-btn" onclick="checkAnswer(this, 'emulate', 'trigger')">유발하다 / 방아쇠, 계기</button></div>
-          <div class="quiz-result" id="result-1"></div>
-        </div>
-        <div class="quiz-item" id="quiz-2">
-          <p class="quiz-q">Q2. <strong>anticipate</strong>의 뜻은?</p>
-          <div class="options"><button class="opt-btn" onclick="checkAnswer(this, 'anticipate', 'tedious')">지루한, 단조로운</button><button class="opt-btn" onclick="checkAnswer(this, 'anticipate', 'anticipate')">예상하다, 기대하다</button><button class="opt-btn" onclick="checkAnswer(this, 'anticipate', 'emulate')">모방하다, 따라 하다</button><button class="opt-btn" onclick="checkAnswer(this, 'anticipate', 'resilient')">회복력이 있는, 탄력적인</button></div>
-          <div class="quiz-result" id="result-2"></div>
-        </div>
-        <div class="quiz-item" id="quiz-3">
-          <p class="quiz-q">Q3. <strong>leverage</strong>의 뜻은?</p>
-          <div class="options"><button class="opt-btn" onclick="checkAnswer(this, 'leverage', 'tedious')">지루한, 단조로운</button><button class="opt-btn" onclick="checkAnswer(this, 'leverage', 'leverage')">영향력 / 활용하다</button><button class="opt-btn" onclick="checkAnswer(this, 'leverage', 'emulate')">모방하다, 따라 하다</button><button class="opt-btn" onclick="checkAnswer(this, 'leverage', 'fluctuate')">변동하다, 오르내리다</button></div>
-          <div class="quiz-result" id="result-3"></div>
-        </div>
-        <div class="quiz-item" id="quiz-4">
-          <p class="quiz-q">Q4. <strong>resilient</strong>의 뜻은?</p>
-          <div class="options"><button class="opt-btn" onclick="checkAnswer(this, 'resilient', 'anticipate')">예상하다, 기대하다</button><button class="opt-btn" onclick="checkAnswer(this, 'resilient', 'resilient')">회복력이 있는, 탄력적인</button><button class="opt-btn" onclick="checkAnswer(this, 'resilient', 'cultivate')">기르다, 계발하다</button><button class="opt-btn" onclick="checkAnswer(this, 'resilient', 'forge')">만들어내다, 구축하다</button></div>
-          <div class="quiz-result" id="result-4"></div>
-        </div>
-        <div class="quiz-item" id="quiz-5">
-          <p class="quiz-q">Q5. <strong>tedious</strong>의 뜻은?</p>
-          <div class="options"><button class="opt-btn" onclick="checkAnswer(this, 'tedious', 'cultivate')">기르다, 계발하다</button><button class="opt-btn" onclick="checkAnswer(this, 'tedious', 'tedious')">지루한, 단조로운</button><button class="opt-btn" onclick="checkAnswer(this, 'tedious', 'leverage')">영향력 / 활용하다</button><button class="opt-btn" onclick="checkAnswer(this, 'tedious', 'anticipate')">예상하다, 기대하다</button></div>
-          <div class="quiz-result" id="result-5"></div>
-        </div>
-  <div class="score-box" id="score-box">
-    <h3 id="score-text">점수 확인!</h3>
-    <p id="score-msg"></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-actions">
+    <button class="btn-unknown" onclick="rateCard(false)">❌ 몰랐어요</button>
+    <button class="btn-knew" onclick="rateCard(true)">✅ 알았어요</button>
   </div>
 </div>
-<footer>린지단어장 · 매일 10단어 · 2026년 05월 30일</footer>
+
+<!-- ── 퀴즈 화면 ── -->
+<div class="screen" id="screen-quiz">
+  <div class="top-bar">
+    <h1>⚡ 인터리빙 퀴즈</h1>
+    <div class="sub" id="quiz-sub"></div>
+    <div class="progress-wrap"><div class="progress-bar" id="quiz-progress" style="width:0%"></div></div>
+  </div>
+  <div class="quiz-card">
+    <div class="quiz-word" id="q-word"></div>
+    <div class="quiz-instruction">뜻을 선택하세요</div>
+    <div class="quiz-options" id="q-options"></div>
+    <div class="quiz-feedback" id="q-feedback"></div>
+  </div>
+  <button class="btn-next" id="btn-next" onclick="nextQuiz()">다음 →</button>
+</div>
+
+<!-- ── 완료 화면 ── -->
+<div class="screen" id="screen-done">
+  <div class="done-emoji">🎉</div>
+  <div class="done-title">오늘 완료!</div>
+  <div class="done-score" id="done-score"></div>
+  <div class="done-stats" id="done-stats"></div>
+  <div class="wrong-list" id="wrong-list"></div>
+  <button class="btn-retry" onclick="location.reload()">다시 하기</button>
+  <div style="font-size:.75rem;opacity:.6">내일 틀린 단어가 자동 복습됩니다</div>
+</div>
+
 <script>
-  let correct = 0, answered = 0;
-  const total = 5;
-  function checkAnswer(btn, correct_word, chosen_word) {
-    const item = btn.closest('.quiz-item');
-    const idx = item.id.split('-')[1];
-    const result = document.getElementById('result-' + idx);
-    item.querySelectorAll('.opt-btn').forEach(b => b.disabled = true);
-    if (chosen_word === correct_word) {
-      btn.classList.add('correct');
-      result.textContent = '✅ 정답!';
-      result.className = 'quiz-result ok';
-      correct++;
-    } else {
-      btn.classList.add('wrong');
-      result.textContent = '❌ 오답 (정답: ' + correct_word + ')';
-      result.className = 'quiz-result fail';
-      item.querySelectorAll('.opt-btn').forEach(b => {
-        if (b.textContent.includes(correct_word) || b.onclick.toString().includes("'" + correct_word + "', '" + correct_word + "'")) {}
-      });
-    }
-    answered++;
-    if (answered === total) {
-      const box = document.getElementById('score-box');
-      box.style.display = 'block';
-      const pct = Math.round(correct/total*100);
-      document.getElementById('score-text').textContent = correct + '/' + total + '점 (' + pct + '%)';
-      const msgs = ['💪 조금 더 복습해봐요!', '👍 잘 하고 있어요!', '🎉 훌륭해요!', '🏆 완벽해요!'];
-      document.getElementById('score-msg').textContent = pct < 40 ? msgs[0] : pct < 70 ? msgs[1] : pct < 100 ? msgs[2] : msgs[3];
-      box.scrollIntoView({behavior:'smooth'});
-    }
+// ── 데이터 ──
+const WORDS = [{"word": "negligible", "pronunciation": "/ˈneɡlɪdʒɪbl/", "pos": "adj", "meaning": "무시해도 될 만한, 사소한", "example": "The difference in price is negligible.", "tip": "neglect+ible → 무시할 수 있는"}, {"word": "vague", "pronunciation": "/veɪɡ/", "pos": "adj", "meaning": "모호한, 막연한", "example": "His explanation was too vague to be useful.", "tip": "흐릿한 안개 이미지 → 명확하지 않은"}, {"word": "attain", "pronunciation": "/əˈteɪn/", "pos": "v", "meaning": "달성하다, 도달하다", "example": "With effort, you can attain any goal you set.", "tip": "at+tain(잡다) → 목표를 손에 잡다"}, {"word": "pragmatic", "pronunciation": "/præɡˈmætɪk/", "pos": "adj", "meaning": "실용적인, 현실적인", "example": "We need a pragmatic approach to solve this problem.", "tip": "pragma(행동) → 실제 행동에 초점"}, {"word": "immerse", "pronunciation": "/ɪˈmɜːrs/", "pos": "v", "meaning": "몰두하다, 빠져들다", "example": "Immerse yourself in the language to learn faster.", "tip": "im+merse(담그다) → 완전히 담그다"}, {"word": "facilitate", "pronunciation": "/fəˈsɪlɪteɪt/", "pos": "v", "meaning": "촉진하다, 용이하게 하다", "example": "Technology can facilitate communication across borders.", "tip": "facil(쉬운) → 쉽게 만들다"}, {"word": "explicit", "pronunciation": "/ɪkˈsplɪsɪt/", "pos": "adj", "meaning": "명시적인, 명확한", "example": "The teacher gave explicit instructions to the class.", "tip": "ex+plic(접다) → 펼쳐서 명확히 보여주는"}, {"word": "tolerate", "pronunciation": "/ˈtɒləreɪt/", "pos": "v", "meaning": "참다, 용인하다", "example": "Good teachers tolerate mistakes as part of learning.", "tip": "toler(참다) → 불편해도 견디다"}, {"word": "hierarchy", "pronunciation": "/ˈhaɪərɑːrki/", "pos": "n", "meaning": "계층, 위계질서", "example": "There is a strict hierarchy in the military.", "tip": "hier(신성한)+archy(통치) → 단계별 구조"}, {"word": "withstand", "pronunciation": "/wɪðˈstænd/", "pos": "v", "meaning": "견디다, 버티다", "example": "The bridge was built to withstand earthquakes.", "tip": "with(맞서서)+stand → 맞서서 서있다"}];
+const TODAY = "2026-05-30";
+
+// ── localStorage helpers ──
+function getLS(k, def) {
+  try { return JSON.parse(localStorage.getItem(k)) ?? def; } catch { return def; }
+}
+function setLS(k, v) { localStorage.setItem(k, JSON.stringify(v)); }
+
+// ── Streak ──
+function updateStreak() {
+  let streak = getLS('streak', 0);
+  const last = getLS('last_study', '');
+  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0,10);
+  if (last === TODAY) return streak;
+  if (last === yesterday) streak++;
+  else if (last !== TODAY) streak = 1;
+  setLS('streak', streak);
+  setLS('last_study', TODAY);
+  return streak;
+}
+
+// ── 오답 시스템 (SM-2 간소화) ──
+function getWrongWords() { return getLS('wrong_words', {}); }
+function saveWrongWords(ww) { setLS('wrong_words', ww); }
+
+function markWrong(word) {
+  const ww = getWrongWords();
+  if (!ww[word]) ww[word] = {count:0, interval:1, ease:2.5, next:TODAY};
+  ww[word].count++;
+  ww[word].ease = Math.max(1.3, ww[word].ease - 0.2);
+  ww[word].interval = 1;
+  const d = new Date(); d.setDate(d.getDate() + 1);
+  ww[word].next = d.toISOString().slice(0,10);
+  saveWrongWords(ww);
+}
+
+function markCorrect(word) {
+  const ww = getWrongWords();
+  if (!ww[word]) return;
+  ww[word].interval = Math.round(ww[word].interval * ww[word].ease);
+  ww[word].ease = Math.min(3.0, ww[word].ease + 0.1);
+  const d = new Date(); d.setDate(d.getDate() + ww[word].interval);
+  ww[word].next = d.toISOString().slice(0,10);
+  saveWrongWords(ww);
+}
+
+function getDueReviews() {
+  const ww = getWrongWords();
+  return Object.keys(ww).filter(w => ww[w].next <= TODAY);
+}
+
+// ── 진입 화면 초기화 ──
+(function initHome() {
+  const streak = updateStreak();
+  document.getElementById('streak-num').textContent = streak;
+  const due = getDueReviews();
+  document.getElementById('review-count').textContent = due.length + '개';
+})();
+
+// ── 학습 상태 ──
+let cardIndex = 0;
+let wrongInSession = [];
+let correctInSession = [];
+let quizQueue = [];
+let quizIndex = 0;
+let quizCorrect = 0;
+let quizTotal = 0;
+const QUIZ_INTERVAL = 3; // 3단어마다 퀴즈
+let isFlipped = false;
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function startLearning() {
+  showScreen('screen-card');
+  renderCard();
+}
+
+// ── 플래시카드 ──
+function renderCard() {
+  const w = WORDS[cardIndex];
+  document.getElementById('fc-word').textContent = w.word;
+  document.getElementById('fc-pron').textContent = w.pronunciation;
+  document.getElementById('fc-pos').textContent = w.pos;
+  document.getElementById('fc-meaning').textContent = w.meaning;
+  document.getElementById('fc-example').textContent = '💬 ' + w.example;
+  document.getElementById('fc-tip').textContent = '💡 ' + w.tip;
+  document.getElementById('card-counter').textContent = (cardIndex+1) + ' / ' + WORDS.length;
+  document.getElementById('card-progress').style.width = ((cardIndex+1)/WORDS.length*100) + '%';
+  // 뒤집힌 상태 초기화
+  isFlipped = false;
+  document.getElementById('flashcard').classList.remove('flipped');
+}
+
+function flipCard() {
+  isFlipped = !isFlipped;
+  document.getElementById('flashcard').classList.toggle('flipped', isFlipped);
+}
+
+function rateCard(knew) {
+  const word = WORDS[cardIndex].word;
+  if (knew) {
+    correctInSession.push(word);
+    markCorrect(word);
+  } else {
+    wrongInSession.push(word);
+    markWrong(word);
   }
+  cardIndex++;
+
+  // 3단어마다 즉시 퀴즈
+  if (cardIndex < WORDS.length && cardIndex % QUIZ_INTERVAL === 0) {
+    const batch = WORDS.slice(cardIndex - QUIZ_INTERVAL, cardIndex);
+    startQuiz(batch, false);
+    return;
+  }
+
+  if (cardIndex >= WORDS.length) {
+    // 전체 학습 후 최종 퀴즈
+    startQuiz(WORDS, true);
+    return;
+  }
+  renderCard();
+}
+
+// ── 퀴즈 ──
+let quizBatch = [];
+let isFinalQuiz = false;
+let afterQuizCallback = null;
+
+function startQuiz(batch, isFinal) {
+  isFinalQuiz = isFinal;
+  quizBatch = isFinal ? [...batch].sort(() => Math.random()-.5).slice(0, Math.min(5, batch.length)) : [...batch];
+  quizIndex = 0;
+  quizCorrect = 0;
+  quizTotal = quizBatch.length;
+  showScreen('screen-quiz');
+  renderQuiz();
+}
+
+function renderQuiz() {
+  const w = quizBatch[quizIndex];
+  document.getElementById('q-word').textContent = w.word;
+  document.getElementById('quiz-sub').textContent = (quizIndex+1) + ' / ' + quizTotal + ' 문제';
+  document.getElementById('quiz-progress').style.width = ((quizIndex+1)/quizTotal*100) + '%';
+  document.getElementById('q-feedback').textContent = '';
+  document.getElementById('q-feedback').className = 'quiz-feedback';
+  document.getElementById('btn-next').style.display = 'none';
+
+  // 보기 생성 (정답 1 + 오답 3)
+  const others = WORDS.filter(x => x.word !== w.word).sort(() => Math.random()-.5).slice(0,3);
+  const opts = [w, ...others].sort(() => Math.random()-.5);
+  const container = document.getElementById('q-options');
+  container.innerHTML = '';
+  opts.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = opt.meaning;
+    btn.onclick = () => selectAnswer(btn, w.word, opt.word, w.meaning);
+    container.appendChild(btn);
+  });
+}
+
+function selectAnswer(btn, correct, chosen, correctMeaning) {
+  document.querySelectorAll('.quiz-opt').forEach(b => b.disabled = true);
+  const fb = document.getElementById('q-feedback');
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    fb.textContent = '✅ 정답!';
+    fb.className = 'quiz-feedback ok';
+    quizCorrect++;
+  } else {
+    btn.classList.add('wrong');
+    fb.textContent = '❌ 오답 — 정답: ' + correctMeaning;
+    fb.className = 'quiz-feedback fail';
+    markWrong(correct);
+    if (!wrongInSession.includes(correct)) wrongInSession.push(correct);
+  }
+  document.getElementById('btn-next').style.display = 'block';
+}
+
+function nextQuiz() {
+  quizIndex++;
+  if (quizIndex >= quizTotal) {
+    if (isFinalQuiz) {
+      showDone();
+    } else {
+      showScreen('screen-card');
+      renderCard();
+    }
+    return;
+  }
+  renderQuiz();
+}
+
+// ── 완료 화면 ──
+function showDone() {
+  showScreen('screen-done');
+  const pct = Math.round(quizCorrect / quizTotal * 100);
+  const emoji = pct >= 90 ? '🏆' : pct >= 70 ? '🎉' : pct >= 50 ? '👍' : '💪';
+  document.getElementById('done-score').textContent = emoji + ' ' + quizCorrect + '/' + quizTotal + '점';
+
+  const stats = document.getElementById('done-stats');
+  stats.innerHTML = `
+    <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.2)">
+      <span style="opacity:.8">정확도</span><strong>${pct}%</strong>
+    </div>
+    <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.2)">
+      <span style="opacity:.8">알았어요</span><strong>${correctInSession.length}개</strong>
+    </div>
+    <div style="display:flex;justify-content:space-between;padding:6px 0">
+      <span style="opacity:.8">오답 (내일 재출제)</span><strong>${wrongInSession.length}개</strong>
+    </div>
+  `;
+
+  if (wrongInSession.length > 0) {
+    const wl = document.getElementById('wrong-list');
+    wl.innerHTML = '<h3>틀린 단어</h3>';
+    wrongInSession.forEach(word => {
+      const w = WORDS.find(x => x.word === word);
+      if (!w) return;
+      const div = document.createElement('div');
+      div.className = 'wrong-item';
+      div.innerHTML = `<strong>${w.word}</strong><span>${w.meaning}</span>`;
+      wl.appendChild(div);
+    });
+  }
+}
 </script>
 </body>
 </html>
