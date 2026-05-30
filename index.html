@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📚 오늘의 영단어 10개 — 2026년 05월 30일</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Noto Sans KR', sans-serif; background: #f0f4ff; color: #222; }
+  header { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 24px 20px; text-align: center; }
+  header h1 { font-size: 1.5rem; margin-bottom: 4px; }
+  header p { font-size: 0.9rem; opacity: 0.85; }
+  .container { max-width: 700px; margin: 0 auto; padding: 20px 16px; }
+  .section-title { font-size: 1.1rem; font-weight: 700; color: #4f46e5; margin: 24px 0 12px; border-left: 4px solid #4f46e5; padding-left: 10px; }
+  .card { background: white; border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .num { background: #4f46e5; color: white; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .word { font-size: 1.3rem; font-weight: 800; color: #1e1b4b; }
+  .pron { font-size: 0.8rem; color: #6b7280; font-style: italic; }
+  .pos-badge { background: #e0e7ff; color: #4338ca; padding: 2px 8px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+  .meaning { font-size: 1rem; font-weight: 600; color: #374151; margin-bottom: 8px; }
+  .example { font-size: 0.9rem; color: #4b5563; background: #f9fafb; padding: 8px 12px; border-radius: 8px; margin-bottom: 8px; line-height: 1.5; }
+  .tip { font-size: 0.85rem; color: #d97706; background: #fffbeb; padding: 7px 12px; border-radius: 8px; }
+  .quiz-item { background: white; border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+  .quiz-q { font-size: 1rem; font-weight: 600; margin-bottom: 12px; color: #1e1b4b; }
+  .options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .opt-btn { background: #f3f4f6; border: 2px solid transparent; border-radius: 10px; padding: 10px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; text-align: center; color: #374151; }
+  .opt-btn:hover { background: #e0e7ff; border-color: #4f46e5; }
+  .opt-btn.correct { background: #d1fae5; border-color: #10b981; color: #065f46; }
+  .opt-btn.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+  .opt-btn:disabled { cursor: default; }
+  .quiz-result { margin-top: 8px; font-size: 0.85rem; font-weight: 600; min-height: 20px; }
+  .quiz-result.ok { color: #10b981; }
+  .quiz-result.fail { color: #ef4444; }
+  .score-box { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; border-radius: 16px; padding: 20px; text-align: center; margin-top: 20px; display: none; }
+  .score-box h3 { font-size: 1.3rem; margin-bottom: 6px; }
+  footer { text-align: center; padding: 30px 16px; font-size: 0.8rem; color: #9ca3af; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📚 오늘의 영단어 10개</h1>
+  <p>2026년 05월 30일 토요일 · 린지단어장 📖</p>
+</header>
+<div class="container">
+  <div class="section-title">📚 오늘의 단어</div>
+  
+        <div class="card" id="card-1">
+          <div class="card-header">
+            <span class="num">1</span>
+            <h2 class="word">alleviate</h2>
+            <span class="pron">/əˈliːvieɪt/</span>
+            <span class="pos-badge">v</span>
+          </div>
+          <div class="meaning">📖 완화하다, 경감하다</div>
+          <div class="example">💬 Exercise can alleviate symptoms of depression.</div>
+          <div class="tip">💡 levi(가볍게) → 무거운 것을 가볍게 하다</div>
+        </div>
+        <div class="card" id="card-2">
+          <div class="card-header">
+            <span class="num">2</span>
+            <h2 class="word">hinder</h2>
+            <span class="pron">/ˈhɪndər/</span>
+            <span class="pos-badge">v</span>
+          </div>
+          <div class="meaning">📖 방해하다, 저해하다</div>
+          <div class="example">💬 Fear of failure can hinder your progress.</div>
+          <div class="tip">💡 hind(뒤) → 뒤에서 잡아당기다</div>
+        </div>
+        <div class="card" id="card-3">
+          <div class="card-header">
+            <span class="num">3</span>
+            <h2 class="word">convey</h2>
+            <span class="pron">/kənˈveɪ/</span>
+            <span class="pos-badge">v</span>
+          </div>
+          <div class="meaning">📖 전달하다, 표현하다</div>
+          <div class="example">💬 Words sometimes fail to convey our true feelings.</div>
+          <div class="tip">💡 con+vey(길) → 통로를 통해 전달하다</div>
+        </div>
+        <div class="card" id="card-4">
+          <div class="card-header">
+            <span class="num">4</span>
+            <h2 class="word">implement</h2>
+            <span class="pron">/ˈɪmplɪment/</span>
+            <span class="pos-badge">v</span>
+          </div>
+          <div class="meaning">📖 실행하다, 시행하다</div>
+          <div class="example">💬 We need to implement the new policy immediately.</div>
+          <div class="tip">💡 im+ple(채우다) → 계획을 채워 실행</div>
+        </div>
+        <div class="card" id="card-5">
+          <div class="card-header">
+            <span class="num">5</span>
+            <h2 class="word">diligent</h2>
+            <span class="pron">/ˈdɪlɪdʒənt/</span>
+            <span class="pos-badge">adj</span>
+          </div>
+          <div class="meaning">📖 근면한, 성실한</div>
+          <div class="example">💬 Diligent students tend to achieve better results.</div>
+          <div class="tip">💡 dili(사랑하다) → 일을 사랑하는</div>
+        </div>
+        <div class="card" id="card-6">
+          <div class="card-header">
+            <span class="num">6</span>
+            <h2 class="word">profound</h2>
+            <span class="pron">/prəˈfaʊnd/</span>
+            <span class="pos-badge">adj</span>
+          </div>
+          <div class="meaning">📖 심오한, 깊은</div>
+          <div class="example">💬 The book had a profound impact on my thinking.</div>
+          <div class="tip">💡 pro+found(바닥) → 바닥까지 깊은</div>
+        </div>
+        <div class="card" id="card-7">
+          <div class="card-header">
+            <span class="num">7</span>
+            <h2 class="word">broaden</h2>
+            <span class="pron">/ˈbrɔːdn/</span>
+            <span class="pos-badge">v</span>
+          </div>
+          <div class="meaning">📖 넓히다, 확장하다</div>
+          <div class="example">💬 Travel can broaden your perspective on life.</div>
+          <div class="tip">💡 broad(넓은)+en → 더 넓게 만들다</div>
+        </div>
+        <div class="card" id="card-8">
+          <div class="card-header">
+            <span class="num">8</span>
+            <h2 class="word">optimistic</h2>
+            <span class="pron">/ˌɒptɪˈmɪstɪk/</span>
+            <span class="pos-badge">adj</span>
+          </div>
+          <div class="meaning">📖 낙관적인</div>
+          <div class="example">💬 Despite the challenges, she remained optimistic.</div>
+          <div class="tip">💡 optim(최선) → 최선의 결과를 기대하는</div>
+        </div>
+        <div class="card" id="card-9">
+          <div class="card-header">
+            <span class="num">9</span>
+            <h2 class="word">yield</h2>
+            <span class="pron">/jiːld/</span>
+            <span class="pos-badge">v/n</span>
+          </div>
+          <div class="meaning">📖 생산하다, 양보하다 / 수익</div>
+          <div class="example">💬 Hard work eventually yields positive results.</div>
+          <div class="tip">💡 농사에서 수확물을 내어주는 이미지</div>
+        </div>
+        <div class="card" id="card-10">
+          <div class="card-header">
+            <span class="num">10</span>
+            <h2 class="word">inevitable</h2>
+            <span class="pron">/ɪnˈevɪtəbl/</span>
+            <span class="pos-badge">adj</span>
+          </div>
+          <div class="meaning">📖 피할 수 없는, 불가피한</div>
+          <div class="example">💬 Change is inevitable in any growing organization.</div>
+          <div class="tip">💡 in(부정)+evit(피하다) → 피할 수 없는</div>
+        </div>
+  <div class="section-title">✏️ 미니 퀴즈 (5문제)</div>
+  
+        <div class="quiz-item" id="quiz-1">
+          <p class="quiz-q">Q1. <strong>hinder</strong>의 뜻은?</p>
+          <div class="options"><button class="opt-btn" onclick="checkAnswer(this, 'hinder', 'profound')">심오한, 깊은</button><button class="opt-btn" onclick="checkAnswer(this, 'hinder', 'alleviate')">완화하다, 경감하다</button><button class="opt-btn" onclick="checkAnswer(this, 'hinder', 'diligent')">근면한, 성실한</button><button class="opt-btn" onclick="checkAnswer(this, 'hinder', 'hinder')">방해하다, 저해하다</button></div>
+          <div class="quiz-result" id="result-1"></div>
+        </div>
+        <div class="quiz-item" id="quiz-2">
+          <p class="quiz-q">Q2. <strong>inevitable</strong>의 뜻은?</p>
+          <div class="options"><button class="opt-btn" onclick="checkAnswer(this, 'inevitable', 'yield')">생산하다, 양보하다 / 수익</button><button class="opt-btn" onclick="checkAnswer(this, 'inevitable', 'inevitable')">피할 수 없는, 불가피한</button><button class="opt-btn" onclick="checkAnswer(this, 'inevitable', 'convey')">전달하다, 표현하다</button><button class="opt-btn" onclick="checkAnswer(this, 'inevitable', 'implement')">실행하다, 시행하다</button></div>
+          <div class="quiz-result" id="result-2"></div>
+        </div>
+        <div class="quiz-item" id="quiz-3">
+          <p class="quiz-q">Q3. <strong>convey</strong>의 뜻은?</p>
+          <div class="options"><button class="opt-btn" onclick="checkAnswer(this, 'convey', 'yield')">생산하다, 양보하다 / 수익</button><button class="opt-btn" onclick="checkAnswer(this, 'convey', 'diligent')">근면한, 성실한</button><button class="opt-btn" onclick="checkAnswer(this, 'convey', 'convey')">전달하다, 표현하다</button><button class="opt-btn" onclick="checkAnswer(this, 'convey', 'alleviate')">완화하다, 경감하다</button></div>
+          <div class="quiz-result" id="result-3"></div>
+        </div>
+        <div class="quiz-item" id="quiz-4">
+          <p class="quiz-q">Q4. <strong>diligent</strong>의 뜻은?</p>
+          <div class="options"><button class="opt-btn" onclick="checkAnswer(this, 'diligent', 'alleviate')">완화하다, 경감하다</button><button class="opt-btn" onclick="checkAnswer(this, 'diligent', 'implement')">실행하다, 시행하다</button><button class="opt-btn" onclick="checkAnswer(this, 'diligent', 'diligent')">근면한, 성실한</button><button class="opt-btn" onclick="checkAnswer(this, 'diligent', 'profound')">심오한, 깊은</button></div>
+          <div class="quiz-result" id="result-4"></div>
+        </div>
+        <div class="quiz-item" id="quiz-5">
+          <p class="quiz-q">Q5. <strong>broaden</strong>의 뜻은?</p>
+          <div class="options"><button class="opt-btn" onclick="checkAnswer(this, 'broaden', 'optimistic')">낙관적인</button><button class="opt-btn" onclick="checkAnswer(this, 'broaden', 'inevitable')">피할 수 없는, 불가피한</button><button class="opt-btn" onclick="checkAnswer(this, 'broaden', 'convey')">전달하다, 표현하다</button><button class="opt-btn" onclick="checkAnswer(this, 'broaden', 'broaden')">넓히다, 확장하다</button></div>
+          <div class="quiz-result" id="result-5"></div>
+        </div>
+  <div class="score-box" id="score-box">
+    <h3 id="score-text">점수 확인!</h3>
+    <p id="score-msg"></p>
+  </div>
+</div>
+<footer>린지단어장 · 매일 10단어 · 2026년 05월 30일</footer>
+<script>
+  let correct = 0, answered = 0;
+  const total = 5;
+  function checkAnswer(btn, correct_word, chosen_word) {
+    const item = btn.closest('.quiz-item');
+    const idx = item.id.split('-')[1];
+    const result = document.getElementById('result-' + idx);
+    item.querySelectorAll('.opt-btn').forEach(b => b.disabled = true);
+    if (chosen_word === correct_word) {
+      btn.classList.add('correct');
+      result.textContent = '✅ 정답!';
+      result.className = 'quiz-result ok';
+      correct++;
+    } else {
+      btn.classList.add('wrong');
+      result.textContent = '❌ 오답 (정답: ' + correct_word + ')';
+      result.className = 'quiz-result fail';
+      item.querySelectorAll('.opt-btn').forEach(b => {
+        if (b.textContent.includes(correct_word) || b.onclick.toString().includes("'" + correct_word + "', '" + correct_word + "'")) {}
+      });
+    }
+    answered++;
+    if (answered === total) {
+      const box = document.getElementById('score-box');
+      box.style.display = 'block';
+      const pct = Math.round(correct/total*100);
+      document.getElementById('score-text').textContent = correct + '/' + total + '점 (' + pct + '%)';
+      const msgs = ['💪 조금 더 복습해봐요!', '👍 잘 하고 있어요!', '🎉 훌륭해요!', '🏆 완벽해요!'];
+      document.getElementById('score-msg').textContent = pct < 40 ? msgs[0] : pct < 70 ? msgs[1] : pct < 100 ? msgs[2] : msgs[3];
+      box.scrollIntoView({behavior:'smooth'});
+    }
+  }
+</script>
+</body>
+</html>
