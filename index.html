@@ -52,6 +52,7 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
 .card-actions{display:flex;gap:12px;padding:0 16px 24px;width:100%;max-width:420px;margin:0 auto}
 .btn-knew{flex:1;background:#10b981;color:white;border:none;border-radius:16px;padding:16px;font-size:1rem;font-weight:700;cursor:pointer}
 .btn-unknown{flex:1;background:#f3f4f6;color:#374151;border:none;border-radius:16px;padding:16px;font-size:1rem;font-weight:700;cursor:pointer}
+.btn-back{background:none;border:2px solid #d1d5db;color:#6b7280;border-radius:16px;padding:16px 14px;font-size:0.9rem;font-weight:600;cursor:pointer;white-space:nowrap}
 .card-counter{text-align:center;font-size:0.85rem;color:#6b7280;padding:8px 0}
 
 /* ── 인터리빙 퀴즈 화면 ── */
@@ -139,6 +140,7 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
     </div>
   </div>
   <div class="card-actions">
+    <button class="btn-back" id="btn-back" onclick="goBack()" style="display:none">← 이전</button>
     <button class="btn-unknown" onclick="rateCard(false)">❌ 몰랐어요</button>
     <button class="btn-knew" onclick="rateCard(true)">✅ 알았어요</button>
   </div>
@@ -185,7 +187,7 @@ function speak(type) {
 }
 
 // ── 데이터 ──
-const WORDS = [{"word": "complain", "pronunciation": "/kəmˈpleɪn/", "pos": "v", "meaning": "불평하다, 항의하다", "example": "Several students complained about the homework.", "tip": "com+plain(치다) → 가슴을 치며 불평하다"}, {"word": "efficient", "pronunciation": "/ɪˈfɪʃnt/", "pos": "adj", "meaning": "효율적인", "example": "Working from home can be very efficient.", "tip": "effici(만들어내다) → 낭비 없이 결과를 냄"}, {"word": "embarrassed", "pronunciation": "/ɪmˈbærəst/", "pos": "adj", "meaning": "당황한, 창피한", "example": "She was embarrassed when she forgot his name.", "tip": "em+barrass(방해) → 마음이 막혀 얼굴이 빨개짐"}, {"word": "challenge", "pronunciation": "/ˈtʃælɪndʒ/", "pos": "n/v", "meaning": "도전 / 도전하다", "example": "Learning a language is a challenge, but it's rewarding.", "tip": "call+enge → 불러내어 도전하다"}, {"word": "disagree", "pronunciation": "/ˌdɪsəˈɡriː/", "pos": "v", "meaning": "반대하다, 의견이 다르다", "example": "I disagree with your opinion on this matter.", "tip": "dis(반대)+agree → 동의와 반대 방향"}, {"word": "look forward to", "pronunciation": "/lʊk ˈfɔːwəd tə/", "pos": "v", "meaning": "기대하다", "example": "I'm really looking forward to the holidays.", "tip": "앞을 바라보다 → 기대감"}, {"word": "agree", "pronunciation": "/əˈɡriː/", "pos": "v", "meaning": "동의하다", "example": "I totally agree with what you said.", "tip": "a+gree(기분 좋은) → 서로 기분 좋게 맞추다"}, {"word": "keep in touch", "pronunciation": "/kiːp ɪn tʌtʃ/", "pos": "v", "meaning": "연락을 유지하다", "example": "Let's keep in touch after you move.", "tip": "touch(접촉) 상태를 keep → 연락 유지"}, {"word": "relieved", "pronunciation": "/rɪˈliːvd/", "pos": "adj", "meaning": "안도한", "example": "I was so relieved when the test was over.", "tip": "re+lieve(가볍게) → 무거운 짐이 사라진"}, {"word": "upset", "pronunciation": "/ʌpˈset/", "pos": "adj/v", "meaning": "속상한 / 화나게 하다", "example": "She was really upset when she heard the news.", "tip": "up(뒤집다)+set → 감정이 뒤집힌 상태"}];
+const WORDS = [{"word": "routine", "pronunciation": "/ruːˈtiːn/", "pos": "n/adj", "meaning": "일상, 루틴 / 일상적인", "example": "Morning exercise is part of my daily routine.", "tip": "route(길) → 매일 걷는 정해진 길"}, {"word": "deadline", "pronunciation": "/ˈdedlaɪn/", "pos": "n", "meaning": "마감 기한", "example": "The deadline for the assignment is next Friday.", "tip": "dead+line → 넘으면 '죽는' 선"}, {"word": "improve", "pronunciation": "/ɪmˈpruːv/", "pos": "v", "meaning": "향상되다, 발전하다", "example": "Your English has improved a lot this year.", "tip": "im+prove(증명) → 발전을 증명해가다"}, {"word": "figure out", "pronunciation": "/ˈfɪɡər aʊt/", "pos": "v", "meaning": "알아내다, 이해하다", "example": "I couldn't figure out how to use the new software.", "tip": "figure(형태) → 형태를 파악해내다"}, {"word": "concentrate", "pronunciation": "/ˈkɒnsntreɪt/", "pos": "v", "meaning": "집중하다", "example": "It's hard to concentrate when there's so much noise.", "tip": "con+center → 중심으로 모으다"}, {"word": "schedule", "pronunciation": "/ˈskedʒuːl/", "pos": "n/v", "meaning": "일정 / 일정을 잡다", "example": "Let me check my schedule for next week.", "tip": "시간표처럼 칸을 채우는 이미지"}, {"word": "run into", "pronunciation": "/rʌn ˈɪntuː/", "pos": "v", "meaning": "우연히 마주치다", "example": "I ran into my old teacher at the supermarket.", "tip": "달리다가 부딪히다 → 우연한 만남"}, {"word": "grateful", "pronunciation": "/ˈɡreɪtfl/", "pos": "adj", "meaning": "감사하는", "example": "I'm so grateful for your help with the project.", "tip": "great(크다) → 크게 감사하는"}, {"word": "prefer", "pronunciation": "/prɪˈfɜːr/", "pos": "v", "meaning": "선호하다", "example": "I prefer tea to coffee in the morning.", "tip": "pre+fer(가져오다) → 앞으로 가져오다 = 선호"}, {"word": "memorize", "pronunciation": "/ˈmeməraɪz/", "pos": "v", "meaning": "암기하다, 외우다", "example": "I need to memorize these vocabulary words.", "tip": "memory+ize → 기억 속에 집어넣다"}];
 const TODAY = "2026-05-30";
 
 // ── localStorage helpers ──
@@ -277,9 +279,19 @@ function renderCard() {
   document.getElementById('fc-tip').textContent = '💡 ' + w.tip;
   document.getElementById('card-counter').textContent = (cardIndex+1) + ' / ' + WORDS.length;
   document.getElementById('card-progress').style.width = ((cardIndex+1)/WORDS.length*100) + '%';
-  // 뒤집힌 상태 초기화
+  document.getElementById('btn-back').style.display = cardIndex > 0 ? 'block' : 'none';
   isFlipped = false;
   document.getElementById('flashcard').classList.remove('flipped');
+}
+
+function goBack() {
+  if (cardIndex <= 0) return;
+  // 마지막 평가 취소
+  const lastWord = WORDS[cardIndex - 1].word;
+  correctInSession = correctInSession.filter(w => w !== lastWord);
+  wrongInSession = wrongInSession.filter(w => w !== lastWord);
+  cardIndex--;
+  renderCard();
 }
 
 function flipCard() {
