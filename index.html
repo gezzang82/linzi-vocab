@@ -36,19 +36,20 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
 .card-prog-bar{height:4px;background:#4f46e5;transition:width .3s}
 .card-counter{text-align:center;font-size:.82rem;color:#6b7280;padding:10px 0 4px}
 .card-area{flex:1;display:flex;align-items:center;justify-content:center;padding:12px 20px}
-.flashcard{width:100%;max-width:420px;height:280px;perspective:1200px;cursor:pointer}
+.flashcard{width:100%;max-width:420px;height:300px;perspective:1200px;cursor:pointer}
 .flashcard-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
-.card-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;box-shadow:0 6px 24px rgba(79,70,229,.12);background:white}
+.card-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;box-shadow:0 6px 24px rgba(79,70,229,.12);background:white}
 .card-back{transform:rotateY(180deg)}
 .card-pos{background:#e0e7ff;color:#4338ca;padding:3px 12px;border-radius:99px;font-size:.78rem;font-weight:600;margin-bottom:10px}
 .card-word{font-size:2.1rem;font-weight:900;color:#1e1b4b;text-align:center}
 .card-pron{font-size:.85rem;color:#6b7280;margin-top:4px}
 .card-meaning{font-size:1.35rem;font-weight:700;color:#1e1b4b;text-align:center;line-height:1.4}
-.card-example{font-size:.8rem;color:#4b5563;background:#f9fafb;border-radius:12px;padding:10px 14px;margin-top:10px;line-height:1.6;text-align:center;width:100%}
-.card-tip{font-size:.77rem;color:#d97706;margin-top:8px;text-align:center}
+.card-example{font-size:.8rem;color:#4b5563;background:#f9fafb;border-radius:12px;padding:9px 13px;margin-top:10px;line-height:1.6;text-align:center;width:100%}
+.card-tip{font-size:.77rem;color:#d97706;margin-top:6px;text-align:center}
 .card-hint{font-size:.82rem;color:#9ca3af;margin-top:14px}
-.tts-btn{background:none;border:none;cursor:pointer;font-size:1rem;padding:3px 7px;border-radius:8px;margin-top:2px}
+.tts-row{display:flex;align-items:center;gap:6px;margin-top:4px}
+.tts-btn{background:none;border:none;cursor:pointer;font-size:.95rem;padding:3px 7px;border-radius:8px}
 .tts-btn:active{background:#e0e7ff}
 .card-nav{display:flex;align-items:center;gap:10px;padding:10px 16px 28px}
 .btn-nav{flex:1;background:white;border:2px solid #e5e7eb;color:#374151;border-radius:16px;padding:14px;font-size:.95rem;font-weight:600;cursor:pointer;transition:border-color .2s}
@@ -57,7 +58,7 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
 .btn-to-quiz{flex:2;background:#4f46e5;color:white;border:none;border-radius:16px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;display:none}
 .btn-to-quiz.show{display:block}
 
-/* ── 퀴즈 ── */
+/* ── 퀴즈 공통 ── */
 #screen-quiz{background:#f0f4ff}
 .quiz-header{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:white;padding:16px 20px}
 .quiz-phase-label{font-size:.78rem;opacity:.75;margin-bottom:2px}
@@ -67,28 +68,49 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
 .quiz-body{flex:1;padding:16px;overflow-y:auto}
 .quiz-qnum{font-size:.78rem;color:#6b7280;margin-bottom:8px;font-weight:600}
 .quiz-q-card{background:white;border-radius:20px;padding:20px;margin-bottom:14px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
-.quiz-q-desc{font-size:.78rem;color:#6b7280;font-weight:600;margin-bottom:8px}
+.quiz-q-desc{font-size:.82rem;color:#6b7280;font-weight:600;margin-bottom:8px}
 .quiz-q-main{font-size:1.25rem;font-weight:800;color:#1e1b4b;text-align:center;line-height:1.4}
-.quiz-q-sub{font-size:.82rem;color:#6b7280;text-align:center;margin-top:4px}
+.quiz-q-sub{font-size:.85rem;color:#6b7280;text-align:center;margin-top:4px}
+
+/* 객관식 옵션 - 폰트 키움 */
 .quiz-opts{display:flex;flex-direction:column;gap:10px}
-.quiz-opt{background:white;border:2px solid #e5e7eb;border-radius:14px;padding:13px 16px;font-size:.88rem;cursor:pointer;text-align:left;color:#374151;transition:all .15s;line-height:1.5}
+.quiz-opt{background:white;border:2px solid #e5e7eb;border-radius:14px;padding:14px 16px;font-size:1rem;cursor:pointer;text-align:left;color:#374151;transition:all .15s;line-height:1.5;font-weight:500}
 .quiz-opt:hover:not(:disabled){border-color:#4f46e5;background:#eef2ff}
 .quiz-opt.correct{background:#d1fae5;border-color:#10b981;color:#065f46;font-weight:600}
 .quiz-opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
 .quiz-opt:disabled{cursor:default}
-.quiz-feedback{text-align:center;font-size:.9rem;font-weight:600;min-height:22px;margin-top:12px}
+.quiz-feedback{text-align:center;font-size:.95rem;font-weight:600;min-height:22px;margin-top:12px}
 .quiz-feedback.ok{color:#10b981}
 .quiz-feedback.fail{color:#ef4444}
 .btn-next-q{width:100%;background:#4f46e5;color:white;border:none;border-radius:16px;padding:15px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:14px;display:none}
+
+/* ── 영작 퀴즈 ── */
+.writing-area{display:flex;flex-direction:column;gap:10px}
+.writing-label{font-size:.82rem;color:#6b7280;font-weight:600}
+.writing-input{width:100%;background:white;border:2px solid #e5e7eb;border-radius:14px;padding:14px 16px;font-size:1rem;color:#1e1b4b;resize:none;min-height:80px;font-family:inherit;line-height:1.6;outline:none}
+.writing-input:focus{border-color:#4f46e5}
+.writing-btns{display:flex;gap:10px}
+.btn-voice{flex:1;background:white;border:2px solid #e5e7eb;color:#374151;border-radius:14px;padding:13px;font-size:.95rem;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-voice.listening{background:#fee2e2;border-color:#ef4444;color:#ef4444}
+.btn-submit{flex:2;background:#4f46e5;color:white;border:none;border-radius:14px;padding:13px;font-size:1rem;font-weight:700;cursor:pointer}
+.btn-submit:disabled{opacity:.5;cursor:default}
+.writing-result{background:white;border-radius:16px;padding:16px;margin-top:4px;display:none}
+.writing-result.show{display:block}
+.result-verdict{font-size:1.1rem;font-weight:700;margin-bottom:10px}
+.result-verdict.ok{color:#10b981}
+.result-verdict.fail{color:#ef4444}
+.result-ref-label{font-size:.78rem;color:#6b7280;font-weight:600;margin-bottom:4px}
+.result-ref{font-size:.9rem;color:#374151;line-height:1.6;background:#f9fafb;border-radius:10px;padding:10px 12px}
+.result-ref em{color:#4f46e5;font-style:normal;font-weight:700}
 
 /* ── 단계 전환 ── */
 #screen-phase{background:linear-gradient(160deg,#4f46e5,#7c3aed);color:white;align-items:center;justify-content:center;padding:32px 24px;gap:20px}
 .phase-icon{font-size:3.5rem}
 .phase-title{font-size:1.5rem;font-weight:900;text-align:center}
 .phase-desc{font-size:.9rem;opacity:.8;text-align:center;line-height:1.6}
-.phase-score{background:rgba(255,255,255,.15);border-radius:16px;padding:14px 32px;text-align:center}
-.phase-score .sc{font-size:2rem;font-weight:900}
-.phase-score .sl{font-size:.8rem;opacity:.8}
+.phase-score-box{background:rgba(255,255,255,.15);border-radius:16px;padding:14px 32px;text-align:center}
+.phase-score-box .sc{font-size:2rem;font-weight:900}
+.phase-score-box .sl{font-size:.8rem;opacity:.8}
 .btn-next-phase{background:white;color:#4f46e5;border:none;border-radius:99px;padding:14px 40px;font-size:1rem;font-weight:800;cursor:pointer}
 
 /* ── 완료 ── */
@@ -167,16 +189,32 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
     <div class="quiz-phase-title" id="quiz-phase-title"></div>
     <div class="quiz-prog-wrap"><div class="quiz-prog-bar" id="quiz-prog"></div></div>
   </div>
-  <div class="quiz-body">
+  <div class="quiz-body" id="quiz-body">
     <div class="quiz-qnum" id="quiz-qnum"></div>
     <div class="quiz-q-card">
       <div class="quiz-q-desc" id="quiz-q-desc"></div>
       <div class="quiz-q-main" id="quiz-q-main"></div>
       <div class="quiz-q-sub" id="quiz-q-sub"></div>
     </div>
+    <!-- 객관식 (1, 2단계) -->
     <div class="quiz-opts" id="quiz-opts"></div>
     <div class="quiz-feedback" id="quiz-feedback"></div>
     <button class="btn-next-q" id="btn-next-q" onclick="nextQuestion()">다음 →</button>
+    <!-- 영작 (3단계) -->
+    <div class="writing-area" id="writing-area" style="display:none">
+      <div class="writing-label">영어로 번역해보세요 (말하거나 직접 입력)</div>
+      <textarea class="writing-input" id="writing-input" placeholder="영어 문장을 입력하세요..."></textarea>
+      <div class="writing-btns">
+        <button class="btn-voice" id="btn-voice" onclick="toggleVoice()">🎤 음성 입력</button>
+        <button class="btn-submit" id="btn-submit" onclick="submitWriting()">제출</button>
+      </div>
+      <div class="writing-result" id="writing-result">
+        <div class="result-verdict" id="result-verdict"></div>
+        <div class="result-ref-label">참고 예문</div>
+        <div class="result-ref" id="result-ref"></div>
+        <button class="btn-next-q" style="display:block;margin-top:14px" onclick="nextQuestion()">다음 →</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -185,7 +223,7 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
   <div class="phase-icon" id="phase-icon"></div>
   <div class="phase-title" id="phase-title"></div>
   <div class="phase-desc" id="phase-desc"></div>
-  <div class="phase-score">
+  <div class="phase-score-box">
     <div class="sc" id="phase-sc"></div>
     <div class="sl" id="phase-sl"></div>
   </div>
@@ -204,8 +242,8 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
 </div>
 
 <script>
-const WORDS = [{"word": "prefer", "pronunciation": "/prɪˈfɜːr/", "pos": "v", "meaning": "선호하다", "example": "I prefer tea to coffee in the morning.", "tip": "pre+fer(가져오다) → 앞으로 가져오다 = 선호"}, {"word": "negotiate", "pronunciation": "/nɪˈɡoʊʃieɪt/", "pos": "v", "meaning": "협상하다", "example": "They negotiated the price for an hour.", "tip": "neg+otiate(일) → 조건을 두고 주고받다"}, {"word": "memorize", "pronunciation": "/ˈmeməraɪz/", "pos": "v", "meaning": "암기하다, 외우다", "example": "I need to memorize these vocabulary words.", "tip": "memory+ize → 기억 속에 집어넣다"}, {"word": "struggle", "pronunciation": "/ˈstrʌɡl/", "pos": "v/n", "meaning": "애쓰다, 힘들어하다", "example": "Many students struggle with grammar rules.", "tip": "strug(저항) → 저항과 싸우며 나아가다"}, {"word": "deadline", "pronunciation": "/ˈdedlaɪn/", "pos": "n", "meaning": "마감 기한", "example": "The deadline for the assignment is next Friday.", "tip": "dead+line → 넘으면 '죽는' 선"}, {"word": "insist", "pronunciation": "/ɪnˈsɪst/", "pos": "v", "meaning": "주장하다, 고집하다", "example": "She insisted on paying for the meal herself.", "tip": "in+sist(서다) → 뜻 위에 굳건히 서다"}, {"word": "persuade", "pronunciation": "/pəˈsweɪd/", "pos": "v", "meaning": "설득하다", "example": "She persuaded him to try a new approach.", "tip": "per+suade(달콤한) → 달콤하게 설득하다"}, {"word": "give up", "pronunciation": "/ɡɪv ʌp/", "pos": "v", "meaning": "포기하다", "example": "Never give up on your dreams.", "tip": "give(주다)+up → 위로 넘겨버리다 = 포기"}, {"word": "disagree", "pronunciation": "/ˌdɪsəˈɡriː/", "pos": "v", "meaning": "반대하다, 의견이 다르다", "example": "I disagree with your opinion on this matter.", "tip": "dis(반대)+agree → 동의와 반대 방향"}, {"word": "concentrate", "pronunciation": "/ˈkɒnsntreɪt/", "pos": "v", "meaning": "집중하다", "example": "It's hard to concentrate when there's so much noise.", "tip": "con+center → 중심으로 모으다"}];
-const ALL_WORDS = [{"word": "upset", "pronunciation": "/ʌpˈset/", "pos": "adj/v", "meaning": "속상한 / 화나게 하다", "example": "She was really upset when she heard the news.", "tip": "up(뒤집다)+set → 감정이 뒤집힌 상태"}, {"word": "awkward", "pronunciation": "/ˈɔːkwərd/", "pos": "adj", "meaning": "어색한, 불편한", "example": "It was awkward when they ran into each other at the party.", "tip": "자리가 안 맞는 느낌 → 어색함"}, {"word": "grateful", "pronunciation": "/ˈɡreɪtfl/", "pos": "adj", "meaning": "감사하는", "example": "I'm so grateful for your help with the project.", "tip": "great(크다) → 크게 감사하는"}, {"word": "annoyed", "pronunciation": "/əˈnɔɪd/", "pos": "adj", "meaning": "짜증난, 성가신", "example": "He was annoyed by the constant noise from next door.", "tip": "annoy → ed → 짜증이 쌓인 상태"}, {"word": "confident", "pronunciation": "/ˈkɒnfɪdənt/", "pos": "adj", "meaning": "자신감 있는", "example": "She felt confident about her presentation.", "tip": "con+fide(믿다) → 자신을 믿는"}, {"word": "exhausted", "pronunciation": "/ɪɡˈzɔːstɪd/", "pos": "adj", "meaning": "완전히 지친, 탈진한", "example": "I was absolutely exhausted after the long trip.", "tip": "exhaust(소진) → 에너지가 완전히 빠진"}, {"word": "relieved", "pronunciation": "/rɪˈliːvd/", "pos": "adj", "meaning": "안도한", "example": "I was so relieved when the test was over.", "tip": "re+lieve(가볍게) → 무거운 짐이 사라진"}, {"word": "jealous", "pronunciation": "/ˈdʒeləs/", "pos": "adj", "meaning": "질투하는, 시기하는", "example": "He was jealous of his friend's success.", "tip": "질투심이 불처럼 타오르는 이미지"}, {"word": "embarrassed", "pronunciation": "/ɪmˈbærəst/", "pos": "adj", "meaning": "당황한, 창피한", "example": "She was embarrassed when she forgot his name.", "tip": "em+barrass(방해) → 마음이 막혀 얼굴이 빨개짐"}, {"word": "disappointed", "pronunciation": "/ˌdɪsəˈpɔɪntɪd/", "pos": "adj", "meaning": "실망한", "example": "He was disappointed with his exam results.", "tip": "dis(부정)+appoint(기대) → 기대가 빗나간"}, {"word": "avoid", "pronunciation": "/əˈvɔɪd/", "pos": "v", "meaning": "피하다, 회피하다", "example": "Try to avoid eating too much sugar.", "tip": "a+void(빈 공간) → 빈 공간으로 비켜가다"}, {"word": "manage", "pronunciation": "/ˈmænɪdʒ/", "pos": "v", "meaning": "해내다, 관리하다", "example": "Did you manage to finish the report on time?", "tip": "manage to = 간신히 해내다"}, {"word": "tend to", "pronunciation": "/tend tuː/", "pos": "v", "meaning": "~하는 경향이 있다", "example": "Students tend to study harder before exams.", "tip": "tend = 기울다 → 그쪽으로 기울어진 습관"}, {"word": "hesitate", "pronunciation": "/ˈhezɪteɪt/", "pos": "v", "meaning": "망설이다, 주저하다", "example": "Don't hesitate to ask me if you need help.", "tip": "hesi(걸리다) → 발걸음이 걸려 멈추는"}, {"word": "handle", "pronunciation": "/ˈhændl/", "pos": "v", "meaning": "다루다, 처리하다", "example": "She knows how to handle difficult students.", "tip": "손잡이(handle)를 잡고 능숙하게 다루다"}, {"word": "figure out", "pronunciation": "/ˈfɪɡər aʊt/", "pos": "v", "meaning": "알아내다, 이해하다", "example": "I couldn't figure out how to use the new software.", "tip": "figure(형태) → 형태를 파악해내다"}, {"word": "give up", "pronunciation": "/ɡɪv ʌp/", "pos": "v", "meaning": "포기하다", "example": "Never give up on your dreams.", "tip": "give(주다)+up → 위로 넘겨버리다 = 포기"}, {"word": "keep in touch", "pronunciation": "/kiːp ɪn tʌtʃ/", "pos": "v", "meaning": "연락을 유지하다", "example": "Let's keep in touch after you move.", "tip": "touch(접촉) 상태를 keep → 연락 유지"}, {"word": "run into", "pronunciation": "/rʌn ˈɪntuː/", "pos": "v", "meaning": "우연히 마주치다", "example": "I ran into my old teacher at the supermarket.", "tip": "달리다가 부딪히다 → 우연한 만남"}, {"word": "bring up", "pronunciation": "/brɪŋ ʌp/", "pos": "v", "meaning": "화제를 꺼내다 / 키우다", "example": "She brought up an interesting point in the meeting.", "tip": "위로 꺼내다 → 말을 꺼내다"}, {"word": "deadline", "pronunciation": "/ˈdedlaɪn/", "pos": "n", "meaning": "마감 기한", "example": "The deadline for the assignment is next Friday.", "tip": "dead+line → 넘으면 '죽는' 선"}, {"word": "commute", "pronunciation": "/kəˈmjuːt/", "pos": "v/n", "meaning": "통근하다 / 통근", "example": "My daily commute takes about an hour.", "tip": "com+mute(바꾸다) → 집과 직장을 왔다 갔다"}, {"word": "schedule", "pronunciation": "/ˈskedʒuːl/", "pos": "n/v", "meaning": "일정 / 일정을 잡다", "example": "Let me check my schedule for next week.", "tip": "시간표처럼 칸을 채우는 이미지"}, {"word": "routine", "pronunciation": "/ruːˈtiːn/", "pos": "n/adj", "meaning": "일상, 루틴 / 일상적인", "example": "Morning exercise is part of my daily routine.", "tip": "route(길) → 매일 걷는 정해진 길"}, {"word": "overwhelmed", "pronunciation": "/ˌoʊvərˈwelmd/", "pos": "adj", "meaning": "압도된, 벅찬", "example": "I feel overwhelmed with so much work to do.", "tip": "over+whelm → 파도에 완전히 덮인 느낌"}, {"word": "distracted", "pronunciation": "/dɪˈstræktɪd/", "pos": "adj", "meaning": "집중이 안 되는, 산만한", "example": "I keep getting distracted by my phone.", "tip": "dis+tract(끌다) → 딴 곳으로 끌려가는"}, {"word": "cancel", "pronunciation": "/ˈkænsəl/", "pos": "v", "meaning": "취소하다", "example": "They had to cancel the meeting due to bad weather.", "tip": "cancel = 선을 그어 지우다"}, {"word": "remind", "pronunciation": "/rɪˈmaɪnd/", "pos": "v", "meaning": "상기시키다, 생각나게 하다", "example": "Can you remind me about the meeting tomorrow?", "tip": "re+mind → 마음에 다시 불러오다"}, {"word": "recommend", "pronunciation": "/ˌrekəˈmend/", "pos": "v", "meaning": "추천하다", "example": "I highly recommend this restaurant.", "tip": "re+commend(맡기다) → 강하게 맡겨 추천"}, {"word": "apologize", "pronunciation": "/əˈpɒlədʒaɪz/", "pos": "v", "meaning": "사과하다", "example": "He apologized for being late to the meeting.", "tip": "apology+ize → 사과의 말을 하다"}, {"word": "mention", "pronunciation": "/ˈmenʃn/", "pos": "v/n", "meaning": "언급하다 / 언급", "example": "Did you mention the new project to your boss?", "tip": "men(마음)+tion → 마음에서 꺼내 말하다"}, {"word": "assume", "pronunciation": "/əˈsjuːm/", "pos": "v", "meaning": "추정하다, 가정하다", "example": "Don't assume you know what others are thinking.", "tip": "as+sume(잡다) → 사실처럼 잡아서 생각하다"}, {"word": "agree", "pronunciation": "/əˈɡriː/", "pos": "v", "meaning": "동의하다", "example": "I totally agree with what you said.", "tip": "a+gree(기분 좋은) → 서로 기분 좋게 맞추다"}, {"word": "disagree", "pronunciation": "/ˌdɪsəˈɡriː/", "pos": "v", "meaning": "반대하다, 의견이 다르다", "example": "I disagree with your opinion on this matter.", "tip": "dis(반대)+agree → 동의와 반대 방향"}, {"word": "prefer", "pronunciation": "/prɪˈfɜːr/", "pos": "v", "meaning": "선호하다", "example": "I prefer tea to coffee in the morning.", "tip": "pre+fer(가져오다) → 앞으로 가져오다 = 선호"}, {"word": "complain", "pronunciation": "/kəmˈpleɪn/", "pos": "v", "meaning": "불평하다, 항의하다", "example": "Several students complained about the homework.", "tip": "com+plain(치다) → 가슴을 치며 불평하다"}, {"word": "persuade", "pronunciation": "/pəˈsweɪd/", "pos": "v", "meaning": "설득하다", "example": "She persuaded him to try a new approach.", "tip": "per+suade(달콤한) → 달콤하게 설득하다"}, {"word": "argue", "pronunciation": "/ˈɑːrɡjuː/", "pos": "v", "meaning": "주장하다, 논쟁하다", "example": "They argued about who should pay the bill.", "tip": "argue = 날카롭게 부딪히며 주장하다"}, {"word": "admit", "pronunciation": "/ədˈmɪt/", "pos": "v", "meaning": "인정하다, 고백하다", "example": "He admitted that he had made a mistake.", "tip": "ad+mit(보내다) → 안으로 들여보내다 = 인정"}, {"word": "insist", "pronunciation": "/ɪnˈsɪst/", "pos": "v", "meaning": "주장하다, 고집하다", "example": "She insisted on paying for the meal herself.", "tip": "in+sist(서다) → 뜻 위에 굳건히 서다"}, {"word": "improve", "pronunciation": "/ɪmˈpruːv/", "pos": "v", "meaning": "향상되다, 발전하다", "example": "Your English has improved a lot this year.", "tip": "im+prove(증명) → 발전을 증명해가다"}, {"word": "review", "pronunciation": "/rɪˈvjuː/", "pos": "v/n", "meaning": "복습하다, 검토하다 / 복습", "example": "Let's review what we learned last week.", "tip": "re+view → 다시 보다"}, {"word": "memorize", "pronunciation": "/ˈmeməraɪz/", "pos": "v", "meaning": "암기하다, 외우다", "example": "I need to memorize these vocabulary words.", "tip": "memory+ize → 기억 속에 집어넣다"}, {"word": "concentrate", "pronunciation": "/ˈkɒnsntreɪt/", "pos": "v", "meaning": "집중하다", "example": "It's hard to concentrate when there's so much noise.", "tip": "con+center → 중심으로 모으다"}, {"word": "practice", "pronunciation": "/ˈpræktɪs/", "pos": "v/n", "meaning": "연습하다 / 연습", "example": "You need to practice speaking English every day.", "tip": "practical(실용적) → 실제로 해보는 것"}, {"word": "struggle", "pronunciation": "/ˈstrʌɡl/", "pos": "v/n", "meaning": "애쓰다, 힘들어하다", "example": "Many students struggle with grammar rules.", "tip": "strug(저항) → 저항과 싸우며 나아가다"}, {"word": "achieve", "pronunciation": "/əˈtʃiːv/", "pos": "v", "meaning": "성취하다, 달성하다", "example": "You can achieve anything if you work hard enough.", "tip": "a+chieve(끝) → 끝에 도달하다"}, {"word": "challenge", "pronunciation": "/ˈtʃælɪndʒ/", "pos": "n/v", "meaning": "도전 / 도전하다", "example": "Learning a language is a challenge, but it's rewarding.", "tip": "call+enge → 불러내어 도전하다"}, {"word": "depend on", "pronunciation": "/dɪˈpend ɒn/", "pos": "v", "meaning": "~에 달려있다, ~을 의존하다", "example": "Success depends on how much effort you put in.", "tip": "de+pend(달리다) → 결과가 달려있다"}, {"word": "look forward to", "pronunciation": "/lʊk ˈfɔːwəd tə/", "pos": "v", "meaning": "기대하다", "example": "I'm really looking forward to the holidays.", "tip": "앞을 바라보다 → 기대감"}, {"word": "promote", "pronunciation": "/prəˈmoʊt/", "pos": "v", "meaning": "승진시키다, 홍보하다", "example": "She was promoted to team leader last month.", "tip": "pro(앞으로)+mote(움직이다) → 앞으로 나아가다"}, {"word": "resign", "pronunciation": "/rɪˈzaɪn/", "pos": "v", "meaning": "사직하다, 辞职하다", "example": "He resigned from his position after 10 years.", "tip": "re+sign(서명) → 서명을 다시 → 그만두다"}, {"word": "salary", "pronunciation": "/ˈsæləri/", "pos": "n", "meaning": "급여, 봉급", "example": "She negotiated a higher salary with her new company.", "tip": "라틴어 salarium(소금값) → 월급"}, {"word": "colleague", "pronunciation": "/ˈkɒliːɡ/", "pos": "n", "meaning": "동료", "example": "I went out for lunch with my colleagues.", "tip": "col+league(함께) → 함께 일하는 사람"}, {"word": "feedback", "pronunciation": "/ˈfiːdbæk/", "pos": "n", "meaning": "피드백, 의견", "example": "Your feedback really helped me improve my work.", "tip": "feed(먹이다)+back → 발전을 위한 정보"}, {"word": "presentation", "pronunciation": "/ˌprezənˈteɪʃn/", "pos": "n", "meaning": "발표, 프레젠테이션", "example": "I have to give a presentation in front of 50 people.", "tip": "present(보여주다)+ation → 앞에서 보여주기"}, {"word": "negotiate", "pronunciation": "/nɪˈɡoʊʃieɪt/", "pos": "v", "meaning": "협상하다", "example": "They negotiated the price for an hour.", "tip": "neg+otiate(일) → 조건을 두고 주고받다"}, {"word": "efficient", "pronunciation": "/ɪˈfɪʃnt/", "pos": "adj", "meaning": "효율적인", "example": "Working from home can be very efficient.", "tip": "effici(만들어내다) → 낭비 없이 결과를 냄"}];
+const WORDS = [{"word": "overwhelmed", "pronunciation": "/ˌoʊvərˈwelmd/", "pos": "adj", "meaning": "압도된, 벅찬", "example": "I feel overwhelmed with so much work to do.", "example_ko": "해야 할 일이 너무 많아서 벅차.", "tip": "over+whelm → 파도에 완전히 덮인 느낌"}, {"word": "routine", "pronunciation": "/ruːˈtiːn/", "pos": "n/adj", "meaning": "일상, 루틴 / 일상적인", "example": "Morning exercise is part of my daily routine.", "example_ko": "아침 운동은 내 일상 루틴의 일부야.", "tip": "route(길) → 매일 걷는 정해진 길"}, {"word": "awkward", "pronunciation": "/ˈɔːkwərd/", "pos": "adj", "meaning": "어색한, 불편한", "example": "It was awkward when they ran into each other at the party.", "example_ko": "파티에서 그들이 우연히 마주쳤을 때 정말 어색했어.", "tip": "자리가 안 맞는 느낌 → 어색함"}, {"word": "efficient", "pronunciation": "/ɪˈfɪʃnt/", "pos": "adj", "meaning": "효율적인", "example": "Working from home can be very efficient.", "example_ko": "재택근무는 매우 효율적일 수 있어.", "tip": "effici(만들어내다) → 낭비 없이 결과를 냄"}, {"word": "hesitate", "pronunciation": "/ˈhezɪteɪt/", "pos": "v", "meaning": "망설이다, 주저하다", "example": "Don't hesitate to ask me if you need help.", "example_ko": "도움이 필요하면 주저하지 말고 물어봐.", "tip": "hesi(걸리다) → 발걸음이 걸려 멈추는"}, {"word": "tend to", "pronunciation": "/tend tuː/", "pos": "v", "meaning": "~하는 경향이 있다", "example": "Students tend to study harder before exams.", "example_ko": "학생들은 시험 전에 더 열심히 공부하는 경향이 있어.", "tip": "tend = 기울다 → 그쪽으로 기울어진 습관"}, {"word": "remind", "pronunciation": "/rɪˈmaɪnd/", "pos": "v", "meaning": "상기시키다, 생각나게 하다", "example": "Can you remind me about the meeting tomorrow?", "example_ko": "내일 회의에 대해 알려줄 수 있어?", "tip": "re+mind → 마음에 다시 불러오다"}, {"word": "review", "pronunciation": "/rɪˈvjuː/", "pos": "v/n", "meaning": "복습하다, 검토하다 / 복습", "example": "Let's review what we learned last week.", "example_ko": "지난주에 배운 걸 복습해보자.", "tip": "re+view → 다시 보다"}, {"word": "look forward to", "pronunciation": "/lʊk ˈfɔːwəd tə/", "pos": "v", "meaning": "기대하다", "example": "I'm really looking forward to the holidays.", "example_ko": "방학이 정말 기대돼.", "tip": "앞을 바라보다 → 기대감"}, {"word": "upset", "pronunciation": "/ʌpˈset/", "pos": "adj/v", "meaning": "속상한 / 화나게 하다", "example": "She was really upset when she heard the news.", "example_ko": "그녀는 그 소식을 들었을 때 정말 속상해했어.", "tip": "up(뒤집다)+set → 감정이 뒤집힌 상태"}];
+const ALL_WORDS = [{"word": "upset", "pronunciation": "/ʌpˈset/", "pos": "adj/v", "meaning": "속상한 / 화나게 하다", "example": "She was really upset when she heard the news.", "example_ko": "그녀는 그 소식을 들었을 때 정말 속상해했어.", "tip": "up(뒤집다)+set → 감정이 뒤집힌 상태"}, {"word": "awkward", "pronunciation": "/ˈɔːkwərd/", "pos": "adj", "meaning": "어색한, 불편한", "example": "It was awkward when they ran into each other at the party.", "example_ko": "파티에서 그들이 우연히 마주쳤을 때 정말 어색했어.", "tip": "자리가 안 맞는 느낌 → 어색함"}, {"word": "grateful", "pronunciation": "/ˈɡreɪtfl/", "pos": "adj", "meaning": "감사하는", "example": "I'm so grateful for your help with the project.", "example_ko": "프로젝트를 도와줘서 정말 감사해.", "tip": "great(크다) → 크게 감사하는"}, {"word": "annoyed", "pronunciation": "/əˈnɔɪd/", "pos": "adj", "meaning": "짜증난, 성가신", "example": "He was annoyed by the constant noise from next door.", "example_ko": "그는 옆집에서 계속 나는 소음에 짜증이 났어.", "tip": "annoy → ed → 짜증이 쌓인 상태"}, {"word": "confident", "pronunciation": "/ˈkɒnfɪdənt/", "pos": "adj", "meaning": "자신감 있는", "example": "She felt confident about her presentation.", "example_ko": "그녀는 자신의 발표에 자신감을 느꼈어.", "tip": "con+fide(믿다) → 자신을 믿는"}, {"word": "exhausted", "pronunciation": "/ɪɡˈzɔːstɪd/", "pos": "adj", "meaning": "완전히 지친, 탈진한", "example": "I was absolutely exhausted after the long trip.", "example_ko": "긴 여행 후 나는 완전히 지쳐버렸어.", "tip": "exhaust(소진) → 에너지가 완전히 빠진"}, {"word": "relieved", "pronunciation": "/rɪˈliːvd/", "pos": "adj", "meaning": "안도한", "example": "I was so relieved when the test was over.", "example_ko": "시험이 끝났을 때 정말 안도했어.", "tip": "re+lieve(가볍게) → 무거운 짐이 사라진"}, {"word": "jealous", "pronunciation": "/ˈdʒeləs/", "pos": "adj", "meaning": "질투하는, 시기하는", "example": "He was jealous of his friend's success.", "example_ko": "그는 친구의 성공을 질투했어.", "tip": "질투심이 불처럼 타오르는 이미지"}, {"word": "embarrassed", "pronunciation": "/ɪmˈbærəst/", "pos": "adj", "meaning": "당황한, 창피한", "example": "She was embarrassed when she forgot his name.", "example_ko": "그녀는 그의 이름을 잊어버려서 당황했어.", "tip": "em+barrass(방해) → 마음이 막혀 얼굴이 빨개짐"}, {"word": "disappointed", "pronunciation": "/ˌdɪsəˈpɔɪntɪd/", "pos": "adj", "meaning": "실망한", "example": "He was disappointed with his exam results.", "example_ko": "그는 시험 결과에 실망했어.", "tip": "dis(부정)+appoint(기대) → 기대가 빗나간"}, {"word": "avoid", "pronunciation": "/əˈvɔɪd/", "pos": "v", "meaning": "피하다, 회피하다", "example": "Try to avoid eating too much sugar.", "example_ko": "설탕을 너무 많이 먹는 걸 피하도록 해봐.", "tip": "a+void(빈 공간) → 빈 공간으로 비켜가다"}, {"word": "manage", "pronunciation": "/ˈmænɪdʒ/", "pos": "v", "meaning": "해내다, 관리하다", "example": "Did you manage to finish the report on time?", "example_ko": "보고서를 제때 끝낼 수 있었어?", "tip": "manage to = 간신히 해내다"}, {"word": "tend to", "pronunciation": "/tend tuː/", "pos": "v", "meaning": "~하는 경향이 있다", "example": "Students tend to study harder before exams.", "example_ko": "학생들은 시험 전에 더 열심히 공부하는 경향이 있어.", "tip": "tend = 기울다 → 그쪽으로 기울어진 습관"}, {"word": "hesitate", "pronunciation": "/ˈhezɪteɪt/", "pos": "v", "meaning": "망설이다, 주저하다", "example": "Don't hesitate to ask me if you need help.", "example_ko": "도움이 필요하면 주저하지 말고 물어봐.", "tip": "hesi(걸리다) → 발걸음이 걸려 멈추는"}, {"word": "handle", "pronunciation": "/ˈhændl/", "pos": "v", "meaning": "다루다, 처리하다", "example": "She knows how to handle difficult students.", "example_ko": "그녀는 어려운 학생들을 어떻게 다루는지 알아.", "tip": "손잡이(handle)를 잡고 능숙하게 다루다"}, {"word": "figure out", "pronunciation": "/ˈfɪɡər aʊt/", "pos": "v", "meaning": "알아내다, 이해하다", "example": "I couldn't figure out how to use the new software.", "example_ko": "새 소프트웨어 사용법을 도저히 알아낼 수가 없었어.", "tip": "figure(형태) → 형태를 파악해내다"}, {"word": "give up", "pronunciation": "/ɡɪv ʌp/", "pos": "v", "meaning": "포기하다", "example": "Never give up on your dreams.", "example_ko": "절대 꿈을 포기하지 마.", "tip": "give(주다)+up → 위로 넘겨버리다 = 포기"}, {"word": "keep in touch", "pronunciation": "/kiːp ɪn tʌtʃ/", "pos": "v", "meaning": "연락을 유지하다", "example": "Let's keep in touch after you move.", "example_ko": "이사 후에도 계속 연락하자.", "tip": "touch(접촉) 상태를 keep → 연락 유지"}, {"word": "run into", "pronunciation": "/rʌn ˈɪntuː/", "pos": "v", "meaning": "우연히 마주치다", "example": "I ran into my old teacher at the supermarket.", "example_ko": "슈퍼마켓에서 옛 선생님을 우연히 만났어.", "tip": "달리다가 부딪히다 → 우연한 만남"}, {"word": "bring up", "pronunciation": "/brɪŋ ʌp/", "pos": "v", "meaning": "화제를 꺼내다 / 키우다", "example": "She brought up an interesting point in the meeting.", "example_ko": "그녀는 회의에서 흥미로운 점을 꺼냈어.", "tip": "위로 꺼내다 → 말을 꺼내다"}, {"word": "deadline", "pronunciation": "/ˈdedlaɪn/", "pos": "n", "meaning": "마감 기한", "example": "The deadline for the assignment is next Friday.", "example_ko": "과제 마감이 다음 금요일이야.", "tip": "dead+line → 넘으면 '죽는' 선"}, {"word": "commute", "pronunciation": "/kəˈmjuːt/", "pos": "v/n", "meaning": "통근하다 / 통근", "example": "My daily commute takes about an hour.", "example_ko": "나의 일상 통근은 약 한 시간 걸려.", "tip": "com+mute(바꾸다) → 집과 직장을 왔다 갔다"}, {"word": "schedule", "pronunciation": "/ˈskedʒuːl/", "pos": "n/v", "meaning": "일정 / 일정을 잡다", "example": "Let me check my schedule for next week.", "example_ko": "다음 주 일정을 한번 확인해볼게.", "tip": "시간표처럼 칸을 채우는 이미지"}, {"word": "routine", "pronunciation": "/ruːˈtiːn/", "pos": "n/adj", "meaning": "일상, 루틴 / 일상적인", "example": "Morning exercise is part of my daily routine.", "example_ko": "아침 운동은 내 일상 루틴의 일부야.", "tip": "route(길) → 매일 걷는 정해진 길"}, {"word": "overwhelmed", "pronunciation": "/ˌoʊvərˈwelmd/", "pos": "adj", "meaning": "압도된, 벅찬", "example": "I feel overwhelmed with so much work to do.", "example_ko": "해야 할 일이 너무 많아서 벅차.", "tip": "over+whelm → 파도에 완전히 덮인 느낌"}, {"word": "distracted", "pronunciation": "/dɪˈstræktɪd/", "pos": "adj", "meaning": "집중이 안 되는, 산만한", "example": "I keep getting distracted by my phone.", "example_ko": "계속 핸드폰 때문에 집중이 안 돼.", "tip": "dis+tract(끌다) → 딴 곳으로 끌려가는"}, {"word": "cancel", "pronunciation": "/ˈkænsəl/", "pos": "v", "meaning": "취소하다", "example": "They had to cancel the meeting due to bad weather.", "example_ko": "날씨가 나빠서 회의를 취소해야 했어.", "tip": "cancel = 선을 그어 지우다"}, {"word": "remind", "pronunciation": "/rɪˈmaɪnd/", "pos": "v", "meaning": "상기시키다, 생각나게 하다", "example": "Can you remind me about the meeting tomorrow?", "example_ko": "내일 회의에 대해 알려줄 수 있어?", "tip": "re+mind → 마음에 다시 불러오다"}, {"word": "recommend", "pronunciation": "/ˌrekəˈmend/", "pos": "v", "meaning": "추천하다", "example": "I highly recommend this restaurant.", "example_ko": "이 식당을 강력히 추천해.", "tip": "re+commend(맡기다) → 강하게 맡겨 추천"}, {"word": "apologize", "pronunciation": "/əˈpɒlədʒaɪz/", "pos": "v", "meaning": "사과하다", "example": "He apologized for being late to the meeting.", "example_ko": "그는 회의에 늦은 것에 대해 사과했어.", "tip": "apology+ize → 사과의 말을 하다"}, {"word": "mention", "pronunciation": "/ˈmenʃn/", "pos": "v/n", "meaning": "언급하다 / 언급", "example": "Did you mention the new project to your boss?", "example_ko": "상사에게 새 프로젝트 얘기 했어?", "tip": "men(마음)+tion → 마음에서 꺼내 말하다"}, {"word": "assume", "pronunciation": "/əˈsjuːm/", "pos": "v", "meaning": "추정하다, 가정하다", "example": "Don't assume you know what others are thinking.", "example_ko": "다른 사람이 무슨 생각 하는지 안다고 가정하지 마.", "tip": "as+sume(잡다) → 사실처럼 잡아서 생각하다"}, {"word": "agree", "pronunciation": "/əˈɡriː/", "pos": "v", "meaning": "동의하다", "example": "I totally agree with what you said.", "example_ko": "네가 말한 것에 완전히 동의해.", "tip": "a+gree(기분 좋은) → 서로 기분 좋게 맞추다"}, {"word": "disagree", "pronunciation": "/ˌdɪsəˈɡriː/", "pos": "v", "meaning": "반대하다, 의견이 다르다", "example": "I disagree with your opinion on this matter.", "example_ko": "이 문제에 대한 네 의견에 반대해.", "tip": "dis(반대)+agree → 동의와 반대 방향"}, {"word": "prefer", "pronunciation": "/prɪˈfɜːr/", "pos": "v", "meaning": "선호하다", "example": "I prefer tea to coffee in the morning.", "example_ko": "나는 아침에 커피보다 차를 더 선호해.", "tip": "pre+fer(가져오다) → 앞으로 가져오다 = 선호"}, {"word": "complain", "pronunciation": "/kəmˈpleɪn/", "pos": "v", "meaning": "불평하다, 항의하다", "example": "Several students complained about the homework.", "example_ko": "몇몇 학생들이 숙제에 대해 불평했어.", "tip": "com+plain(치다) → 가슴을 치며 불평하다"}, {"word": "persuade", "pronunciation": "/pəˈsweɪd/", "pos": "v", "meaning": "설득하다", "example": "She persuaded him to try a new approach.", "example_ko": "그녀는 그에게 새로운 방법을 시도해보라고 설득했어.", "tip": "per+suade(달콤한) → 달콤하게 설득하다"}, {"word": "argue", "pronunciation": "/ˈɑːrɡjuː/", "pos": "v", "meaning": "주장하다, 논쟁하다", "example": "They argued about who should pay the bill.", "example_ko": "그들은 누가 계산해야 하는지 논쟁했어.", "tip": "argue = 날카롭게 부딪히며 주장하다"}, {"word": "admit", "pronunciation": "/ədˈmɪt/", "pos": "v", "meaning": "인정하다, 고백하다", "example": "He admitted that he had made a mistake.", "example_ko": "그는 실수를 했다는 걸 인정했어.", "tip": "ad+mit(보내다) → 안으로 들여보내다 = 인정"}, {"word": "insist", "pronunciation": "/ɪnˈsɪst/", "pos": "v", "meaning": "주장하다, 고집하다", "example": "She insisted on paying for the meal herself.", "example_ko": "그녀는 직접 식사비를 내겠다고 고집했어.", "tip": "in+sist(서다) → 뜻 위에 굳건히 서다"}, {"word": "improve", "pronunciation": "/ɪmˈpruːv/", "pos": "v", "meaning": "향상되다, 발전하다", "example": "Your English has improved a lot this year.", "example_ko": "올해 네 영어 실력이 많이 늘었어.", "tip": "im+prove(증명) → 발전을 증명해가다"}, {"word": "review", "pronunciation": "/rɪˈvjuː/", "pos": "v/n", "meaning": "복습하다, 검토하다 / 복습", "example": "Let's review what we learned last week.", "example_ko": "지난주에 배운 걸 복습해보자.", "tip": "re+view → 다시 보다"}, {"word": "memorize", "pronunciation": "/ˈmeməraɪz/", "pos": "v", "meaning": "암기하다, 외우다", "example": "I need to memorize these vocabulary words.", "example_ko": "이 단어들을 외워야 해.", "tip": "memory+ize → 기억 속에 집어넣다"}, {"word": "concentrate", "pronunciation": "/ˈkɒnsntreɪt/", "pos": "v", "meaning": "집중하다", "example": "It's hard to concentrate when there's so much noise.", "example_ko": "소음이 너무 많을 때는 집중하기가 힘들어.", "tip": "con+center → 중심으로 모으다"}, {"word": "practice", "pronunciation": "/ˈpræktɪs/", "pos": "v/n", "meaning": "연습하다 / 연습", "example": "You need to practice speaking English every day.", "example_ko": "매일 영어 말하기를 연습해야 해.", "tip": "practical(실용적) → 실제로 해보는 것"}, {"word": "struggle", "pronunciation": "/ˈstrʌɡl/", "pos": "v/n", "meaning": "애쓰다, 힘들어하다", "example": "Many students struggle with grammar rules.", "example_ko": "많은 학생들이 문법 규칙을 어려워해.", "tip": "strug(저항) → 저항과 싸우며 나아가다"}, {"word": "achieve", "pronunciation": "/əˈtʃiːv/", "pos": "v", "meaning": "성취하다, 달성하다", "example": "You can achieve anything if you work hard enough.", "example_ko": "충분히 열심히 하면 뭐든 이룰 수 있어.", "tip": "a+chieve(끝) → 끝에 도달하다"}, {"word": "challenge", "pronunciation": "/ˈtʃælɪndʒ/", "pos": "n/v", "meaning": "도전 / 도전하다", "example": "Learning a language is a challenge, but it's rewarding.", "example_ko": "언어 배우기는 도전이지만 정말 보람 있어.", "tip": "call+enge → 불러내어 도전하다"}, {"word": "depend on", "pronunciation": "/dɪˈpend ɒn/", "pos": "v", "meaning": "~에 달려있다, ~을 의존하다", "example": "Success depends on how much effort you put in.", "example_ko": "성공은 얼마나 노력하느냐에 달려있어.", "tip": "de+pend(달리다) → 결과가 달려있다"}, {"word": "look forward to", "pronunciation": "/lʊk ˈfɔːwəd tə/", "pos": "v", "meaning": "기대하다", "example": "I'm really looking forward to the holidays.", "example_ko": "방학이 정말 기대돼.", "tip": "앞을 바라보다 → 기대감"}, {"word": "promote", "pronunciation": "/prəˈmoʊt/", "pos": "v", "meaning": "승진시키다, 홍보하다", "example": "She was promoted to team leader last month.", "example_ko": "그녀는 지난달 팀장으로 승진했어.", "tip": "pro(앞으로)+mote(움직이다) → 앞으로 나아가다"}, {"word": "resign", "pronunciation": "/rɪˈzaɪn/", "pos": "v", "meaning": "사직하다, 사임하다", "example": "He resigned from his position after 10 years.", "example_ko": "그는 10년 만에 그 자리에서 사직했어.", "tip": "re+sign(서명) → 서명을 다시 → 그만두다"}, {"word": "salary", "pronunciation": "/ˈsæləri/", "pos": "n", "meaning": "급여, 봉급", "example": "She negotiated a higher salary with her new company.", "example_ko": "그녀는 새 회사에서 더 높은 연봉을 협상했어.", "tip": "라틴어 salarium(소금값) → 월급"}, {"word": "colleague", "pronunciation": "/ˈkɒliːɡ/", "pos": "n", "meaning": "동료", "example": "I went out for lunch with my colleagues.", "example_ko": "동료들과 함께 점심을 먹으러 나갔어.", "tip": "col+league(함께) → 함께 일하는 사람"}, {"word": "feedback", "pronunciation": "/ˈfiːdbæk/", "pos": "n", "meaning": "피드백, 의견", "example": "Your feedback really helped me improve my work.", "example_ko": "네 피드백이 내 업무 향상에 정말 도움이 됐어.", "tip": "feed(먹이다)+back → 발전을 위한 정보"}, {"word": "presentation", "pronunciation": "/ˌprezənˈteɪʃn/", "pos": "n", "meaning": "발표, 프레젠테이션", "example": "I have to give a presentation in front of 50 people.", "example_ko": "50명 앞에서 발표를 해야 해.", "tip": "present(보여주다)+ation → 앞에서 보여주기"}, {"word": "negotiate", "pronunciation": "/nɪˈɡoʊʃieɪt/", "pos": "v", "meaning": "협상하다", "example": "They negotiated the price for an hour.", "example_ko": "그들은 한 시간 동안 가격을 협상했어.", "tip": "neg+otiate(일) → 조건을 두고 주고받다"}, {"word": "efficient", "pronunciation": "/ɪˈfɪʃnt/", "pos": "adj", "meaning": "효율적인", "example": "Working from home can be very efficient.", "example_ko": "재택근무는 매우 효율적일 수 있어.", "tip": "effici(만들어내다) → 낭비 없이 결과를 냄"}];
 const TODAY = "2026-05-31";
 
 // ── 유틸 ──
@@ -224,10 +262,11 @@ function showScreen(id) {
 }
 function getLS(k, def) { try { return JSON.parse(localStorage.getItem(k)) ?? def; } catch { return def; } }
 function setLS(k, v) { localStorage.setItem(k, JSON.stringify(v)); }
-function speak(text, lang = 'en-US') {
+
+function speak(text, lang = 'en-US', rate = 0.85) {
   if (!window.speechSynthesis) return;
   const u = new SpeechSynthesisUtterance(text);
-  u.lang = lang; u.rate = 0.85;
+  u.lang = lang; u.rate = rate;
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);
 }
@@ -242,10 +281,10 @@ function markWrong5(word) {
 }
 function getDueWords() {
   const store = getLS('wrong5', {});
-  const todayWords = new Set(WORDS.map(w => w.word));
+  const todaySet = new Set(WORDS.map(w => w.word));
   return Object.keys(store)
-    .filter(word => store[word].exp >= TODAY && !todayWords.has(word))
-    .map(word => ALL_WORDS.find(w => w.word === word))
+    .filter(w => store[w].exp >= TODAY && !todaySet.has(w))
+    .map(w => ALL_WORDS.find(x => x.word === w))
     .filter(Boolean);
 }
 
@@ -255,9 +294,8 @@ function initStreak() {
   const last = getLS('lastStudy', '');
   const yd = new Date(TODAY + 'T00:00:00');
   yd.setDate(yd.getDate() - 1);
-  const yesterday = yd.toISOString().slice(0, 10);
   if (last === TODAY) return streak;
-  streak = (last === yesterday) ? streak + 1 : 1;
+  streak = (last === yd.toISOString().slice(0, 10)) ? streak + 1 : 1;
   setLS('streak', streak);
   setLS('lastStudy', TODAY);
   return streak;
@@ -281,9 +319,7 @@ let flipped = false;
 
 function startStudy() {
   studyWords = shuffle([...WORDS, ...getDueWords()]);
-  cardIdx = 0;
-  lang = 'ko';
-  flipped = false;
+  cardIdx = 0; lang = 'ko'; flipped = false;
   document.getElementById('tab-ko').classList.add('active');
   document.getElementById('tab-en').classList.remove('active');
   renderCard();
@@ -309,7 +345,6 @@ function renderCard() {
   document.getElementById('btn-prev').disabled = cardIdx === 0;
   document.getElementById('btn-next-card').style.display = isLast ? 'none' : '';
   document.getElementById('btn-to-quiz').classList.toggle('show', isLast);
-
   flipped = false;
   document.getElementById('flashcard').classList.remove('flipped');
 
@@ -324,29 +359,34 @@ function renderCard() {
     back.innerHTML = `
       <div class="card-pos">${w.pos}</div>
       <div class="card-word">${w.word}</div>
-      <div style="display:flex;align-items:center;gap:6px">
+      <div class="tts-row">
         <div class="card-pron">${w.pronunciation}</div>
-        <button class="tts-btn" onclick="event.stopPropagation();speakCard()">🔊</button>
+        <button class="tts-btn" onclick="event.stopPropagation();speak(studyWords[cardIdx].word)">🔊</button>
       </div>
-      <div class="card-example">💬 ${w.example}</div>
+      <div style="position:relative;width:100%">
+        <div class="card-example">💬 ${w.example}</div>
+        <button class="tts-btn" style="position:absolute;top:4px;right:4px" onclick="event.stopPropagation();speak(studyWords[cardIdx].example)">🔊</button>
+      </div>
       <div class="card-tip">💡 ${w.tip}</div>`;
   } else {
     front.innerHTML = `
       <div class="card-pos">${w.pos}</div>
       <div class="card-word">${w.word}</div>
-      <div style="display:flex;align-items:center;gap:6px">
+      <div class="tts-row">
         <div class="card-pron">${w.pronunciation}</div>
-        <button class="tts-btn" onclick="event.stopPropagation();speakCard()">🔊</button>
+        <button class="tts-btn" onclick="event.stopPropagation();speak(studyWords[cardIdx].word)">🔊</button>
       </div>
       <div class="card-hint">👆 탭해서 뜻 확인</div>`;
     back.innerHTML = `
       <div class="card-meaning">${w.meaning}</div>
-      <div class="card-example">💬 ${w.example}</div>
+      <div style="position:relative;width:100%">
+        <div class="card-example">💬 ${w.example}</div>
+        <button class="tts-btn" style="position:absolute;top:4px;right:4px" onclick="event.stopPropagation();speak(studyWords[cardIdx].example)">🔊</button>
+      </div>
       <div class="card-tip">💡 ${w.tip}</div>`;
   }
 }
 
-function speakCard() { speak(studyWords[cardIdx].word); }
 function flipCard() {
   flipped = !flipped;
   document.getElementById('flashcard').classList.toggle('flipped', flipped);
@@ -355,25 +395,23 @@ function prevCard() { if (cardIdx > 0) { cardIdx--; renderCard(); } }
 function nextCard() { if (cardIdx < studyWords.length - 1) { cardIdx++; renderCard(); } }
 
 // ── 퀴즈 상태 ──
-let qPhase = 1;      // 1=영→한, 2=한→영, 3=영작
+let qPhase = 1;
 let qWords = [];
 let qIdx = 0;
 let phaseScores = [0, 0, 0];
 let wrongWords = new Set();
 let qAnswered = false;
+let voiceRec = null;
 
 const PHASES = [
   { label: '1단계 / 3', title: '영어 → 한국어', desc: '영어 단어를 보고 올바른 뜻을 고르세요' },
   { label: '2단계 / 3', title: '한국어 → 영어', desc: '한국어 뜻을 보고 올바른 단어를 고르세요' },
-  { label: '3단계 / 3', title: '영작 퀴즈',     desc: '단어가 올바르게 쓰인 문장을 고르세요' },
+  { label: '3단계 / 3', title: '영작 퀴즈',     desc: '한국어 문장을 영어로 옮겨보세요' },
 ];
 
 function startQuiz() {
-  qPhase = 1;
-  qWords = shuffle([...studyWords]);
-  qIdx = 0;
-  phaseScores = [0, 0, 0];
-  wrongWords = new Set();
+  qPhase = 1; qWords = shuffle([...studyWords]);
+  qIdx = 0; phaseScores = [0, 0, 0]; wrongWords = new Set();
   renderQuestion();
   showScreen('screen-quiz');
 }
@@ -393,28 +431,28 @@ function renderQuestion() {
   document.getElementById('btn-next-q').style.display = 'none';
   qAnswered = false;
 
+  const isWriting = qPhase === 3;
+  document.getElementById('quiz-opts').style.display = isWriting ? 'none' : 'flex';
+  document.getElementById('writing-area').style.display = isWriting ? 'flex' : 'none';
+
+  if (isWriting) {
+    renderWritingQuestion(w);
+    return;
+  }
+
+  const others = shuffle(ALL_WORDS.filter(x => x.word !== w.word)).slice(0, 3);
   let qMain, qSub, opts, correctText;
-  const pool = ALL_WORDS.filter(x => x.word !== w.word);
-  const others = shuffle(pool).slice(0, 3);
 
   if (qPhase === 1) {
-    qMain = w.word;
-    qSub = w.pronunciation;
+    qMain = w.word; qSub = w.pronunciation;
     const choices = shuffle([w, ...others]);
     opts = choices.map(x => ({ text: x.meaning, correct: x.word === w.word }));
     correctText = w.meaning;
-  } else if (qPhase === 2) {
-    qMain = w.meaning;
-    qSub = '';
+  } else {
+    qMain = w.meaning; qSub = '';
     const choices = shuffle([w, ...others]);
     opts = choices.map(x => ({ text: x.word, correct: x.word === w.word }));
     correctText = w.word;
-  } else {
-    qMain = `"${w.word}"`;
-    qSub = `${w.meaning} — 올바르게 쓰인 문장은?`;
-    const choices = shuffle([w, ...others]);
-    opts = choices.map(x => ({ text: x.example, correct: x.word === w.word }));
-    correctText = w.example;
   }
 
   document.getElementById('quiz-q-main').textContent = qMain;
@@ -428,12 +466,12 @@ function renderQuestion() {
     btn.textContent = opt.text;
     btn.dataset.correct = opt.correct;
     btn.dataset.correctText = correctText;
-    btn.onclick = () => selectAnswer(btn, w.word);
+    btn.onclick = () => selectMC(btn, w.word);
     container.appendChild(btn);
   });
 }
 
-function selectAnswer(btn, word) {
+function selectMC(btn, word) {
   if (qAnswered) return;
   qAnswered = true;
   const isCorrect = btn.dataset.correct === 'true';
@@ -444,44 +482,133 @@ function selectAnswer(btn, word) {
   });
   const fb = document.getElementById('quiz-feedback');
   if (isCorrect) {
-    fb.textContent = '✅ 정답!';
-    fb.className = 'quiz-feedback ok';
+    fb.textContent = '✅ 정답!'; fb.className = 'quiz-feedback ok';
     phaseScores[qPhase - 1]++;
   } else {
     btn.classList.add('wrong');
-    fb.textContent = '❌ 오답';
-    fb.className = 'quiz-feedback fail';
-    wrongWords.add(word);
-    markWrong5(word);
+    fb.textContent = '❌ 오답'; fb.className = 'quiz-feedback fail';
+    wrongWords.add(word); markWrong5(word);
   }
   document.getElementById('btn-next-q').style.display = 'block';
 }
 
+// ── 영작 퀴즈 ──
+function renderWritingQuestion(w) {
+  document.getElementById('quiz-q-main').textContent = w.example_ko || w.meaning;
+  document.getElementById('quiz-q-sub').textContent = `단어 힌트: ${w.word} (${w.meaning})`;
+  document.getElementById('writing-input').value = '';
+  document.getElementById('writing-result').classList.remove('show');
+  document.getElementById('btn-submit').disabled = false;
+  document.getElementById('btn-voice').textContent = '🎤 음성 입력';
+  document.getElementById('btn-voice').classList.remove('listening');
+}
+
+function toggleVoice() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) { alert('Chrome 브라우저에서 음성 인식이 지원됩니다.'); return; }
+
+  if (voiceRec) { voiceRec.stop(); voiceRec = null; return; }
+
+  voiceRec = new SR();
+  voiceRec.lang = 'en-US';
+  voiceRec.continuous = false;
+  voiceRec.interimResults = false;
+
+  const btn = document.getElementById('btn-voice');
+  btn.textContent = '🔴 듣는 중... (탭하여 중지)';
+  btn.classList.add('listening');
+
+  voiceRec.onresult = e => {
+    document.getElementById('writing-input').value = e.results[0][0].transcript;
+  };
+  voiceRec.onend = () => {
+    btn.textContent = '🎤 음성 입력';
+    btn.classList.remove('listening');
+    voiceRec = null;
+  };
+  voiceRec.onerror = () => {
+    btn.textContent = '🎤 음성 입력';
+    btn.classList.remove('listening');
+    voiceRec = null;
+  };
+  voiceRec.start();
+}
+
+function judgeWriting(userAnswer, targetWord, referenceAnswer) {
+  const norm = userAnswer.toLowerCase().trim().replace(/[.,!?;:']/g, '');
+  const words = norm.split(/\s+/).filter(Boolean);
+  const base = targetWord.toLowerCase().replace(/\s+/g, ' ');
+
+  // 구동사 처리 (예: "give up", "run into")
+  const isPhrasal = base.includes(' ');
+  const mainWord = isPhrasal ? base.split(' ')[0] : base;
+
+  const hasWord = norm.includes(base) ||
+    words.some(w =>
+      w === mainWord ||
+      w === mainWord + 's' ||
+      w === mainWord + 'ed' ||
+      w === mainWord + 'd' ||
+      w === mainWord + 'ing' ||
+      w === mainWord.replace(/e$/, 'ing') ||
+      w === mainWord.replace(/y$/, 'ied')
+    );
+
+  const hasLength = words.length >= 3;
+  return hasWord && hasLength;
+}
+
+function submitWriting() {
+  const w = qWords[qIdx];
+  const userAnswer = document.getElementById('writing-input').value.trim();
+  if (!userAnswer) return;
+
+  document.getElementById('btn-submit').disabled = true;
+  if (voiceRec) { voiceRec.stop(); voiceRec = null; }
+
+  const isCorrect = judgeWriting(userAnswer, w.word, w.example);
+  const verdict = document.getElementById('result-verdict');
+  if (isCorrect) {
+    verdict.textContent = '✅ 정답으로 인정!';
+    verdict.className = 'result-verdict ok';
+    phaseScores[2]++;
+  } else {
+    verdict.textContent = '❌ 핵심 단어를 포함해 다시 확인해보세요';
+    verdict.className = 'result-verdict fail';
+    wrongWords.add(w.word); markWrong5(w.word);
+  }
+
+  // 참고 예문에서 핵심 단어 강조
+  const highlighted = w.example.replace(
+    new RegExp(`(${w.word.split(' ')[0]}\\w*)`, 'gi'),
+    '<em>$1</em>'
+  );
+  document.getElementById('result-ref').innerHTML = highlighted;
+  document.getElementById('writing-result').classList.add('show');
+}
+
 function nextQuestion() {
   qIdx++;
-  if (qIdx >= qWords.length) {
-    showPhaseEnd();
-    return;
-  }
+  if (qIdx >= qWords.length) { showPhaseEnd(); return; }
   renderQuestion();
 }
 
+// ── 단계 전환 ──
 function showPhaseEnd() {
   const score = phaseScores[qPhase - 1];
   const total = qWords.length;
   const isLast = qPhase === 3;
-
   const icons = ['📖', '✏️', '🖊️'];
   const nextLabels = ['2단계: 한국어 → 영어 시작', '3단계: 영작 퀴즈 시작', '결과 보기'];
   const descs = [
-    '한국어 뜻을 보고 영어 단어를 맞혀보세요',
-    '단어가 올바르게 쓰인 문장을 골라보세요',
-    '퀴즈가 모두 끝났어요!'
+    '이번엔 한국어 뜻을 보고 영어 단어를 맞혀보세요',
+    '마지막! 한국어 문장을 영어로 영작해보세요',
+    '모든 퀴즈가 끝났어요!',
   ];
 
   document.getElementById('phase-icon').textContent = icons[qPhase - 1];
   document.getElementById('phase-title').textContent = PHASES[qPhase - 1].title + ' 완료';
-  document.getElementById('phase-desc').textContent = isLast ? descs[2] : descs[qPhase - 1];
+  document.getElementById('phase-desc').textContent = descs[qPhase - 1];
   document.getElementById('phase-sc').textContent = `${score} / ${total}`;
   document.getElementById('phase-sl').textContent = Math.round(score / total * 100) + '% 정확도';
   document.getElementById('btn-next-phase').textContent = nextLabels[qPhase - 1];
@@ -489,10 +616,7 @@ function showPhaseEnd() {
 }
 
 function nextPhase() {
-  if (qPhase === 3) {
-    showDone();
-    return;
-  }
+  if (qPhase === 3) { showDone(); return; }
   qPhase++;
   qWords = shuffle([...studyWords]);
   qIdx = 0;
@@ -500,6 +624,7 @@ function nextPhase() {
   showScreen('screen-quiz');
 }
 
+// ── 완료 ──
 function showDone() {
   const total = phaseScores.reduce((a, b) => a + b, 0);
   const totalQ = qWords.length * 3;
@@ -508,9 +633,7 @@ function showDone() {
 
   document.getElementById('done-emoji').textContent = emoji;
   document.getElementById('done-total').textContent = `${total} / ${totalQ}점`;
-
-  const breakdown = document.getElementById('done-breakdown');
-  breakdown.innerHTML = PHASES.map((p, i) => `
+  document.getElementById('done-breakdown').innerHTML = PHASES.map((p, i) => `
     <div class="phase-row">
       <span class="pl">${p.title}</span>
       <span class="pv">${phaseScores[i]} / ${qWords.length}</span>
@@ -524,7 +647,6 @@ function showDone() {
         return w ? `<div class="wrong-item"><div class="ww">${w.word}</div><div class="wm">${w.meaning}</div></div>` : '';
       }).join('');
   }
-
   showScreen('screen-done');
 }
 </script>
