@@ -223,6 +223,7 @@ def generate_html(words, is_friday=False):
     html = html.replace("NEW_WORDS_PLACEHOLDER", str(len(words)))
     html = html.replace("TODAY_PLACEHOLDER", today.isoformat())
     html = html.replace("OPENAI_API_KEY_PLACEHOLDER", openai_key)
+    html = html.replace("GH_TOKEN_PLACEHOLDER", tokens.get("github_token", ""))
     html = html.replace("ALL_WORDS_JSON_PLACEHOLDER", _j.dumps(VOCAB_LIST, ensure_ascii=False))
     html = html.replace("WORDS_JSON_PLACEHOLDER", _j.dumps(words, ensure_ascii=False))
     return html
