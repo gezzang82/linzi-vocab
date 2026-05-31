@@ -2,608 +2,8 @@
   "week_start": "2026-05-25",
   "weekly_words": [
     {
-      "word": "vivid",
-      "meaning": "생생한, 선명한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "integrate",
-      "meaning": "통합하다, 융합하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "insight",
-      "meaning": "통찰력, 깊은 이해",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "phenomenon",
-      "meaning": "현상, 놀라운 사람/사물",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "collaborate",
-      "meaning": "협력하다, 공동 작업하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "compelling",
-      "meaning": "설득력 있는, 강렬한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "skeptical",
-      "meaning": "회의적인, 의심스러운",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "genuine",
-      "meaning": "진짜의, 진심 어린",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "nuance",
-      "meaning": "뉘앙스, 미묘한 차이",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "consolidate",
-      "meaning": "통합하다, 강화하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "alleviate",
-      "meaning": "완화하다, 경감하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "hinder",
-      "meaning": "방해하다, 저해하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "convey",
-      "meaning": "전달하다, 표현하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "implement",
-      "meaning": "실행하다, 시행하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "diligent",
-      "meaning": "근면한, 성실한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "profound",
-      "meaning": "심오한, 깊은",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "broaden",
-      "meaning": "넓히다, 확장하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "optimistic",
-      "meaning": "낙관적인",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "yield",
-      "meaning": "생산하다, 양보하다 / 수익",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "inevitable",
-      "meaning": "피할 수 없는, 불가피한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "intuition",
-      "meaning": "직관, 직감",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "paradox",
-      "meaning": "역설, 모순",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "diverse",
-      "meaning": "다양한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "overwhelming",
-      "meaning": "압도적인, 감당하기 어려운",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "coherent",
-      "meaning": "논리적인, 일관된",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "jeopardize",
-      "meaning": "위험에 빠뜨리다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "ambiguous",
-      "meaning": "모호한, 불명확한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "substantial",
-      "meaning": "상당한, 실질적인",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "grasp",
-      "meaning": "이해하다, 파악하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "integrity",
-      "meaning": "성실함, 도덕성",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "daunting",
-      "meaning": "위협적인, 겁나는",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "prioritize",
-      "meaning": "우선순위를 정하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "eloquent",
-      "meaning": "웅변적인, 표현력이 풍부한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "comply",
-      "meaning": "따르다, 준수하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "transparent",
-      "meaning": "투명한, 명백한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "persistence",
-      "meaning": "끈기, 지속성",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "assert",
-      "meaning": "주장하다, 단언하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "stimulate",
-      "meaning": "자극하다, 촉진하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "legitimate",
-      "meaning": "합법적인, 정당한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "momentum",
-      "meaning": "추진력, 탄력, 기세",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "bias",
-      "meaning": "편견, 편향",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "diminish",
-      "meaning": "줄어들다, 약화되다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "contemplate",
-      "meaning": "심사숙고하다, 고려하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "ambivalent",
-      "meaning": "양가감정의, 결정을 못 내리는",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "undermine",
-      "meaning": "약화시키다, 훼손하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "stagnant",
-      "meaning": "정체된, 침체된",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "versatile",
-      "meaning": "다재다능한, 다용도의",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "notorious",
-      "meaning": "악명 높은",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "vulnerable",
-      "meaning": "취약한, 상처받기 쉬운",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "acknowledge",
-      "meaning": "인정하다, 감사히 여기다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "anticipate",
-      "meaning": "예상하다, 기대하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "emulate",
-      "meaning": "모방하다, 따라 하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "reinforce",
-      "meaning": "강화하다, 보강하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "forge",
-      "meaning": "만들어내다, 구축하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "fluctuate",
-      "meaning": "변동하다, 오르내리다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "trigger",
-      "meaning": "유발하다 / 방아쇠, 계기",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "tedious",
-      "meaning": "지루한, 단조로운",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "resilient",
-      "meaning": "회복력이 있는, 탄력적인",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "leverage",
-      "meaning": "영향력 / 활용하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "cultivate",
-      "meaning": "기르다, 계발하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "negligible",
-      "meaning": "무시해도 될 만한, 사소한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "vague",
-      "meaning": "모호한, 막연한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "attain",
-      "meaning": "달성하다, 도달하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "pragmatic",
-      "meaning": "실용적인, 현실적인",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "immerse",
-      "meaning": "몰두하다, 빠져들다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "facilitate",
-      "meaning": "촉진하다, 용이하게 하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "explicit",
-      "meaning": "명시적인, 명확한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "tolerate",
-      "meaning": "참다, 용인하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "hierarchy",
-      "meaning": "계층, 위계질서",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "withstand",
-      "meaning": "견디다, 버티다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "deliberate",
-      "meaning": "의도적인 / 심사숙고하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "detrimental",
-      "meaning": "해로운, 불리한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "proactive",
-      "meaning": "사전 예방적인, 주도적인",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "scrutinize",
-      "meaning": "면밀히 조사하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "empathy",
-      "meaning": "공감, 감정이입",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "empower",
-      "meaning": "권한을 주다, 역량을 강화하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "concise",
-      "meaning": "간결한, 명료한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "rigorous",
-      "meaning": "엄격한, 철저한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "enhance",
-      "meaning": "향상시키다, 높이다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "subtle",
-      "meaning": "미묘한, 은근한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "argue",
-      "meaning": "주장하다, 논쟁하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "admit",
-      "meaning": "인정하다, 고백하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "confident",
-      "meaning": "자신감 있는",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "insist",
-      "meaning": "주장하다, 고집하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "practice",
-      "meaning": "연습하다 / 연습",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "negotiate",
-      "meaning": "협상하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "handle",
-      "meaning": "다루다, 처리하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "recommend",
-      "meaning": "추천하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "resign",
-      "meaning": "사직하다, 辞职하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "give up",
-      "meaning": "포기하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "complain",
-      "meaning": "불평하다, 항의하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "efficient",
-      "meaning": "효율적인",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "embarrassed",
-      "meaning": "당황한, 창피한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "challenge",
-      "meaning": "도전 / 도전하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "disagree",
-      "meaning": "반대하다, 의견이 다르다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "look forward to",
-      "meaning": "기대하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "agree",
-      "meaning": "동의하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "keep in touch",
-      "meaning": "연락을 유지하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "relieved",
-      "meaning": "안도한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "upset",
-      "meaning": "속상한 / 화나게 하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "routine",
-      "meaning": "일상, 루틴 / 일상적인",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "deadline",
-      "meaning": "마감 기한",
-      "date": "2026-05-30"
-    },
-    {
       "word": "improve",
       "meaning": "향상되다, 발전하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "figure out",
-      "meaning": "알아내다, 이해하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "concentrate",
-      "meaning": "집중하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "schedule",
-      "meaning": "일정 / 일정을 잡다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "run into",
-      "meaning": "우연히 마주치다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "grateful",
-      "meaning": "감사하는",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "prefer",
-      "meaning": "선호하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "memorize",
-      "meaning": "암기하다, 외우다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "distracted",
-      "meaning": "집중이 안 되는, 산만한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "cancel",
-      "meaning": "취소하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "disappointed",
-      "meaning": "실망한",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "presentation",
-      "meaning": "발표, 프레젠테이션",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "assume",
-      "meaning": "추정하다, 가정하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "bring up",
-      "meaning": "화제를 꺼내다 / 키우다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "tend to",
-      "meaning": "~하는 경향이 있다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "mention",
-      "meaning": "언급하다 / 언급",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "promote",
-      "meaning": "승진시키다, 홍보하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "hesitate",
-      "meaning": "망설이다, 주저하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "jealous",
-      "meaning": "질투하는, 시기하는",
       "date": "2026-05-30"
     },
     {
@@ -612,48 +12,13 @@
       "date": "2026-05-30"
     },
     {
-      "word": "depend on",
-      "meaning": "~에 달려있다, ~을 의존하다",
+      "word": "disappointed",
+      "meaning": "실망한",
       "date": "2026-05-30"
     },
     {
-      "word": "remind",
-      "meaning": "상기시키다, 생각나게 하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "avoid",
-      "meaning": "피하다, 회피하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "salary",
-      "meaning": "급여, 봉급",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "persuade",
-      "meaning": "설득하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "apologize",
-      "meaning": "사과하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "struggle",
-      "meaning": "애쓰다, 힘들어하다",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "review",
-      "meaning": "복습하다, 검토하다 / 복습",
-      "date": "2026-05-30"
-    },
-    {
-      "word": "annoyed",
-      "meaning": "짜증난, 성가신",
+      "word": "admit",
+      "meaning": "인정하다, 고백하다",
       "date": "2026-05-30"
     },
     {
@@ -662,34 +27,269 @@
       "date": "2026-05-30"
     },
     {
-      "word": "feedback",
-      "meaning": "피드백, 의견",
+      "word": "apologize",
+      "meaning": "사과하다",
       "date": "2026-05-30"
     },
     {
-      "word": "commute",
-      "meaning": "통근하다 / 통근",
+      "word": "grateful",
+      "meaning": "감사하는",
       "date": "2026-05-30"
     },
     {
-      "word": "awkward",
-      "meaning": "어색한, 불편한",
+      "word": "assume",
+      "meaning": "추정하다, 가정하다",
       "date": "2026-05-30"
     },
     {
-      "word": "colleague",
-      "meaning": "동료",
+      "word": "mention",
+      "meaning": "언급하다 / 언급",
       "date": "2026-05-30"
     },
     {
-      "word": "exhausted",
-      "meaning": "완전히 지친, 탈진한",
+      "word": "annoyed",
+      "meaning": "짜증난, 성가신",
       "date": "2026-05-30"
+    },
+    {
+      "word": "prefer",
+      "meaning": "선호하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "negotiate",
+      "meaning": "협상하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "memorize",
+      "meaning": "암기하다, 외우다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "struggle",
+      "meaning": "애쓰다, 힘들어하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "deadline",
+      "meaning": "마감 기한",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "insist",
+      "meaning": "주장하다, 고집하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "persuade",
+      "meaning": "설득하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "give up",
+      "meaning": "포기하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "disagree",
+      "meaning": "반대하다, 의견이 다르다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "concentrate",
+      "meaning": "집중하다",
+      "date": "2026-05-31"
     },
     {
       "word": "overwhelmed",
       "meaning": "압도된, 벅찬",
-      "date": "2026-05-30"
+      "date": "2026-05-31"
+    },
+    {
+      "word": "routine",
+      "meaning": "일상, 루틴 / 일상적인",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "awkward",
+      "meaning": "어색한, 불편한",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "efficient",
+      "meaning": "효율적인",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "hesitate",
+      "meaning": "망설이다, 주저하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "tend to",
+      "meaning": "~하는 경향이 있다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "remind",
+      "meaning": "상기시키다, 생각나게 하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "review",
+      "meaning": "복습하다, 검토하다 / 복습",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "look forward to",
+      "meaning": "기대하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "upset",
+      "meaning": "속상한 / 화나게 하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "distracted",
+      "meaning": "집중이 안 되는, 산만한",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "schedule",
+      "meaning": "일정 / 일정을 잡다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "resign",
+      "meaning": "사직하다, 사임하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "confident",
+      "meaning": "자신감 있는",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "cancel",
+      "meaning": "취소하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "colleague",
+      "meaning": "동료",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "avoid",
+      "meaning": "피하다, 회피하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "challenge",
+      "meaning": "도전 / 도전하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "figure out",
+      "meaning": "알아내다, 이해하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "handle",
+      "meaning": "다루다, 처리하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "feedback",
+      "meaning": "피드백, 의견",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "practice",
+      "meaning": "연습하다 / 연습",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "jealous",
+      "meaning": "질투하는, 시기하는",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "relieved",
+      "meaning": "안도한",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "salary",
+      "meaning": "급여, 봉급",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "promote",
+      "meaning": "승진시키다, 홍보하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "presentation",
+      "meaning": "발표, 프레젠테이션",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "agree",
+      "meaning": "동의하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "keep in touch",
+      "meaning": "연락을 유지하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "bring up",
+      "meaning": "화제를 꺼내다 / 키우다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "run into",
+      "meaning": "우연히 마주치다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "exhausted",
+      "meaning": "완전히 지친, 탈진한",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "argue",
+      "meaning": "주장하다, 논쟁하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "embarrassed",
+      "meaning": "당황한, 창피한",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "recommend",
+      "meaning": "추천하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "complain",
+      "meaning": "불평하다, 항의하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "depend on",
+      "meaning": "~에 달려있다, ~을 의존하다",
+      "date": "2026-05-31"
+    },
+    {
+      "word": "commute",
+      "meaning": "통근하다 / 통근",
+      "date": "2026-05-31"
     }
   ],
   "wrong_answers": [],

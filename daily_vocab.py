@@ -20,76 +20,75 @@ HTML_FILE    = os.path.join(BASE_DIR, "today_vocab.html")
 # ── 단어 목록 (B1-B2 일상 실용 영어) ─────────────────────────────────────────
 VOCAB_LIST = [
     # 감정/관계
-    {"word": "upset",        "pronunciation": "/ʌpˈset/",        "pos": "adj/v", "meaning": "속상한 / 화나게 하다",           "example": "She was really upset when she heard the news.",              "tip": "up(뒤집다)+set → 감정이 뒤집힌 상태"},
-    {"word": "awkward",      "pronunciation": "/ˈɔːkwərd/",      "pos": "adj",   "meaning": "어색한, 불편한",                 "example": "It was awkward when they ran into each other at the party.", "tip": "자리가 안 맞는 느낌 → 어색함"},
-    {"word": "grateful",     "pronunciation": "/ˈɡreɪtfl/",      "pos": "adj",   "meaning": "감사하는",                      "example": "I'm so grateful for your help with the project.",            "tip": "great(크다) → 크게 감사하는"},
-    {"word": "annoyed",      "pronunciation": "/əˈnɔɪd/",        "pos": "adj",   "meaning": "짜증난, 성가신",                 "example": "He was annoyed by the constant noise from next door.",       "tip": "annoy → ed → 짜증이 쌓인 상태"},
-    {"word": "confident",    "pronunciation": "/ˈkɒnfɪdənt/",    "pos": "adj",   "meaning": "자신감 있는",                   "example": "She felt confident about her presentation.",                 "tip": "con+fide(믿다) → 자신을 믿는"},
-    {"word": "exhausted",    "pronunciation": "/ɪɡˈzɔːstɪd/",    "pos": "adj",   "meaning": "완전히 지친, 탈진한",            "example": "I was absolutely exhausted after the long trip.",            "tip": "exhaust(소진) → 에너지가 완전히 빠진"},
-    {"word": "relieved",     "pronunciation": "/rɪˈliːvd/",      "pos": "adj",   "meaning": "안도한",                        "example": "I was so relieved when the test was over.",                  "tip": "re+lieve(가볍게) → 무거운 짐이 사라진"},
-    {"word": "jealous",      "pronunciation": "/ˈdʒeləs/",       "pos": "adj",   "meaning": "질투하는, 시기하는",              "example": "He was jealous of his friend's success.",                   "tip": "질투심이 불처럼 타오르는 이미지"},
-    {"word": "embarrassed",  "pronunciation": "/ɪmˈbærəst/",     "pos": "adj",   "meaning": "당황한, 창피한",                 "example": "She was embarrassed when she forgot his name.",              "tip": "em+barrass(방해) → 마음이 막혀 얼굴이 빨개짐"},
-    {"word": "disappointed", "pronunciation": "/ˌdɪsəˈpɔɪntɪd/","pos": "adj",   "meaning": "실망한",                        "example": "He was disappointed with his exam results.",                 "tip": "dis(부정)+appoint(기대) → 기대가 빗나간"},
+    {"word": "upset",        "pronunciation": "/ʌpˈset/",        "pos": "adj/v", "meaning": "속상한 / 화나게 하다",           "example": "She was really upset when she heard the news.",              "example_ko": "그녀는 그 소식을 들었을 때 정말 속상해했어.",                          "tip": "up(뒤집다)+set → 감정이 뒤집힌 상태"},
+    {"word": "awkward",      "pronunciation": "/ˈɔːkwərd/",      "pos": "adj",   "meaning": "어색한, 불편한",                 "example": "It was awkward when they ran into each other at the party.", "example_ko": "파티에서 그들이 우연히 마주쳤을 때 정말 어색했어.",                    "tip": "자리가 안 맞는 느낌 → 어색함"},
+    {"word": "grateful",     "pronunciation": "/ˈɡreɪtfl/",      "pos": "adj",   "meaning": "감사하는",                      "example": "I'm so grateful for your help with the project.",            "example_ko": "프로젝트를 도와줘서 정말 감사해.",                                    "tip": "great(크다) → 크게 감사하는"},
+    {"word": "annoyed",      "pronunciation": "/əˈnɔɪd/",        "pos": "adj",   "meaning": "짜증난, 성가신",                 "example": "He was annoyed by the constant noise from next door.",       "example_ko": "그는 옆집에서 계속 나는 소음에 짜증이 났어.",                         "tip": "annoy → ed → 짜증이 쌓인 상태"},
+    {"word": "confident",    "pronunciation": "/ˈkɒnfɪdənt/",    "pos": "adj",   "meaning": "자신감 있는",                   "example": "She felt confident about her presentation.",                 "example_ko": "그녀는 자신의 발표에 자신감을 느꼈어.",                               "tip": "con+fide(믿다) → 자신을 믿는"},
+    {"word": "exhausted",    "pronunciation": "/ɪɡˈzɔːstɪd/",    "pos": "adj",   "meaning": "완전히 지친, 탈진한",            "example": "I was absolutely exhausted after the long trip.",            "example_ko": "긴 여행 후 나는 완전히 지쳐버렸어.",                                  "tip": "exhaust(소진) → 에너지가 완전히 빠진"},
+    {"word": "relieved",     "pronunciation": "/rɪˈliːvd/",      "pos": "adj",   "meaning": "안도한",                        "example": "I was so relieved when the test was over.",                  "example_ko": "시험이 끝났을 때 정말 안도했어.",                                     "tip": "re+lieve(가볍게) → 무거운 짐이 사라진"},
+    {"word": "jealous",      "pronunciation": "/ˈdʒeləs/",       "pos": "adj",   "meaning": "질투하는, 시기하는",              "example": "He was jealous of his friend's success.",                   "example_ko": "그는 친구의 성공을 질투했어.",                                        "tip": "질투심이 불처럼 타오르는 이미지"},
+    {"word": "embarrassed",  "pronunciation": "/ɪmˈbærəst/",     "pos": "adj",   "meaning": "당황한, 창피한",                 "example": "She was embarrassed when she forgot his name.",              "example_ko": "그녀는 그의 이름을 잊어버려서 당황했어.",                             "tip": "em+barrass(방해) → 마음이 막혀 얼굴이 빨개짐"},
+    {"word": "disappointed", "pronunciation": "/ˌdɪsəˈpɔɪntɪd/","pos": "adj",   "meaning": "실망한",                        "example": "He was disappointed with his exam results.",                 "example_ko": "그는 시험 결과에 실망했어.",                                          "tip": "dis(부정)+appoint(기대) → 기대가 빗나간"},
 
     # 행동/습관
-    {"word": "avoid",        "pronunciation": "/əˈvɔɪd/",        "pos": "v",     "meaning": "피하다, 회피하다",               "example": "Try to avoid eating too much sugar.",                        "tip": "a+void(빈 공간) → 빈 공간으로 비켜가다"},
-    {"word": "manage",       "pronunciation": "/ˈmænɪdʒ/",       "pos": "v",     "meaning": "해내다, 관리하다",               "example": "Did you manage to finish the report on time?",               "tip": "manage to = 간신히 해내다"},
-    {"word": "tend to",      "pronunciation": "/tend tuː/",       "pos": "v",     "meaning": "~하는 경향이 있다",              "example": "Students tend to study harder before exams.",                "tip": "tend = 기울다 → 그쪽으로 기울어진 습관"},
-    {"word": "hesitate",     "pronunciation": "/ˈhezɪteɪt/",     "pos": "v",     "meaning": "망설이다, 주저하다",              "example": "Don't hesitate to ask me if you need help.",                 "tip": "hesi(걸리다) → 발걸음이 걸려 멈추는"},
-    {"word": "handle",       "pronunciation": "/ˈhændl/",         "pos": "v",     "meaning": "다루다, 처리하다",               "example": "She knows how to handle difficult students.",                "tip": "손잡이(handle)를 잡고 능숙하게 다루다"},
-    {"word": "figure out",   "pronunciation": "/ˈfɪɡər aʊt/",   "pos": "v",     "meaning": "알아내다, 이해하다",              "example": "I couldn't figure out how to use the new software.",         "tip": "figure(형태) → 형태를 파악해내다"},
-    {"word": "give up",      "pronunciation": "/ɡɪv ʌp/",        "pos": "v",     "meaning": "포기하다",                      "example": "Never give up on your dreams.",                              "tip": "give(주다)+up → 위로 넘겨버리다 = 포기"},
-    {"word": "keep in touch","pronunciation": "/kiːp ɪn tʌtʃ/", "pos": "v",     "meaning": "연락을 유지하다",                "example": "Let's keep in touch after you move.",                        "tip": "touch(접촉) 상태를 keep → 연락 유지"},
-    {"word": "run into",     "pronunciation": "/rʌn ˈɪntuː/",   "pos": "v",     "meaning": "우연히 마주치다",                "example": "I ran into my old teacher at the supermarket.",              "tip": "달리다가 부딪히다 → 우연한 만남"},
-    {"word": "bring up",     "pronunciation": "/brɪŋ ʌp/",       "pos": "v",     "meaning": "화제를 꺼내다 / 키우다",         "example": "She brought up an interesting point in the meeting.",        "tip": "위로 꺼내다 → 말을 꺼내다"},
+    {"word": "avoid",        "pronunciation": "/əˈvɔɪd/",        "pos": "v",     "meaning": "피하다, 회피하다",               "example": "Try to avoid eating too much sugar.",                        "example_ko": "설탕을 너무 많이 먹는 걸 피하도록 해봐.",                             "tip": "a+void(빈 공간) → 빈 공간으로 비켜가다"},
+    {"word": "manage",       "pronunciation": "/ˈmænɪdʒ/",       "pos": "v",     "meaning": "해내다, 관리하다",               "example": "Did you manage to finish the report on time?",               "example_ko": "보고서를 제때 끝낼 수 있었어?",                                       "tip": "manage to = 간신히 해내다"},
+    {"word": "tend to",      "pronunciation": "/tend tuː/",       "pos": "v",     "meaning": "~하는 경향이 있다",              "example": "Students tend to study harder before exams.",                "example_ko": "학생들은 시험 전에 더 열심히 공부하는 경향이 있어.",                  "tip": "tend = 기울다 → 그쪽으로 기울어진 습관"},
+    {"word": "hesitate",     "pronunciation": "/ˈhezɪteɪt/",     "pos": "v",     "meaning": "망설이다, 주저하다",              "example": "Don't hesitate to ask me if you need help.",                 "example_ko": "도움이 필요하면 주저하지 말고 물어봐.",                               "tip": "hesi(걸리다) → 발걸음이 걸려 멈추는"},
+    {"word": "handle",       "pronunciation": "/ˈhændl/",         "pos": "v",     "meaning": "다루다, 처리하다",               "example": "She knows how to handle difficult students.",                "example_ko": "그녀는 어려운 학생들을 어떻게 다루는지 알아.",                        "tip": "손잡이(handle)를 잡고 능숙하게 다루다"},
+    {"word": "figure out",   "pronunciation": "/ˈfɪɡər aʊt/",   "pos": "v",     "meaning": "알아내다, 이해하다",              "example": "I couldn't figure out how to use the new software.",         "example_ko": "새 소프트웨어 사용법을 도저히 알아낼 수가 없었어.",                  "tip": "figure(형태) → 형태를 파악해내다"},
+    {"word": "give up",      "pronunciation": "/ɡɪv ʌp/",        "pos": "v",     "meaning": "포기하다",                      "example": "Never give up on your dreams.",                              "example_ko": "절대 꿈을 포기하지 마.",                                             "tip": "give(주다)+up → 위로 넘겨버리다 = 포기"},
+    {"word": "keep in touch","pronunciation": "/kiːp ɪn tʌtʃ/", "pos": "v",     "meaning": "연락을 유지하다",                "example": "Let's keep in touch after you move.",                        "example_ko": "이사 후에도 계속 연락하자.",                                          "tip": "touch(접촉) 상태를 keep → 연락 유지"},
+    {"word": "run into",     "pronunciation": "/rʌn ˈɪntuː/",   "pos": "v",     "meaning": "우연히 마주치다",                "example": "I ran into my old teacher at the supermarket.",              "example_ko": "슈퍼마켓에서 옛 선생님을 우연히 만났어.",                             "tip": "달리다가 부딪히다 → 우연한 만남"},
+    {"word": "bring up",     "pronunciation": "/brɪŋ ʌp/",       "pos": "v",     "meaning": "화제를 꺼내다 / 키우다",         "example": "She brought up an interesting point in the meeting.",        "example_ko": "그녀는 회의에서 흥미로운 점을 꺼냈어.",                               "tip": "위로 꺼내다 → 말을 꺼내다"},
 
     # 일상 상황
-    {"word": "deadline",     "pronunciation": "/ˈdedlaɪn/",      "pos": "n",     "meaning": "마감 기한",                     "example": "The deadline for the assignment is next Friday.",            "tip": "dead+line → 넘으면 '죽는' 선"},
-    {"word": "commute",      "pronunciation": "/kəˈmjuːt/",      "pos": "v/n",   "meaning": "통근하다 / 통근",                "example": "My daily commute takes about an hour.",                      "tip": "com+mute(바꾸다) → 집과 직장을 왔다 갔다"},
-    {"word": "schedule",     "pronunciation": "/ˈskedʒuːl/",     "pos": "n/v",   "meaning": "일정 / 일정을 잡다",             "example": "Let me check my schedule for next week.",                    "tip": "시간표처럼 칸을 채우는 이미지"},
-    {"word": "routine",      "pronunciation": "/ruːˈtiːn/",       "pos": "n/adj", "meaning": "일상, 루틴 / 일상적인",          "example": "Morning exercise is part of my daily routine.",              "tip": "route(길) → 매일 걷는 정해진 길"},
-    {"word": "overwhelmed",  "pronunciation": "/ˌoʊvərˈwelmd/",  "pos": "adj",   "meaning": "압도된, 벅찬",                  "example": "I feel overwhelmed with so much work to do.",               "tip": "over+whelm → 파도에 완전히 덮인 느낌"},
-    {"word": "distracted",   "pronunciation": "/dɪˈstræktɪd/",   "pos": "adj",   "meaning": "집중이 안 되는, 산만한",         "example": "I keep getting distracted by my phone.",                    "tip": "dis+tract(끌다) → 딴 곳으로 끌려가는"},
-    {"word": "cancel",       "pronunciation": "/ˈkænsəl/",        "pos": "v",     "meaning": "취소하다",                      "example": "They had to cancel the meeting due to bad weather.",         "tip": "cancel = 선을 그어 지우다"},
-    {"word": "remind",       "pronunciation": "/rɪˈmaɪnd/",       "pos": "v",     "meaning": "상기시키다, 생각나게 하다",      "example": "Can you remind me about the meeting tomorrow?",              "tip": "re+mind → 마음에 다시 불러오다"},
-    {"word": "recommend",    "pronunciation": "/ˌrekəˈmend/",     "pos": "v",     "meaning": "추천하다",                      "example": "I highly recommend this restaurant.",                        "tip": "re+commend(맡기다) → 강하게 맡겨 추천"},
-    {"word": "apologize",    "pronunciation": "/əˈpɒlədʒaɪz/",  "pos": "v",     "meaning": "사과하다",                      "example": "He apologized for being late to the meeting.",               "tip": "apology+ize → 사과의 말을 하다"},
+    {"word": "deadline",     "pronunciation": "/ˈdedlaɪn/",      "pos": "n",     "meaning": "마감 기한",                     "example": "The deadline for the assignment is next Friday.",            "example_ko": "과제 마감이 다음 금요일이야.",                                        "tip": "dead+line → 넘으면 '죽는' 선"},
+    {"word": "commute",      "pronunciation": "/kəˈmjuːt/",      "pos": "v/n",   "meaning": "통근하다 / 통근",                "example": "My daily commute takes about an hour.",                      "example_ko": "나의 일상 통근은 약 한 시간 걸려.",                                  "tip": "com+mute(바꾸다) → 집과 직장을 왔다 갔다"},
+    {"word": "schedule",     "pronunciation": "/ˈskedʒuːl/",     "pos": "n/v",   "meaning": "일정 / 일정을 잡다",             "example": "Let me check my schedule for next week.",                    "example_ko": "다음 주 일정을 한번 확인해볼게.",                                     "tip": "시간표처럼 칸을 채우는 이미지"},
+    {"word": "routine",      "pronunciation": "/ruːˈtiːn/",       "pos": "n/adj", "meaning": "일상, 루틴 / 일상적인",          "example": "Morning exercise is part of my daily routine.",              "example_ko": "아침 운동은 내 일상 루틴의 일부야.",                                  "tip": "route(길) → 매일 걷는 정해진 길"},
+    {"word": "overwhelmed",  "pronunciation": "/ˌoʊvərˈwelmd/",  "pos": "adj",   "meaning": "압도된, 벅찬",                  "example": "I feel overwhelmed with so much work to do.",               "example_ko": "해야 할 일이 너무 많아서 벅차.",                                      "tip": "over+whelm → 파도에 완전히 덮인 느낌"},
+    {"word": "distracted",   "pronunciation": "/dɪˈstræktɪd/",   "pos": "adj",   "meaning": "집중이 안 되는, 산만한",         "example": "I keep getting distracted by my phone.",                    "example_ko": "계속 핸드폰 때문에 집중이 안 돼.",                                   "tip": "dis+tract(끌다) → 딴 곳으로 끌려가는"},
+    {"word": "cancel",       "pronunciation": "/ˈkænsəl/",        "pos": "v",     "meaning": "취소하다",                      "example": "They had to cancel the meeting due to bad weather.",         "example_ko": "날씨가 나빠서 회의를 취소해야 했어.",                                 "tip": "cancel = 선을 그어 지우다"},
+    {"word": "remind",       "pronunciation": "/rɪˈmaɪnd/",       "pos": "v",     "meaning": "상기시키다, 생각나게 하다",      "example": "Can you remind me about the meeting tomorrow?",              "example_ko": "내일 회의에 대해 알려줄 수 있어?",                                    "tip": "re+mind → 마음에 다시 불러오다"},
+    {"word": "recommend",    "pronunciation": "/ˌrekəˈmend/",     "pos": "v",     "meaning": "추천하다",                      "example": "I highly recommend this restaurant.",                        "example_ko": "이 식당을 강력히 추천해.",                                            "tip": "re+commend(맡기다) → 강하게 맡겨 추천"},
+    {"word": "apologize",    "pronunciation": "/əˈpɒlədʒaɪz/",  "pos": "v",     "meaning": "사과하다",                      "example": "He apologized for being late to the meeting.",               "example_ko": "그는 회의에 늦은 것에 대해 사과했어.",                                "tip": "apology+ize → 사과의 말을 하다"},
 
     # 소통/표현
-    {"word": "mention",      "pronunciation": "/ˈmenʃn/",         "pos": "v/n",   "meaning": "언급하다 / 언급",                "example": "Did you mention the new project to your boss?",              "tip": "men(마음)+tion → 마음에서 꺼내 말하다"},
-    {"word": "assume",       "pronunciation": "/əˈsjuːm/",        "pos": "v",     "meaning": "추정하다, 가정하다",              "example": "Don't assume you know what others are thinking.",            "tip": "as+sume(잡다) → 사실처럼 잡아서 생각하다"},
-    {"word": "agree",        "pronunciation": "/əˈɡriː/",         "pos": "v",     "meaning": "동의하다",                      "example": "I totally agree with what you said.",                        "tip": "a+gree(기분 좋은) → 서로 기분 좋게 맞추다"},
-    {"word": "disagree",     "pronunciation": "/ˌdɪsəˈɡriː/",    "pos": "v",     "meaning": "반대하다, 의견이 다르다",         "example": "I disagree with your opinion on this matter.",               "tip": "dis(반대)+agree → 동의와 반대 방향"},
-    {"word": "prefer",       "pronunciation": "/prɪˈfɜːr/",       "pos": "v",     "meaning": "선호하다",                      "example": "I prefer tea to coffee in the morning.",                    "tip": "pre+fer(가져오다) → 앞으로 가져오다 = 선호"},
-    {"word": "complain",     "pronunciation": "/kəmˈpleɪn/",      "pos": "v",     "meaning": "불평하다, 항의하다",              "example": "Several students complained about the homework.",             "tip": "com+plain(치다) → 가슴을 치며 불평하다"},
-    {"word": "persuade",     "pronunciation": "/pəˈsweɪd/",       "pos": "v",     "meaning": "설득하다",                      "example": "She persuaded him to try a new approach.",                   "tip": "per+suade(달콤한) → 달콤하게 설득하다"},
-    {"word": "argue",        "pronunciation": "/ˈɑːrɡjuː/",       "pos": "v",     "meaning": "주장하다, 논쟁하다",              "example": "They argued about who should pay the bill.",                 "tip": "argue = 날카롭게 부딪히며 주장하다"},
-    {"word": "admit",        "pronunciation": "/ədˈmɪt/",         "pos": "v",     "meaning": "인정하다, 고백하다",              "example": "He admitted that he had made a mistake.",                   "tip": "ad+mit(보내다) → 안으로 들여보내다 = 인정"},
-    {"word": "insist",       "pronunciation": "/ɪnˈsɪst/",        "pos": "v",     "meaning": "주장하다, 고집하다",              "example": "She insisted on paying for the meal herself.",               "tip": "in+sist(서다) → 뜻 위에 굳건히 서다"},
+    {"word": "mention",      "pronunciation": "/ˈmenʃn/",         "pos": "v/n",   "meaning": "언급하다 / 언급",                "example": "Did you mention the new project to your boss?",              "example_ko": "상사에게 새 프로젝트 얘기 했어?",                                     "tip": "men(마음)+tion → 마음에서 꺼내 말하다"},
+    {"word": "assume",       "pronunciation": "/əˈsjuːm/",        "pos": "v",     "meaning": "추정하다, 가정하다",              "example": "Don't assume you know what others are thinking.",            "example_ko": "다른 사람이 무슨 생각 하는지 안다고 가정하지 마.",                    "tip": "as+sume(잡다) → 사실처럼 잡아서 생각하다"},
+    {"word": "agree",        "pronunciation": "/əˈɡriː/",         "pos": "v",     "meaning": "동의하다",                      "example": "I totally agree with what you said.",                        "example_ko": "네가 말한 것에 완전히 동의해.",                                       "tip": "a+gree(기분 좋은) → 서로 기분 좋게 맞추다"},
+    {"word": "disagree",     "pronunciation": "/ˌdɪsəˈɡriː/",    "pos": "v",     "meaning": "반대하다, 의견이 다르다",         "example": "I disagree with your opinion on this matter.",               "example_ko": "이 문제에 대한 네 의견에 반대해.",                                    "tip": "dis(반대)+agree → 동의와 반대 방향"},
+    {"word": "prefer",       "pronunciation": "/prɪˈfɜːr/",       "pos": "v",     "meaning": "선호하다",                      "example": "I prefer tea to coffee in the morning.",                    "example_ko": "나는 아침에 커피보다 차를 더 선호해.",                                "tip": "pre+fer(가져오다) → 앞으로 가져오다 = 선호"},
+    {"word": "complain",     "pronunciation": "/kəmˈpleɪn/",      "pos": "v",     "meaning": "불평하다, 항의하다",              "example": "Several students complained about the homework.",             "example_ko": "몇몇 학생들이 숙제에 대해 불평했어.",                                 "tip": "com+plain(치다) → 가슴을 치며 불평하다"},
+    {"word": "persuade",     "pronunciation": "/pəˈsweɪd/",       "pos": "v",     "meaning": "설득하다",                      "example": "She persuaded him to try a new approach.",                   "example_ko": "그녀는 그에게 새로운 방법을 시도해보라고 설득했어.",                  "tip": "per+suade(달콤한) → 달콤하게 설득하다"},
+    {"word": "argue",        "pronunciation": "/ˈɑːrɡjuː/",       "pos": "v",     "meaning": "주장하다, 논쟁하다",              "example": "They argued about who should pay the bill.",                 "example_ko": "그들은 누가 계산해야 하는지 논쟁했어.",                               "tip": "argue = 날카롭게 부딪히며 주장하다"},
+    {"word": "admit",        "pronunciation": "/ədˈmɪt/",         "pos": "v",     "meaning": "인정하다, 고백하다",              "example": "He admitted that he had made a mistake.",                   "example_ko": "그는 실수를 했다는 걸 인정했어.",                                     "tip": "ad+mit(보내다) → 안으로 들여보내다 = 인정"},
+    {"word": "insist",       "pronunciation": "/ɪnˈsɪst/",        "pos": "v",     "meaning": "주장하다, 고집하다",              "example": "She insisted on paying for the meal herself.",               "example_ko": "그녀는 직접 식사비를 내겠다고 고집했어.",                             "tip": "in+sist(서다) → 뜻 위에 굳건히 서다"},
 
     # 학습/성장
-    {"word": "improve",      "pronunciation": "/ɪmˈpruːv/",       "pos": "v",     "meaning": "향상되다, 발전하다",              "example": "Your English has improved a lot this year.",                 "tip": "im+prove(증명) → 발전을 증명해가다"},
-    {"word": "review",       "pronunciation": "/rɪˈvjuː/",        "pos": "v/n",   "meaning": "복습하다, 검토하다 / 복습",      "example": "Let's review what we learned last week.",                    "tip": "re+view → 다시 보다"},
-    {"word": "memorize",     "pronunciation": "/ˈmeməraɪz/",      "pos": "v",     "meaning": "암기하다, 외우다",               "example": "I need to memorize these vocabulary words.",                 "tip": "memory+ize → 기억 속에 집어넣다"},
-    {"word": "concentrate",  "pronunciation": "/ˈkɒnsntreɪt/",   "pos": "v",     "meaning": "집중하다",                      "example": "It's hard to concentrate when there's so much noise.",       "tip": "con+center → 중심으로 모으다"},
-    {"word": "practice",     "pronunciation": "/ˈpræktɪs/",       "pos": "v/n",   "meaning": "연습하다 / 연습",                "example": "You need to practice speaking English every day.",           "tip": "practical(실용적) → 실제로 해보는 것"},
-    {"word": "struggle",     "pronunciation": "/ˈstrʌɡl/",        "pos": "v/n",   "meaning": "애쓰다, 힘들어하다",              "example": "Many students struggle with grammar rules.",                 "tip": "strug(저항) → 저항과 싸우며 나아가다"},
-    {"word": "achieve",      "pronunciation": "/əˈtʃiːv/",        "pos": "v",     "meaning": "성취하다, 달성하다",              "example": "You can achieve anything if you work hard enough.",          "tip": "a+chieve(끝) → 끝에 도달하다"},
-    {"word": "challenge",    "pronunciation": "/ˈtʃælɪndʒ/",      "pos": "n/v",   "meaning": "도전 / 도전하다",                "example": "Learning a language is a challenge, but it's rewarding.",    "tip": "call+enge → 불러내어 도전하다"},
-    {"word": "depend on",    "pronunciation": "/dɪˈpend ɒn/",     "pos": "v",     "meaning": "~에 달려있다, ~을 의존하다",     "example": "Success depends on how much effort you put in.",             "tip": "de+pend(달리다) → 결과가 달려있다"},
-    {"word": "look forward to","pronunciation":"/lʊk ˈfɔːwəd tə/","pos":"v",     "meaning": "기대하다",                      "example": "I'm really looking forward to the holidays.",               "tip": "앞을 바라보다 → 기대감"},
+    {"word": "improve",      "pronunciation": "/ɪmˈpruːv/",       "pos": "v",     "meaning": "향상되다, 발전하다",              "example": "Your English has improved a lot this year.",                 "example_ko": "올해 네 영어 실력이 많이 늘었어.",                                    "tip": "im+prove(증명) → 발전을 증명해가다"},
+    {"word": "review",       "pronunciation": "/rɪˈvjuː/",        "pos": "v/n",   "meaning": "복습하다, 검토하다 / 복습",      "example": "Let's review what we learned last week.",                    "example_ko": "지난주에 배운 걸 복습해보자.",                                        "tip": "re+view → 다시 보다"},
+    {"word": "memorize",     "pronunciation": "/ˈmeməraɪz/",      "pos": "v",     "meaning": "암기하다, 외우다",               "example": "I need to memorize these vocabulary words.",                 "example_ko": "이 단어들을 외워야 해.",                                              "tip": "memory+ize → 기억 속에 집어넣다"},
+    {"word": "concentrate",  "pronunciation": "/ˈkɒnsntreɪt/",   "pos": "v",     "meaning": "집중하다",                      "example": "It's hard to concentrate when there's so much noise.",       "example_ko": "소음이 너무 많을 때는 집중하기가 힘들어.",                            "tip": "con+center → 중심으로 모으다"},
+    {"word": "practice",     "pronunciation": "/ˈpræktɪs/",       "pos": "v/n",   "meaning": "연습하다 / 연습",                "example": "You need to practice speaking English every day.",           "example_ko": "매일 영어 말하기를 연습해야 해.",                                     "tip": "practical(실용적) → 실제로 해보는 것"},
+    {"word": "struggle",     "pronunciation": "/ˈstrʌɡl/",        "pos": "v/n",   "meaning": "애쓰다, 힘들어하다",              "example": "Many students struggle with grammar rules.",                 "example_ko": "많은 학생들이 문법 규칙을 어려워해.",                                 "tip": "strug(저항) → 저항과 싸우며 나아가다"},
+    {"word": "achieve",      "pronunciation": "/əˈtʃiːv/",        "pos": "v",     "meaning": "성취하다, 달성하다",              "example": "You can achieve anything if you work hard enough.",          "example_ko": "충분히 열심히 하면 뭐든 이룰 수 있어.",                              "tip": "a+chieve(끝) → 끝에 도달하다"},
+    {"word": "challenge",    "pronunciation": "/ˈtʃælɪndʒ/",      "pos": "n/v",   "meaning": "도전 / 도전하다",                "example": "Learning a language is a challenge, but it's rewarding.",    "example_ko": "언어 배우기는 도전이지만 정말 보람 있어.",                            "tip": "call+enge → 불러내어 도전하다"},
+    {"word": "depend on",    "pronunciation": "/dɪˈpend ɒn/",     "pos": "v",     "meaning": "~에 달려있다, ~을 의존하다",     "example": "Success depends on how much effort you put in.",             "example_ko": "성공은 얼마나 노력하느냐에 달려있어.",                                "tip": "de+pend(달리다) → 결과가 달려있다"},
+    {"word": "look forward to","pronunciation":"/lʊk ˈfɔːwəd tə/","pos":"v",     "meaning": "기대하다",                      "example": "I'm really looking forward to the holidays.",               "example_ko": "방학이 정말 기대돼.",                                                 "tip": "앞을 바라보다 → 기대감"},
 
     # 직장/사회생활
-    {"word": "promote",      "pronunciation": "/prəˈmoʊt/",       "pos": "v",     "meaning": "승진시키다, 홍보하다",            "example": "She was promoted to team leader last month.",                "tip": "pro(앞으로)+mote(움직이다) → 앞으로 나아가다"},
-    {"word": "resign",       "pronunciation": "/rɪˈzaɪn/",        "pos": "v",     "meaning": "사직하다, 辞职하다",             "example": "He resigned from his position after 10 years.",             "tip": "re+sign(서명) → 서명을 다시 → 그만두다"},
-    {"word": "salary",       "pronunciation": "/ˈsæləri/",         "pos": "n",     "meaning": "급여, 봉급",                    "example": "She negotiated a higher salary with her new company.",       "tip": "라틴어 salarium(소금값) → 월급"},
-    {"word": "colleague",    "pronunciation": "/ˈkɒliːɡ/",        "pos": "n",     "meaning": "동료",                          "example": "I went out for lunch with my colleagues.",                  "tip": "col+league(함께) → 함께 일하는 사람"},
-    {"word": "feedback",     "pronunciation": "/ˈfiːdbæk/",       "pos": "n",     "meaning": "피드백, 의견",                  "example": "Your feedback really helped me improve my work.",            "tip": "feed(먹이다)+back → 발전을 위한 정보"},
-    {"word": "deadline",     "pronunciation": "/ˈdedlaɪn/",       "pos": "n",     "meaning": "마감 기한",                     "example": "We need to meet the deadline no matter what.",               "tip": "dead+line → 넘으면 안 되는 선"},
-    {"word": "presentation", "pronunciation": "/ˌprezənˈteɪʃn/", "pos": "n",     "meaning": "발표, 프레젠테이션",              "example": "I have to give a presentation in front of 50 people.",       "tip": "present(보여주다)+ation → 앞에서 보여주기"},
-    {"word": "negotiate",    "pronunciation": "/nɪˈɡoʊʃieɪt/",   "pos": "v",     "meaning": "협상하다",                      "example": "They negotiated the price for an hour.",                    "tip": "neg+otiate(일) → 조건을 두고 주고받다"},
-    {"word": "efficient",    "pronunciation": "/ɪˈfɪʃnt/",        "pos": "adj",   "meaning": "효율적인",                      "example": "Working from home can be very efficient.",                   "tip": "effici(만들어내다) → 낭비 없이 결과를 냄"},
-    {"word": "deadline",     "pronunciation": "/ˈdedlaɪn/",       "pos": "n",     "meaning": "마감 기한",                     "example": "The project deadline is end of this week.",                  "tip": "dead+line → 이 선을 넘으면 '끝'"},
+    {"word": "promote",      "pronunciation": "/prəˈmoʊt/",       "pos": "v",     "meaning": "승진시키다, 홍보하다",            "example": "She was promoted to team leader last month.",                "example_ko": "그녀는 지난달 팀장으로 승진했어.",                                    "tip": "pro(앞으로)+mote(움직이다) → 앞으로 나아가다"},
+    {"word": "resign",       "pronunciation": "/rɪˈzaɪn/",        "pos": "v",     "meaning": "사직하다, 사임하다",             "example": "He resigned from his position after 10 years.",             "example_ko": "그는 10년 만에 그 자리에서 사직했어.",                                "tip": "re+sign(서명) → 서명을 다시 → 그만두다"},
+    {"word": "salary",       "pronunciation": "/ˈsæləri/",         "pos": "n",     "meaning": "급여, 봉급",                    "example": "She negotiated a higher salary with her new company.",       "example_ko": "그녀는 새 회사에서 더 높은 연봉을 협상했어.",                        "tip": "라틴어 salarium(소금값) → 월급"},
+    {"word": "colleague",    "pronunciation": "/ˈkɒliːɡ/",        "pos": "n",     "meaning": "동료",                          "example": "I went out for lunch with my colleagues.",                  "example_ko": "동료들과 함께 점심을 먹으러 나갔어.",                                 "tip": "col+league(함께) → 함께 일하는 사람"},
+    {"word": "feedback",     "pronunciation": "/ˈfiːdbæk/",       "pos": "n",     "meaning": "피드백, 의견",                  "example": "Your feedback really helped me improve my work.",            "example_ko": "네 피드백이 내 업무 향상에 정말 도움이 됐어.",                       "tip": "feed(먹이다)+back → 발전을 위한 정보"},
+    {"word": "presentation", "pronunciation": "/ˌprezənˈteɪʃn/", "pos": "n",     "meaning": "발표, 프레젠테이션",              "example": "I have to give a presentation in front of 50 people.",       "example_ko": "50명 앞에서 발표를 해야 해.",                                         "tip": "present(보여주다)+ation → 앞에서 보여주기"},
+    {"word": "negotiate",    "pronunciation": "/nɪˈɡoʊʃieɪt/",   "pos": "v",     "meaning": "협상하다",                      "example": "They negotiated the price for an hour.",                    "example_ko": "그들은 한 시간 동안 가격을 협상했어.",                                "tip": "neg+otiate(일) → 조건을 두고 주고받다"},
+    {"word": "efficient",    "pronunciation": "/ɪˈfɪʃnt/",        "pos": "adj",   "meaning": "효율적인",                      "example": "Working from home can be very efficient.",                   "example_ko": "재택근무는 매우 효율적일 수 있어.",                                   "tip": "effici(만들어내다) → 낭비 없이 결과를 냄"},
+    {"word": "deadline",     "pronunciation": "/ˈdedlaɪn/",       "pos": "n",     "meaning": "마감 기한",                     "example": "We need to meet the deadline no matter what.",               "example_ko": "무슨 일이 있어도 마감 기한을 지켜야 해.",                             "tip": "dead+line → 넘으면 안 되는 선"},
 ]
 
 # 중복 제거
@@ -105,12 +104,26 @@ VOCAB_LIST = _deduped
 # ── 유틸 함수 ──────────────────────────────────────────────────────────────
 
 def load_tokens():
-    with open(TOKENS_FILE, "r") as f:
-        return json.load(f)
+    # GitHub Actions: 로컬 파일 없으면 환경변수에서 읽기
+    if os.path.exists(TOKENS_FILE):
+        with open(TOKENS_FILE, "r") as f:
+            return json.load(f)
+    return {
+        "access_token":  os.environ.get("KAKAO_ACCESS_TOKEN", ""),
+        "refresh_token": os.environ.get("KAKAO_REFRESH_TOKEN", ""),
+        "client_id":     os.environ.get("KAKAO_CLIENT_ID", ""),
+        "client_secret": os.environ.get("KAKAO_CLIENT_SECRET", ""),
+        "github_token":  os.environ.get("GH_TOKEN", ""),
+        "github_user":   "gezzang82",
+        "github_repo":   "linzi-vocab",
+        "openai_api_key": os.environ.get("OPENAI_API_KEY", ""),
+    }
 
 def save_tokens(tokens):
-    with open(TOKENS_FILE, "w") as f:
-        json.dump(tokens, f, indent=2, ensure_ascii=False)
+    # 로컬에서만 저장 (GitHub Actions에서는 파일 없음)
+    if os.path.exists(TOKENS_FILE):
+        with open(TOKENS_FILE, "w") as f:
+            json.dump(tokens, f, indent=2, ensure_ascii=False)
 
 def refresh_access_token(tokens):
     resp = requests.post("https://kauth.kakao.com/oauth/token", data={
@@ -202,12 +215,16 @@ def generate_html(words, is_friday=False):
     with open(tmpl_path, "r", encoding="utf-8") as f:
         html = f.read()
 
+    tokens = load_tokens()
+    openai_key = tokens.get("openai_api_key", "")
+
     html = html.replace("TITLE_PLACEHOLDER", title)
     html = html.replace("DATE_PLACEHOLDER", f"{date_str} {weekday}")
     html = html.replace("NEW_WORDS_PLACEHOLDER", str(len(words)))
     html = html.replace("TODAY_PLACEHOLDER", today.isoformat())
-    html = html.replace("WORDS_JSON_PLACEHOLDER", _j.dumps(words, ensure_ascii=False))
+    html = html.replace("OPENAI_API_KEY_PLACEHOLDER", openai_key)
     html = html.replace("ALL_WORDS_JSON_PLACEHOLDER", _j.dumps(VOCAB_LIST, ensure_ascii=False))
+    html = html.replace("WORDS_JSON_PLACEHOLDER", _j.dumps(words, ensure_ascii=False))
     return html
 
 def _generate_html_old(words, is_friday=False):  # noqa: C901 — kept for reference
@@ -701,9 +718,54 @@ def already_sent_today():
         f.write(today)
     return False
 
+# 한국 법정 공휴일 (매년 갱신 필요)
+KR_HOLIDAYS = {
+    # 2025
+    "2025-01-01",               # 신정
+    "2025-01-28", "2025-01-29", "2025-01-30",  # 설날 연휴
+    "2025-03-01",               # 삼일절
+    "2025-05-05", "2025-05-06", # 어린이날 + 대체공휴일
+    "2025-06-06",               # 현충일
+    "2025-08-15",               # 광복절
+    "2025-10-03",               # 개천절
+    "2025-10-05", "2025-10-06", "2025-10-07",  # 추석 연휴
+    "2025-10-09",               # 한글날
+    "2025-12-25",               # 크리스마스
+
+    # 2026
+    "2026-01-01",               # 신정
+    "2026-02-17", "2026-02-18", "2026-02-19",  # 설날 연휴
+    "2026-03-01",               # 삼일절
+    "2026-03-02",               # 대체공휴일 (삼일절이 일요일)
+    "2026-05-05",               # 어린이날
+    "2026-05-24",               # 부처님오신날 (음력 4/8)
+    "2026-05-25",               # 대체공휴일 (부처님오신날)
+    "2026-06-03",               # 지방선거일
+    "2026-06-06",               # 현충일
+    "2026-08-15",               # 광복절
+    "2026-08-17",               # 대체공휴일 (광복절이 토요일)
+    "2026-09-24", "2026-09-25", "2026-09-26",  # 추석 연휴
+    "2026-09-27",               # 대체공휴일 (추석 연휴)
+    "2026-10-03",               # 개천절
+    "2026-10-09",               # 한글날
+    "2026-12-25",               # 크리스마스
+}
+
+def is_study_day(today=None):
+    if today is None:
+        today = date.today()
+    if today.weekday() >= 5:  # 토(5), 일(6)
+        return False
+    if today.isoformat() in KR_HOLIDAYS:
+        return False
+    return True
+
 def main():
     if already_sent_today():
         print("⚠️ 오늘 이미 발송했습니다. 종료합니다.")
+        return
+    if not is_study_day():
+        print(f"🏖️ 오늘은 주말/공휴일입니다. 발송을 건너뜁니다. ({date.today().strftime('%Y-%m-%d %A')})")
         return
     print(f"🚀 단어 발송 시작: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
 

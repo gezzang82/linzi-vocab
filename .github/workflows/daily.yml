@@ -1,0 +1,42 @@
+name: 린지단어장 daily vocab
+
+on:
+  schedule:
+    - cron: '0 0 * * 1-5'   # 매일 오전 9시 KST (UTC+9 = UTC 00:00), 월~금
+  workflow_dispatch:          # 수동 실행 버튼 (테스트용)
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write         # vocab_tracker.json 커밋용
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 패키지 설치
+        run: pip install requests
+
+      - name: 단어장 실행
+        env:
+          KAKAO_ACCESS_TOKEN:  ${{ secrets.KAKAO_ACCESS_TOKEN }}
+          KAKAO_REFRESH_TOKEN: ${{ secrets.KAKAO_REFRESH_TOKEN }}
+          KAKAO_CLIENT_ID:     ${{ secrets.KAKAO_CLIENT_ID }}
+          KAKAO_CLIENT_SECRET: ${{ secrets.KAKAO_CLIENT_SECRET }}
+          GH_TOKEN:            ${{ secrets.GH_TOKEN }}
+          OPENAI_API_KEY:      ${{ secrets.OPENAI_API_KEY }}
+        run: python3 daily_vocab.py
+
+      - name: vocab_tracker.json 커밋
+        run: |
+          git config user.name  "linzi-bot"
+          git config user.email "linzi-bot@users.noreply.github.com"
+          git add vocab_tracker.json
+          git diff --cached --quiet || git commit -m "chore: update vocab tracker $(date +%Y-%m-%d)"
+          git push
