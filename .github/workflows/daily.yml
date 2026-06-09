@@ -1,9 +1,7 @@
 name: 린지단어장 daily vocab
 
 on:
-  schedule:
-    - cron: '0 0 * * 1-5'   # 매일 오전 9시 KST (UTC+9 = UTC 00:00), 월~금
-  workflow_dispatch:          # 수동 실행 버튼 (테스트용)
+  workflow_dispatch:          # cron-job.org에서 트리거 (매일 9시 KST)
 
 jobs:
   send:
@@ -39,4 +37,7 @@ jobs:
           git config user.email "linzi-bot@users.noreply.github.com"
           git add vocab_tracker.json
           git diff --cached --quiet || git commit -m "chore: update vocab tracker $(date +%Y-%m-%d)"
+          git stash
+          git pull --rebase origin main
+          git stash pop || true
           git push

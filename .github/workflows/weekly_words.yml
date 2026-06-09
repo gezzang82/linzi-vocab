@@ -1,0 +1,40 @@
+name: 린지단어장 weekly word generation
+
+on:
+  schedule:
+    - cron: '0 23 * * 0'   # 매주 일요일 23:00 UTC = 월요일 08:00 KST (단어 발송 1시간 전)
+  workflow_dispatch:         # 수동 실행 (테스트용)
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 패키지 설치
+        run: pip install requests
+
+      - name: 단어 50개 생성
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python3 generate_words.py
+
+      - name: words.json 커밋
+        run: |
+          git config user.name  "linzi-bot"
+          git config user.email "linzi-bot@users.noreply.github.com"
+          git add words.json
+          git diff --cached --quiet || git commit -m "feat: auto-generate 50 new words $(date +%Y-%m-%d)"
+          git stash
+          git pull --rebase origin main
+          git stash pop || true
+          git push
