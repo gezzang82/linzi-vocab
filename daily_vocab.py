@@ -239,17 +239,13 @@ def get_todays_words(tracker):
     return new_words
 
 
-def get_review_words(tracker, count=50):
-    """토/일 복습: 최근 studied_words에서 최대 count개 반환"""
-    studied = tracker.get("studied_words", [])
-    if not studied:
-        # studied_words가 없으면 VOCAB_LIST 앞에서 가져오기
-        return VOCAB_LIST[:count]
-    # 최근 단어부터 (뒤에서부터) count개
-    recent = studied[-count:] if len(studied) > count else studied
-    word_set = set(recent)
+def get_review_words(tracker):
+    """토/일 복습: 이번 주 월~금 공부한 단어들만 복습 (순서 섞기)"""
+    weekly = tracker.get("weekly_words", [])
+    if not weekly:
+        return VOCAB_LIST[:10]
+    word_set = {w["word"] for w in weekly}
     words = [w for w in VOCAB_LIST if w["word"] in word_set]
-    # 랜덤 셔플 (복습은 섞어서)
     import random
     random.shuffle(words)
     return words
@@ -852,7 +848,7 @@ def main():
     is_review = (day_type == 'review')
 
     if is_review:
-        words = get_review_words(tracker, count=50)
+        words = get_review_words(tracker)
         label = "📖 주말 복습"
         mode_title = f"📖 주말 복습 {len(words)}개"
     else:
