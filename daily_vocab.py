@@ -15,9 +15,21 @@ from datetime import datetime, date
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TOKENS_FILE  = os.path.join(BASE_DIR, "kakao_tokens.json")
 TRACKER_FILE = os.path.join(BASE_DIR, "vocab_tracker.json")
+WORDS_FILE   = os.path.join(BASE_DIR, "words.json")
 HTML_FILE    = os.path.join(BASE_DIR, "today_vocab.html")
 
-# ── 단어 목록 (B1-B2 일상 실용 영어) ─────────────────────────────────────────
+# ── 단어 DB 로드 (words.json) ──────────────────────────────────────────────
+def load_vocab_list():
+    if os.path.exists(WORDS_FILE):
+        with open(WORDS_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+            words = data.get("words", [])
+            if words:
+                return words
+    # fallback: 하드코딩 목록 (words.json 없을 때)
+    return []
+
+# ── 단어 목록 (하드코딩 fallback + words.json 없는 경우 대비) ─────────────
 VOCAB_LIST = [
     # 감정/관계
     {"word": "upset",        "pronunciation": "/ʌpˈset/",        "pos": "adj/v", "meaning": "속상한 / 화나게 하다",           "example": "She was really upset when she heard the news.",              "example_ko": "그녀는 그 소식을 들었을 때 정말 속상해했어.",                          "tip": "up(뒤집다)+set → 감정이 뒤집힌 상태"},
@@ -91,7 +103,7 @@ VOCAB_LIST = [
     {"word": "deadline",     "pronunciation": "/ˈdedlaɪn/",       "pos": "n",     "meaning": "마감 기한",                     "example": "We need to meet the deadline no matter what.",               "example_ko": "무슨 일이 있어도 마감 기한을 지켜야 해.",                             "tip": "dead+line → 넘으면 안 되는 선"},
 ]
 
-# 중복 제거
+# 중복 제거 (하드코딩 fallback)
 _seen = set()
 _deduped = []
 for _w in VOCAB_LIST:
@@ -99,6 +111,11 @@ for _w in VOCAB_LIST:
         _seen.add(_w["word"])
         _deduped.append(_w)
 VOCAB_LIST = _deduped
+
+# words.json이 있으면 그걸 사용 (하드코딩 덮어씀)
+_loaded = load_vocab_list()
+if _loaded:
+    VOCAB_LIST = _loaded
 
 
 # ── 유틸 함수 ──────────────────────────────────────────────────────────────
@@ -147,7 +164,6 @@ def send_kakao_notification(access_token, text, link_url):
         "content": {
             "title": "📚 린지단어장",
             "description": text,
-            "image_url": "https://raw.githubusercontent.com/gezzang82/linzi-vocab/main/banner.png",
             "link": {"web_url": link_url, "mobile_web_url": link_url}
         },
         "buttons": [
@@ -165,10 +181,18 @@ def send_kakao_notification(access_token, text, link_url):
     return resp.json()
 
 def load_tracker():
+    default = {
+        "week_start": "", "weekly_words": [],
+        "studied_words": [], "wrong_answers": [], "quiz_history": []
+    }
     if not os.path.exists(TRACKER_FILE):
-        return {"week_start": "", "weekly_words": [], "wrong_answers": [], "quiz_history": []}
+        return default
     with open(TRACKER_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+        t = json.load(f)
+    # 구버전 호환: studied_words 없으면 추가
+    if "studied_words" not in t:
+        t["studied_words"] = [w["word"] for w in t.get("weekly_words", [])]
+    return t
 
 def save_tracker(tracker):
     with open(TRACKER_FILE, "w", encoding="utf-8") as f:
@@ -186,19 +210,49 @@ def get_todays_words(tracker):
         tracker["weekly_words"] = []
         tracker["wrong_answers"] = []
 
-    used = {w["word"] for w in tracker["weekly_words"]}
-    available = [w for w in VOCAB_LIST if w["word"] not in used]
-    wrong_words = [w for w in VOCAB_LIST if w["word"] in tracker.get("wrong_answers", [])]
-    new_count = max(0, 10 - len(wrong_words))
-    new_words = random.sample(available, min(new_count, len(available)))
-    todays = (wrong_words + new_words)[:10]
-
     today_str = date.today().isoformat()
+
+    # ── 오늘 이미 뽑은 단어가 있으면 그대로 반환 (중복 발송 방지) ──
+    todays_sent = [w["word"] for w in tracker.get("weekly_words", []) if w.get("date") == today_str]
+    if todays_sent:
+        print(f"⚠️ 오늘({today_str}) 이미 발송된 단어 {len(todays_sent)}개 재사용")
+        return [w for w in VOCAB_LIST if w["word"] in todays_sent]
+
+    # studied_words: 전체 학습 이력 (중복 방지)
+    studied = set(tracker.get("studied_words", []))
+
+    # 전체 단어를 다 배웠으면 리셋
+    if len(studied) >= len(VOCAB_LIST):
+        print("🔄 모든 단어 학습 완료! 처음부터 다시 시작합니다.")
+        tracker["studied_words"] = []
+        studied = set()
+
+    available = [w for w in VOCAB_LIST if w["word"] not in studied]
+    new_words = available[:10]  # 순서대로 10개 (랜덤 아님 — 매일 일관성)
+
     for w in new_words:
         tracker["weekly_words"].append({"word": w["word"], "meaning": w["meaning"], "date": today_str})
+        if w["word"] not in studied:
+            tracker["studied_words"].append(w["word"])
     tracker["wrong_answers"] = []
     save_tracker(tracker)
-    return todays
+    return new_words
+
+
+def get_review_words(tracker, count=50):
+    """토/일 복습: 최근 studied_words에서 최대 count개 반환"""
+    studied = tracker.get("studied_words", [])
+    if not studied:
+        # studied_words가 없으면 VOCAB_LIST 앞에서 가져오기
+        return VOCAB_LIST[:count]
+    # 최근 단어부터 (뒤에서부터) count개
+    recent = studied[-count:] if len(studied) > count else studied
+    word_set = set(recent)
+    words = [w for w in VOCAB_LIST if w["word"] in word_set]
+    # 랜덤 셔플 (복습은 섞어서)
+    import random
+    random.shuffle(words)
+    return words
 
 
 # ── HTML 생성 ──────────────────────────────────────────────────────────────
@@ -209,7 +263,11 @@ def generate_html(words, is_friday=False):
     date_str = today.strftime("%Y년 %m월 %d일")
     weekday_names = ["월요일","화요일","수요일","목요일","금요일","토요일","일요일"]
     weekday = weekday_names[today.weekday()]
-    title = "🎓 금요일 총복습" if is_friday else f"📚 오늘의 영단어 {len(words)}개"
+    is_weekend = today.weekday() >= 5
+    if is_weekend or is_friday:
+        title = f"📖 주말 복습 {len(words)}개"
+    else:
+        title = f"📚 오늘의 영단어 {len(words)}개"
 
     tmpl_path = os.path.join(BASE_DIR, "vocab_template.html")
     with open(tmpl_path, "r", encoding="utf-8") as f:
@@ -223,7 +281,6 @@ def generate_html(words, is_friday=False):
     html = html.replace("NEW_WORDS_PLACEHOLDER", str(len(words)))
     html = html.replace("TODAY_PLACEHOLDER", today.isoformat())
     html = html.replace("OPENAI_API_KEY_PLACEHOLDER", openai_key)
-    html = html.replace("GH_TOKEN_PLACEHOLDER", tokens.get("github_token", ""))
     html = html.replace("ALL_WORDS_JSON_PLACEHOLDER", _j.dumps(VOCAB_LIST, ensure_ascii=False))
     html = html.replace("WORDS_JSON_PLACEHOLDER", _j.dumps(words, ensure_ascii=False))
     return html
@@ -752,38 +809,59 @@ KR_HOLIDAYS = {
     "2026-12-25",               # 크리스마스
 }
 
-def is_study_day(today=None):
+def get_day_type(today=None):
+    """
+    반환값:
+      'new'    — 월~금 (공휴일 제외): 새 단어 10개
+      'review' — 토/일: 복습 50개
+      'holiday'— 평일 공휴일: 발송 없음
+    """
     if today is None:
         today = date.today()
-    if today.weekday() >= 5:  # 토(5), 일(6)
-        return False
+    weekday = today.weekday()  # 0=월 … 6=일
     if today.isoformat() in KR_HOLIDAYS:
-        return False
-    return True
+        if weekday >= 5:
+            return 'review'   # 주말 공휴일도 복습 발송
+        return 'holiday'      # 평일 공휴일은 쉬기
+    if weekday >= 5:
+        return 'review'
+    return 'new'
+
+def is_study_day(today=None):
+    # 하위 호환 — 기존 코드가 혹시 호출할 경우 대비
+    return get_day_type(today) != 'holiday'
 
 def main():
     if already_sent_today():
         print("⚠️ 오늘 이미 발송했습니다. 종료합니다.")
         return
-    if not is_study_day():
-        print(f"🏖️ 오늘은 주말/공휴일입니다. 발송을 건너뜁니다. ({date.today().strftime('%Y-%m-%d %A')})")
+
+    day_type = get_day_type()
+    today    = date.today()
+
+    if day_type == 'holiday':
+        print(f"🏖️ 오늘은 평일 공휴일입니다. 발송을 건너뜁니다. ({today.strftime('%Y-%m-%d %A')})")
         return
-    print(f"🚀 단어 발송 시작: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+
+    print(f"🚀 단어 발송 시작: {datetime.now().strftime('%Y-%m-%d %H:%M')} [{day_type}]")
 
     tokens  = load_tokens()
     tokens  = refresh_access_token(tokens)
     tracker = load_tracker()
-    today   = date.today()
-    is_friday = today.weekday() == 4
 
-    if is_friday:
-        all_week = [w for w in VOCAB_LIST if any(tw["word"] == w["word"] for tw in tracker.get("weekly_words", []))]
-        words = all_week if all_week else get_todays_words(tracker)
+    is_review = (day_type == 'review')
+
+    if is_review:
+        words = get_review_words(tracker, count=50)
+        label = "📖 주말 복습"
+        mode_title = f"📖 주말 복습 {len(words)}개"
     else:
         words = get_todays_words(tracker)
+        label = "📚 오늘의 영단어"
+        mode_title = f"📚 오늘의 영단어 {len(words)}개"
 
     # 1. HTML 파일 생성
-    html = generate_html(words, is_friday)
+    html = generate_html(words, is_friday=(day_type == 'review'))
     with open(HTML_FILE, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"✅ HTML 생성: {HTML_FILE}")
@@ -793,9 +871,8 @@ def main():
     if not link_url:
         link_url = f"file://{HTML_FILE}"
 
-    # 3. 카톡 알림 1개 발송 (버튼+링크 포함)
-    label = "🎓 금요일 총복습" if is_friday else "📚 오늘의 영단어"
-    word_list = ", ".join([w["word"] for w in words[:5]]) + (" 외..." if len(words) > 5 else "")
+    # 3. 카톡 알림 발송
+    word_list = ", ".join([w["word"] for w in words[:5]]) + " 외..." if len(words) > 5 else ", ".join([w["word"] for w in words])
     msg = f"{label} {len(words)}개 도착!\n{word_list}"
 
     result = send_kakao_notification(tokens["access_token"], msg, link_url)
