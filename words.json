@@ -521,8 +521,287 @@
       "example": "Working from home can be very efficient.",
       "example_ko": "재택근무는 매우 효율적일 수 있어.",
       "tip": "effici(만들어내다) → 낭비 없이 결과를 냄"
+    },
+    {
+      "word": "surprised",
+      "pronunciation": "/sərˈpraɪzd/",
+      "pos": "adj",
+      "meaning": "놀란",
+      "example": "I was surprised by the news.",
+      "example_ko": "그 소식에 놀랐어.",
+      "tip": "surprise(놀라게 하다)+d → 놀란 상태"
+    },
+    {
+      "word": "curious",
+      "pronunciation": "/ˈkjʊəriəs/",
+      "pos": "adj",
+      "meaning": "호기심 있는",
+      "example": "I'm curious about your opinion.",
+      "example_ko": "너의 의견이 궁금해.",
+      "tip": "cur(알고 싶어하다)+ious → 알고 싶어하는 성격"
+    },
+    {
+      "word": "impress",
+      "pronunciation": "/ɪmˈprɛs/",
+      "pos": "v",
+      "meaning": "감명을 주다",
+      "example": "She always tries to impress her boss.",
+      "example_ko": "그녀는 항상 상사에게 감명을 주려고 해.",
+      "tip": "im(안으로)+press(누르다) → 안으로 누르다 → 감동을 주다"
+    },
+    {
+      "word": "compliment",
+      "pronunciation": "/ˈkɒmplɪˌmɛnt/",
+      "pos": "n/v",
+      "meaning": "칭찬 / 칭찬하다",
+      "example": "He gave me a nice compliment.",
+      "example_ko": "그가 나에게 좋은 칭찬을 해줬어.",
+      "tip": "com(함께)+pli(가득 채우다)+ment → 가득 채워주는 말"
+    },
+    {
+      "word": "encourage",
+      "pronunciation": "/ɪnˈkʌrɪdʒ/",
+      "pos": "v",
+      "meaning": "격려하다",
+      "example": "My friends always encourage me.",
+      "example_ko": "내 친구들은 항상 나를 격려해.",
+      "tip": "en(안으로)+courage(용기) → 용기를 주다"
+    },
+    {
+      "word": "organize",
+      "pronunciation": "/ˈɔːrɡənaɪz/",
+      "pos": "v",
+      "meaning": "조직하다",
+      "example": "We need to organize a meeting.",
+      "example_ko": "우리는 회의를 조직해야 해.",
+      "tip": "organ(조직)+ize → 조직화하다"
+    },
+    {
+      "word": "satisfy",
+      "pronunciation": "/ˈsætɪsfaɪ/",
+      "pos": "v",
+      "meaning": "만족시키다",
+      "example": "I hope this will satisfy your needs.",
+      "example_ko": "이것이 당신의 필요를 만족시킬 수 있기를 바래.",
+      "tip": "satis(충족)+fy → 충족시키다"
+    },
+    {
+      "word": "encounter",
+      "pronunciation": "/ɪnˈkaʊntər/",
+      "pos": "n/v",
+      "meaning": "만남 / 우연히 만나다",
+      "example": "I had an interesting encounter at the cafe.",
+      "example_ko": "카페에서 흥미로운 만남이 있었어.",
+      "tip": "en(안으로)+counter(반대) → 반대 상황에서 만나다"
+    },
+    {
+      "word": "gather",
+      "pronunciation": "/ˈɡæðər/",
+      "pos": "v",
+      "meaning": "모으다",
+      "example": "Let's gather all the information.",
+      "example_ko": "모든 정보를 모으자.",
+      "tip": "gath(모으다)+er → 모으는 행위"
+    },
+    {
+      "word": "assist",
+      "pronunciation": "/əˈsɪst/",
+      "pos": "v",
+      "meaning": "돕다",
+      "example": "Can you assist me with this project?",
+      "example_ko": "이 프로젝트에서 나를 도와줄 수 있어?",
+      "tip": "as(같이)+sist(서다) → 함께 서서 돕다"
+    },
+    {
+      "word": "conflict",
+      "pronunciation": "/ˈkɒnflɪkt/",
+      "pos": "n/v",
+      "meaning": "갈등 / 충돌하다",
+      "example": "There was a conflict between the two groups.",
+      "example_ko": "두 그룹 간에 갈등이 있었어.",
+      "tip": "con(함께)+flict(타격) → 함께 타격하는 상황"
+    },
+    {
+      "word": "establish",
+      "pronunciation": "/ɪˈstæblɪʃ/",
+      "pos": "v",
+      "meaning": "설립하다",
+      "example": "They want to establish a new company.",
+      "example_ko": "그들은 새로운 회사를 설립하고 싶어 해.",
+      "tip": "establ(정착하다)+ish → 정착시키다"
+    },
+    {
+      "word": "navigate",
+      "pronunciation": "/ˈnævɪɡeɪt/",
+      "pos": "v",
+      "meaning": "항해하다 / 길을 찾다",
+      "example": "I used a map to navigate the city.",
+      "example_ko": "지도를 사용해서 도시를 탐색했어.",
+      "tip": "navi(항해)+gate → 항해하는 행동"
+    },
+    {
+      "word": "inquire",
+      "pronunciation": "/ɪnˈkwaɪər/",
+      "pos": "v",
+      "meaning": "문의하다",
+      "example": "I would like to inquire about the job.",
+      "example_ko": "그 직업에 대해 문의하고 싶어.",
+      "tip": "in(안으로)+quire(찾다) → 안으로 찾아가다"
+    },
+    {
+      "word": "evaluate",
+      "pronunciation": "/ɪˈvæljueɪt/",
+      "pos": "v",
+      "meaning": "평가하다",
+      "example": "We need to evaluate the results.",
+      "example_ko": "결과를 평가해야 해.",
+      "tip": "e(밖으로)+valuate(가치 평가하다) → 가치를 평가하다"
+    },
+    {
+      "word": "participate",
+      "pronunciation": "/pɑːrˈtɪsɪpeɪt/",
+      "pos": "v",
+      "meaning": "참여하다",
+      "example": "I want to participate in the event.",
+      "example_ko": "그 행사에 참여하고 싶어.",
+      "tip": "parti(부분)+cipate(잡다) → 일부로 잡다"
+    },
+    {
+      "word": "explore",
+      "pronunciation": "/ɪkˈsplɔːr/",
+      "pos": "v",
+      "meaning": "탐험하다",
+      "example": "Let's explore the city together.",
+      "example_ko": "함께 도시를 탐험하자.",
+      "tip": "ex(밖으로)+plore(찾다) → 밖으로 찾다"
+    },
+    {
+      "word": "adapt",
+      "pronunciation": "/əˈdæpt/",
+      "pos": "v",
+      "meaning": "적응하다",
+      "example": "You need to adapt to new situations.",
+      "example_ko": "새로운 상황에 적응해야 해.",
+      "tip": "a(방향)+dapt(적응하다) → 방향을 맞추다"
+    },
+    {
+      "word": "encourage",
+      "pronunciation": "/ɪnˈkɜːrɪdʒ/",
+      "pos": "v",
+      "meaning": "격려하다",
+      "example": "Teachers encourage students to ask questions.",
+      "example_ko": "선생님들은 학생들이 질문하도록 격려해.",
+      "tip": "en(더하다)+courage(용기) → 더 많은 용기를 주다"
+    },
+    {
+      "word": "inspire",
+      "pronunciation": "/ɪnˈspaɪər/",
+      "pos": "v",
+      "meaning": "영감을 주다",
+      "example": "Her story will inspire many people.",
+      "example_ko": "그녀의 이야기는 많은 사람들에게 영감을 줄 거야.",
+      "tip": "in(안으로)+spire(숨쉬다) → 안으로 숨 쉬게 하다"
+    },
+    {
+      "word": "volunteer",
+      "pronunciation": "/ˌvɒlənˈtɪər/",
+      "pos": "n/v",
+      "meaning": "자원봉사자 / 자원봉사하다",
+      "example": "She is a volunteer at the animal shelter.",
+      "example_ko": "그녀는 동물 보호소에서 자원봉사자야.",
+      "tip": "volun(자발적인)+teer(사람) → 자발적으로 돕는 사람"
+    },
+    {
+      "word": "discuss",
+      "pronunciation": "/dɪsˈkʌs/",
+      "pos": "v",
+      "meaning": "토론하다",
+      "example": "Let's discuss this issue.",
+      "example_ko": "이 문제에 대해 토론하자.",
+      "tip": "dis(분리)+cuss(말하다) → 서로 나누어 말하다"
+    },
+    {
+      "word": "reflect",
+      "pronunciation": "/rɪˈflɛkt/",
+      "pos": "v",
+      "meaning": "반영하다",
+      "example": "Her actions reflect her values.",
+      "example_ko": "그녀의 행동은 그녀의 가치를 반영해.",
+      "tip": "re(다시)+flect(구부리다) → 다시 구부려서 보여주다"
+    },
+    {
+      "word": "support",
+      "pronunciation": "/səˈpɔːrt/",
+      "pos": "n/v",
+      "meaning": "지원 / 지원하다",
+      "example": "They offered their support during the crisis.",
+      "example_ko": "그들은 위기 동안 지원을 제공했어.",
+      "tip": "sup(아래에서)+port(지탱하다) → 아래에서 지탱해주다"
+    },
+    {
+      "word": "celebrate",
+      "pronunciation": "/ˈsɛlɪbreɪt/",
+      "pos": "v",
+      "meaning": "축하하다",
+      "example": "We will celebrate her birthday tomorrow.",
+      "example_ko": "우리는 내일 그녀의 생일을 축하할 거야.",
+      "tip": "celebr(기념)+ate → 기념하는 행동"
+    },
+    {
+      "word": "communicate",
+      "pronunciation": "/kəˈmjunɪkeɪt/",
+      "pos": "v",
+      "meaning": "소통하다",
+      "example": "We need to communicate effectively.",
+      "example_ko": "우리는 효과적으로 소통해야 해.",
+      "tip": "com(함께)+munic(소통하다)+ate → 함께 소통하다"
+    },
+    {
+      "word": "motivate",
+      "pronunciation": "/ˈmoʊtɪveɪt/",
+      "pos": "v",
+      "meaning": "동기를 부여하다",
+      "example": "We need to motivate the team.",
+      "example_ko": "우리는 팀에 동기를 부여해야 해.",
+      "tip": "moti(운동)+vate(가져오다) → 운동의 힘을 가져오다"
+    },
+    {
+      "word": "connect",
+      "pronunciation": "/kəˈnɛkt/",
+      "pos": "v",
+      "meaning": "연결하다",
+      "example": "We need to connect with our audience.",
+      "example_ko": "우리는 청중과 연결해야 해.",
+      "tip": "con(함께)+nect(연결하다) → 함께 연결하다"
+    },
+    {
+      "word": "influence",
+      "pronunciation": "/ˈɪnfluəns/",
+      "pos": "n/v",
+      "meaning": "영향 / 영향을 미치다",
+      "example": "She has a strong influence on her peers.",
+      "example_ko": "그녀는 동료들에게 강한 영향을 미쳐.",
+      "tip": "in(안으로)+fluence(흐르다) → 안으로 흐르다"
+    },
+    {
+      "word": "adapt",
+      "pronunciation": "/əˈdæpt/",
+      "pos": "v",
+      "meaning": "적응하다",
+      "example": "You need to adapt to new situations.",
+      "example_ko": "새로운 상황에 적응해야 해.",
+      "tip": "a(방향)+dapt(적응하다) → 방향을 맞추다"
+    },
+    {
+      "word": "balance",
+      "pronunciation": "/ˈbæl.əns/",
+      "pos": "n/v",
+      "meaning": "균형 / 균형을 맞추다",
+      "example": "It's important to balance work and life.",
+      "example_ko": "일과 삶의 균형을 맞추는 것이 중요해.",
+      "tip": "bal(균형)+ance → 균형 상태"
     }
   ],
-  "last_generated": "2026-06-04",
-  "total": 58
+  "last_generated": "2026-06-10",
+  "total": 89
 }
