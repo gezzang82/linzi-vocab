@@ -685,15 +685,6 @@
       "tip": "a(방향)+dapt(적응하다) → 방향을 맞추다"
     },
     {
-      "word": "encourage",
-      "pronunciation": "/ɪnˈkɜːrɪdʒ/",
-      "pos": "v",
-      "meaning": "격려하다",
-      "example": "Teachers encourage students to ask questions.",
-      "example_ko": "선생님들은 학생들이 질문하도록 격려해.",
-      "tip": "en(더하다)+courage(용기) → 더 많은 용기를 주다"
-    },
-    {
       "word": "inspire",
       "pronunciation": "/ɪnˈspaɪər/",
       "pos": "v",
@@ -784,15 +775,6 @@
       "tip": "in(안으로)+fluence(흐르다) → 안으로 흐르다"
     },
     {
-      "word": "adapt",
-      "pronunciation": "/əˈdæpt/",
-      "pos": "v",
-      "meaning": "적응하다",
-      "example": "You need to adapt to new situations.",
-      "example_ko": "새로운 상황에 적응해야 해.",
-      "tip": "a(방향)+dapt(적응하다) → 방향을 맞추다"
-    },
-    {
       "word": "balance",
       "pronunciation": "/ˈbæl.əns/",
       "pos": "n/v",
@@ -803,5 +785,5 @@
     }
   ],
   "last_generated": "2026-06-10",
-  "total": 89
+  "total": 87
 }
