@@ -50,6 +50,56 @@
       "word": "assist",
       "meaning": "돕다",
       "date": "2026-06-11"
+    },
+    {
+      "word": "conflict",
+      "meaning": "갈등 / 충돌하다",
+      "date": "2026-06-12"
+    },
+    {
+      "word": "establish",
+      "meaning": "설립하다",
+      "date": "2026-06-12"
+    },
+    {
+      "word": "navigate",
+      "meaning": "항해하다 / 길을 찾다",
+      "date": "2026-06-12"
+    },
+    {
+      "word": "inquire",
+      "meaning": "문의하다",
+      "date": "2026-06-12"
+    },
+    {
+      "word": "evaluate",
+      "meaning": "평가하다",
+      "date": "2026-06-12"
+    },
+    {
+      "word": "participate",
+      "meaning": "참여하다",
+      "date": "2026-06-12"
+    },
+    {
+      "word": "explore",
+      "meaning": "탐험하다",
+      "date": "2026-06-12"
+    },
+    {
+      "word": "adapt",
+      "meaning": "적응하다",
+      "date": "2026-06-12"
+    },
+    {
+      "word": "inspire",
+      "meaning": "영감을 주다",
+      "date": "2026-06-12"
+    },
+    {
+      "word": "volunteer",
+      "meaning": "자원봉사자 / 자원봉사하다",
+      "date": "2026-06-12"
     }
   ],
   "wrong_answers": [],
@@ -122,6 +172,16 @@
     "satisfy",
     "encounter",
     "gather",
-    "assist"
+    "assist",
+    "conflict",
+    "establish",
+    "navigate",
+    "inquire",
+    "evaluate",
+    "participate",
+    "explore",
+    "adapt",
+    "inspire",
+    "volunteer"
   ]
 }
