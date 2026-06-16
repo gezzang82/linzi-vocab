@@ -45,6 +45,56 @@
       "word": "balance",
       "meaning": "균형 / 균형을 맞추다",
       "date": "2026-06-15"
+    },
+    {
+      "word": "upset",
+      "meaning": "속상한 / 화나게 하다",
+      "date": "2026-06-16"
+    },
+    {
+      "word": "awkward",
+      "meaning": "어색한, 불편한",
+      "date": "2026-06-16"
+    },
+    {
+      "word": "grateful",
+      "meaning": "감사하는",
+      "date": "2026-06-16"
+    },
+    {
+      "word": "annoyed",
+      "meaning": "짜증난, 성가신",
+      "date": "2026-06-16"
+    },
+    {
+      "word": "confident",
+      "meaning": "자신감 있는",
+      "date": "2026-06-16"
+    },
+    {
+      "word": "exhausted",
+      "meaning": "완전히 지친, 탈진한",
+      "date": "2026-06-16"
+    },
+    {
+      "word": "relieved",
+      "meaning": "안도한",
+      "date": "2026-06-16"
+    },
+    {
+      "word": "jealous",
+      "meaning": "질투하는, 시기하는",
+      "date": "2026-06-16"
+    },
+    {
+      "word": "embarrassed",
+      "meaning": "당황한, 창피한",
+      "date": "2026-06-16"
+    },
+    {
+      "word": "disappointed",
+      "meaning": "실망한",
+      "date": "2026-06-16"
     }
   ],
   "wrong_answers": [],
@@ -59,83 +109,6 @@
     "relieved",
     "jealous",
     "embarrassed",
-    "disappointed",
-    "avoid",
-    "manage",
-    "tend to",
-    "hesitate",
-    "handle",
-    "figure out",
-    "give up",
-    "keep in touch",
-    "run into",
-    "bring up",
-    "deadline",
-    "commute",
-    "schedule",
-    "routine",
-    "overwhelmed",
-    "distracted",
-    "cancel",
-    "remind",
-    "recommend",
-    "apologize",
-    "mention",
-    "assume",
-    "agree",
-    "disagree",
-    "prefer",
-    "complain",
-    "persuade",
-    "argue",
-    "admit",
-    "insist",
-    "improve",
-    "review",
-    "memorize",
-    "concentrate",
-    "practice",
-    "struggle",
-    "achieve",
-    "challenge",
-    "depend on",
-    "look forward to",
-    "promote",
-    "resign",
-    "salary",
-    "colleague",
-    "feedback",
-    "presentation",
-    "negotiate",
-    "efficient",
-    "surprised",
-    "curious",
-    "impress",
-    "compliment",
-    "encourage",
-    "organize",
-    "satisfy",
-    "encounter",
-    "gather",
-    "assist",
-    "conflict",
-    "establish",
-    "navigate",
-    "inquire",
-    "evaluate",
-    "participate",
-    "explore",
-    "adapt",
-    "inspire",
-    "volunteer",
-    "discuss",
-    "reflect",
-    "support",
-    "celebrate",
-    "communicate",
-    "motivate",
-    "connect",
-    "influence",
-    "balance"
+    "disappointed"
   ]
 }
