@@ -95,6 +95,56 @@
       "word": "disappointed",
       "meaning": "실망한",
       "date": "2026-06-16"
+    },
+    {
+      "word": "avoid",
+      "meaning": "피하다, 회피하다",
+      "date": "2026-06-17"
+    },
+    {
+      "word": "manage",
+      "meaning": "해내다, 관리하다",
+      "date": "2026-06-17"
+    },
+    {
+      "word": "tend to",
+      "meaning": "~하는 경향이 있다",
+      "date": "2026-06-17"
+    },
+    {
+      "word": "hesitate",
+      "meaning": "망설이다, 주저하다",
+      "date": "2026-06-17"
+    },
+    {
+      "word": "handle",
+      "meaning": "다루다, 처리하다",
+      "date": "2026-06-17"
+    },
+    {
+      "word": "figure out",
+      "meaning": "알아내다, 이해하다",
+      "date": "2026-06-17"
+    },
+    {
+      "word": "give up",
+      "meaning": "포기하다",
+      "date": "2026-06-17"
+    },
+    {
+      "word": "keep in touch",
+      "meaning": "연락을 유지하다",
+      "date": "2026-06-17"
+    },
+    {
+      "word": "run into",
+      "meaning": "우연히 마주치다",
+      "date": "2026-06-17"
+    },
+    {
+      "word": "bring up",
+      "meaning": "화제를 꺼내다 / 키우다",
+      "date": "2026-06-17"
     }
   ],
   "wrong_answers": [],
@@ -109,6 +159,16 @@
     "relieved",
     "jealous",
     "embarrassed",
-    "disappointed"
+    "disappointed",
+    "avoid",
+    "manage",
+    "tend to",
+    "hesitate",
+    "handle",
+    "figure out",
+    "give up",
+    "keep in touch",
+    "run into",
+    "bring up"
   ]
 }
