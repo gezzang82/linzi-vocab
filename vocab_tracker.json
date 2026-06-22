@@ -1,250 +1,55 @@
 {
-  "week_start": "2026-06-15",
+  "week_start": "2026-06-22",
   "weekly_words": [
     {
-      "word": "discuss",
-      "meaning": "토론하다",
-      "date": "2026-06-15"
+      "word": "improve",
+      "meaning": "향상되다, 발전하다",
+      "date": "2026-06-22"
     },
     {
-      "word": "reflect",
-      "meaning": "반영하다",
-      "date": "2026-06-15"
+      "word": "review",
+      "meaning": "복습하다, 검토하다 / 복습",
+      "date": "2026-06-22"
     },
     {
-      "word": "support",
-      "meaning": "지원 / 지원하다",
-      "date": "2026-06-15"
+      "word": "memorize",
+      "meaning": "암기하다, 외우다",
+      "date": "2026-06-22"
     },
     {
-      "word": "celebrate",
-      "meaning": "축하하다",
-      "date": "2026-06-15"
+      "word": "concentrate",
+      "meaning": "집중하다",
+      "date": "2026-06-22"
     },
     {
-      "word": "communicate",
-      "meaning": "소통하다",
-      "date": "2026-06-15"
+      "word": "practice",
+      "meaning": "연습하다 / 연습",
+      "date": "2026-06-22"
     },
     {
-      "word": "motivate",
-      "meaning": "동기를 부여하다",
-      "date": "2026-06-15"
+      "word": "struggle",
+      "meaning": "애쓰다, 힘들어하다",
+      "date": "2026-06-22"
     },
     {
-      "word": "connect",
-      "meaning": "연결하다",
-      "date": "2026-06-15"
+      "word": "achieve",
+      "meaning": "성취하다, 달성하다",
+      "date": "2026-06-22"
     },
     {
-      "word": "influence",
-      "meaning": "영향 / 영향을 미치다",
-      "date": "2026-06-15"
+      "word": "challenge",
+      "meaning": "도전 / 도전하다",
+      "date": "2026-06-22"
     },
     {
-      "word": "balance",
-      "meaning": "균형 / 균형을 맞추다",
-      "date": "2026-06-15"
+      "word": "depend on",
+      "meaning": "~에 달려있다, ~을 의존하다",
+      "date": "2026-06-22"
     },
     {
-      "word": "upset",
-      "meaning": "속상한 / 화나게 하다",
-      "date": "2026-06-16"
-    },
-    {
-      "word": "awkward",
-      "meaning": "어색한, 불편한",
-      "date": "2026-06-16"
-    },
-    {
-      "word": "grateful",
-      "meaning": "감사하는",
-      "date": "2026-06-16"
-    },
-    {
-      "word": "annoyed",
-      "meaning": "짜증난, 성가신",
-      "date": "2026-06-16"
-    },
-    {
-      "word": "confident",
-      "meaning": "자신감 있는",
-      "date": "2026-06-16"
-    },
-    {
-      "word": "exhausted",
-      "meaning": "완전히 지친, 탈진한",
-      "date": "2026-06-16"
-    },
-    {
-      "word": "relieved",
-      "meaning": "안도한",
-      "date": "2026-06-16"
-    },
-    {
-      "word": "jealous",
-      "meaning": "질투하는, 시기하는",
-      "date": "2026-06-16"
-    },
-    {
-      "word": "embarrassed",
-      "meaning": "당황한, 창피한",
-      "date": "2026-06-16"
-    },
-    {
-      "word": "disappointed",
-      "meaning": "실망한",
-      "date": "2026-06-16"
-    },
-    {
-      "word": "avoid",
-      "meaning": "피하다, 회피하다",
-      "date": "2026-06-17"
-    },
-    {
-      "word": "manage",
-      "meaning": "해내다, 관리하다",
-      "date": "2026-06-17"
-    },
-    {
-      "word": "tend to",
-      "meaning": "~하는 경향이 있다",
-      "date": "2026-06-17"
-    },
-    {
-      "word": "hesitate",
-      "meaning": "망설이다, 주저하다",
-      "date": "2026-06-17"
-    },
-    {
-      "word": "handle",
-      "meaning": "다루다, 처리하다",
-      "date": "2026-06-17"
-    },
-    {
-      "word": "figure out",
-      "meaning": "알아내다, 이해하다",
-      "date": "2026-06-17"
-    },
-    {
-      "word": "give up",
-      "meaning": "포기하다",
-      "date": "2026-06-17"
-    },
-    {
-      "word": "keep in touch",
-      "meaning": "연락을 유지하다",
-      "date": "2026-06-17"
-    },
-    {
-      "word": "run into",
-      "meaning": "우연히 마주치다",
-      "date": "2026-06-17"
-    },
-    {
-      "word": "bring up",
-      "meaning": "화제를 꺼내다 / 키우다",
-      "date": "2026-06-17"
-    },
-    {
-      "word": "deadline",
-      "meaning": "마감 기한",
-      "date": "2026-06-18"
-    },
-    {
-      "word": "commute",
-      "meaning": "통근하다 / 통근",
-      "date": "2026-06-18"
-    },
-    {
-      "word": "schedule",
-      "meaning": "일정 / 일정을 잡다",
-      "date": "2026-06-18"
-    },
-    {
-      "word": "routine",
-      "meaning": "일상, 루틴 / 일상적인",
-      "date": "2026-06-18"
-    },
-    {
-      "word": "overwhelmed",
-      "meaning": "압도된, 벅찬",
-      "date": "2026-06-18"
-    },
-    {
-      "word": "distracted",
-      "meaning": "집중이 안 되는, 산만한",
-      "date": "2026-06-18"
-    },
-    {
-      "word": "cancel",
-      "meaning": "취소하다",
-      "date": "2026-06-18"
-    },
-    {
-      "word": "remind",
-      "meaning": "상기시키다, 생각나게 하다",
-      "date": "2026-06-18"
-    },
-    {
-      "word": "recommend",
-      "meaning": "추천하다",
-      "date": "2026-06-18"
-    },
-    {
-      "word": "apologize",
-      "meaning": "사과하다",
-      "date": "2026-06-18"
-    },
-    {
-      "word": "mention",
-      "meaning": "언급하다 / 언급",
-      "date": "2026-06-19"
-    },
-    {
-      "word": "assume",
-      "meaning": "추정하다, 가정하다",
-      "date": "2026-06-19"
-    },
-    {
-      "word": "agree",
-      "meaning": "동의하다",
-      "date": "2026-06-19"
-    },
-    {
-      "word": "disagree",
-      "meaning": "반대하다, 의견이 다르다",
-      "date": "2026-06-19"
-    },
-    {
-      "word": "prefer",
-      "meaning": "선호하다",
-      "date": "2026-06-19"
-    },
-    {
-      "word": "complain",
-      "meaning": "불평하다, 항의하다",
-      "date": "2026-06-19"
-    },
-    {
-      "word": "persuade",
-      "meaning": "설득하다",
-      "date": "2026-06-19"
-    },
-    {
-      "word": "argue",
-      "meaning": "주장하다, 논쟁하다",
-      "date": "2026-06-19"
-    },
-    {
-      "word": "admit",
-      "meaning": "인정하다, 고백하다",
-      "date": "2026-06-19"
-    },
-    {
-      "word": "insist",
-      "meaning": "주장하다, 고집하다",
-      "date": "2026-06-19"
+      "word": "look forward to",
+      "meaning": "기대하다",
+      "date": "2026-06-22"
     }
   ],
   "wrong_answers": [],
@@ -289,6 +94,16 @@
     "persuade",
     "argue",
     "admit",
-    "insist"
+    "insist",
+    "improve",
+    "review",
+    "memorize",
+    "concentrate",
+    "practice",
+    "struggle",
+    "achieve",
+    "challenge",
+    "depend on",
+    "look forward to"
   ]
 }
