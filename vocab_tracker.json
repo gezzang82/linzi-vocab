@@ -100,6 +100,56 @@
       "word": "curious",
       "meaning": "호기심 있는",
       "date": "2026-06-23"
+    },
+    {
+      "word": "impress",
+      "meaning": "감명을 주다",
+      "date": "2026-06-24"
+    },
+    {
+      "word": "compliment",
+      "meaning": "칭찬 / 칭찬하다",
+      "date": "2026-06-24"
+    },
+    {
+      "word": "encourage",
+      "meaning": "격려하다",
+      "date": "2026-06-24"
+    },
+    {
+      "word": "organize",
+      "meaning": "조직하다",
+      "date": "2026-06-24"
+    },
+    {
+      "word": "satisfy",
+      "meaning": "만족시키다",
+      "date": "2026-06-24"
+    },
+    {
+      "word": "encounter",
+      "meaning": "만남 / 우연히 만나다",
+      "date": "2026-06-24"
+    },
+    {
+      "word": "gather",
+      "meaning": "모으다",
+      "date": "2026-06-24"
+    },
+    {
+      "word": "assist",
+      "meaning": "돕다",
+      "date": "2026-06-24"
+    },
+    {
+      "word": "conflict",
+      "meaning": "갈등 / 충돌하다",
+      "date": "2026-06-24"
+    },
+    {
+      "word": "establish",
+      "meaning": "설립하다",
+      "date": "2026-06-24"
     }
   ],
   "wrong_answers": [],
@@ -164,6 +214,16 @@
     "negotiate",
     "efficient",
     "surprised",
-    "curious"
+    "curious",
+    "impress",
+    "compliment",
+    "encourage",
+    "organize",
+    "satisfy",
+    "encounter",
+    "gather",
+    "assist",
+    "conflict",
+    "establish"
   ]
 }
