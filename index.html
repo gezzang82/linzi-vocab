@@ -50,6 +50,7 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
 .flashcard{width:100%;max-width:420px;height:300px;perspective:1200px;cursor:pointer}
 .flashcard-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
+.flashcard.no-anim .flashcard-inner{transition:none}
 .card-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;box-shadow:0 6px 24px rgba(79,70,229,.12);background:white}
 .card-back{transform:rotateY(180deg)}
 .card-pos{background:#e0e7ff;color:#4338ca;padding:3px 12px;border-radius:99px;font-size:.78rem;font-weight:600;margin-bottom:10px}
@@ -160,10 +161,6 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
       <div class="val">10</div>
       <div class="lbl">오늘 단어</div>
     </div>
-    <div class="stat-card">
-      <div class="val" id="stat-review">0</div>
-      <div class="lbl">복습 대기</div>
-    </div>
   </div>
   <button class="btn-start" onclick="startStudy()">단어 학습 시작 →</button>
   <button class="btn-quiz-only" onclick="startQuizOnly()">⚡ 퀴즈 바로 시작</button>
@@ -270,7 +267,6 @@ body{font-family:-apple-system,'Noto Sans KR',sans-serif;background:#f0f4ff;min-
   <div class="done-breakdown" id="done-breakdown"></div>
   <div class="wrong-list" id="wrong-list"></div>
   <button class="btn-retry" onclick="location.reload()">다시 하기</button>
-  <div class="done-note">틀린 단어는 5일간 매일 복습에 포함됩니다</div>
 </div>
 
 <script>
@@ -306,67 +302,37 @@ function speak(text, lang = 'en-US', rate = 0.85) {
   window.speechSynthesis.speak(u);
 }
 
-// ── GitHub API ──
+// ── Tracker API (Turso 백엔드) ──
+// 사용자 식별자: ?user= 쿼리스트링 또는 localStorage 로 지정 (기본 'linzi')
+const USER = (new URLSearchParams(location.search).get('user'))
+  || localStorage.getItem('vocabUser') || 'linzi';
 let _ghTrackerCache = null;
 
 async function ghGetTracker() {
   try {
-    const res = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/vocab_tracker.json`, {
-      headers: { 'Authorization': `token ${GH_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }
-    });
+    const res = await fetch(`/api/tracker?user=${encodeURIComponent(USER)}`);
     if (!res.ok) return null;
-    const data = await res.json();
-    const obj = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
-    obj._sha = data.sha;
+    const obj = await res.json();
     _ghTrackerCache = obj;
     return obj;
   } catch { return null; }
 }
 
 async function ghSaveTracker(tracker) {
-  const sha = tracker._sha;
   const copy = { ...tracker };
-  delete copy._sha;
+  delete copy._sha;       // 과거 GitHub 연동 흔적 제거
+  delete copy.progress;   // 서버에서 파생하므로 전송 불필요
   try {
-    const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(copy, null, 2))));
-    const res = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/vocab_tracker.json`, {
+    const res = await fetch(`/api/tracker?user=${encodeURIComponent(USER)}`, {
       method: 'PUT',
-      headers: {
-        'Authorization': `token ${GH_TOKEN}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: `quiz result ${TODAY}`, content: encoded, sha })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(copy)
     });
-    if (res.ok) {
-      const d = await res.json();
-      _ghTrackerCache = copy;
-      _ghTrackerCache._sha = d.content.sha;
-    }
+    if (res.ok) _ghTrackerCache = tracker;
     return res.ok;
   } catch { return false; }
 }
 
-// ── 5일 복습 ──
-function markWrong5(word) {
-  const store = getLS('wrong5', {});
-  const exp = new Date(TODAY + 'T00:00:00');
-  exp.setDate(exp.getDate() + 5);
-  store[word] = { exp: exp.toISOString().slice(0, 10), count: (store[word]?.count || 0) + 1 };
-  setLS('wrong5', store);
-}
-function resolveWrong5(word) {
-  // 복습 단어를 맞췄을 때 목록에서 제거
-  const store = getLS('wrong5', {});
-  if (store[word]) { delete store[word]; setLS('wrong5', store); }
-}
-function getDueWords() {
-  const store = getLS('wrong5', {});
-  const todaySet = new Set(WORDS.map(w => w.word));
-  return Object.keys(store)
-    .filter(w => store[w].exp >= TODAY && !todaySet.has(w))
-    .map(w => ALL_WORDS.find(x => x.word === w))
-    .filter(Boolean);
-}
 
 // ── 스트릭 ──
 function initStreak() {
@@ -416,17 +382,10 @@ function renderStats(tracker) {
   document.getElementById('home-date').textContent =
     d.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) + ' ' + days[d.getDay()];
   document.getElementById('streak-num').textContent = initStreak();
-  document.getElementById('stat-review').textContent = getDueWords().length;
 
-  // GitHub에서 tracker 로드 → 통계 표시 + wrong5 동기화
+  // 서버(tracker)에서 통계 로드
   ghGetTracker().then(tracker => {
     if (!tracker) return;
-    // wrong5 동기화 (GitHub 우선)
-    if (tracker.wrong5) {
-      const local = getLS('wrong5', {});
-      setLS('wrong5', { ...tracker.wrong5, ...local });
-      document.getElementById('stat-review').textContent = getDueWords().length;
-    }
     renderStats(tracker);
   });
 })();
@@ -438,12 +397,12 @@ let lang = 'ko';
 let flipped = false;
 
 function startQuizOnly() {
-  studyWords = shuffle([...WORDS, ...getDueWords()]);
+  studyWords = shuffle([...WORDS]);
   startQuiz();
 }
 
 function startStudy() {
-  studyWords = shuffle([...WORDS, ...getDueWords()]);
+  studyWords = shuffle([...WORDS]);
   cardIdx = 0; lang = 'ko'; flipped = false;
   document.getElementById('tab-ko').classList.add('active');
   document.getElementById('tab-en').classList.remove('active');
@@ -471,7 +430,13 @@ function renderCard() {
   document.getElementById('btn-next-card').style.display = isLast ? 'none' : '';
   document.getElementById('btn-to-quiz').classList.toggle('show', isLast);
   flipped = false;
-  document.getElementById('flashcard').classList.remove('flipped');
+  // 카드 전환 시엔 애니메이션 없이 즉시 앞면으로 초기화
+  // (되돌리기 애니메이션 중 다음 카드의 뒷면이 잠깐 보이는 현상 방지)
+  const fc = document.getElementById('flashcard');
+  fc.classList.add('no-anim');
+  fc.classList.remove('flipped');
+  void fc.offsetWidth;            // 강제 reflow: 위 상태를 즉시 반영
+  fc.classList.remove('no-anim'); // 이후 사용자 탭 시엔 다시 애니메이션 동작
 
   const front = document.getElementById('card-front');
   const back = document.getElementById('card-back');
@@ -601,11 +566,10 @@ function selectMC(btn, word) {
   if (isCorrect) {
     fb.textContent = '✅ 정답!'; fb.className = 'quiz-feedback ok';
     phaseScores[qPhase - 1]++;
-    resolveWrong5(word); // 복습 단어 맞추면 목록에서 제거
   } else {
     btn.classList.add('wrong');
     fb.textContent = '❌ 오답'; fb.className = 'quiz-feedback fail';
-    wrongWords.add(word); markWrong5(word);
+    wrongWords.add(word);
   }
   document.getElementById('btn-next-q').style.display = 'block';
 }
@@ -735,11 +699,10 @@ async function submitWriting() {
     verdict.textContent = '✅ 정답!';
     verdict.className = 'result-verdict ok';
     phaseScores[1]++;
-    resolveWrong5(w.word);
   } else {
     verdict.textContent = '❌ 오답';
     verdict.className = 'result-verdict fail';
-    wrongWords.add(w.word); markWrong5(w.word);
+    wrongWords.add(w.word);
   }
 
   // 피드백 표시 (기존 제거 후 새로 추가)
@@ -820,9 +783,6 @@ async function saveResultToGH() {
   else tracker.quiz_history.push(record);
   if (tracker.quiz_history.length > 60) tracker.quiz_history = tracker.quiz_history.slice(-60);
 
-  // wrong5 동기화
-  tracker.wrong5 = getLS('wrong5', {});
-
   const ok = await ghSaveTracker(tracker);
   status.textContent = ok ? '✅ 기록 저장됨' : '⚠️ 저장 실패 (오프라인?)';
   setTimeout(() => { status.textContent = ''; }, 3000);
@@ -845,7 +805,7 @@ function showDone() {
 
   const wl = document.getElementById('wrong-list');
   if (wrongWords.size > 0) {
-    wl.innerHTML = '<h3>틀린 단어 — 5일간 복습 예정</h3>' +
+    wl.innerHTML = '<h3>틀린 단어</h3>' +
       [...wrongWords].map(word => {
         const w = ALL_WORDS.find(x => x.word === word);
         return w ? `<div class="wrong-item"><div class="ww">${w.word}</div><div class="wm">${w.meaning}</div></div>` : '';

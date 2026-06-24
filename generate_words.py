@@ -12,6 +12,22 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 WORDS_FILE = os.path.join(BASE_DIR, "words.json")
 OPENAI_KEY = os.environ.get("OPENAI_API_KEY", "")
 
+# Turso 백엔드 (웹앱/일일발송과 동일한 단일 소스)
+API_BASE = os.environ.get("VOCAB_API_BASE", "https://linzi-vocab.vercel.app").rstrip("/")
+
+
+def push_words_to_turso(words):
+    """생성된 새 단어를 Turso(API)에 추가."""
+    try:
+        r = requests.post(f"{API_BASE}/api/words", json={"words": words}, timeout=30)
+        r.raise_for_status()
+        res = r.json()
+        print(f"✅ Turso 반영: {res.get('added')}개 추가, 총 {res.get('total')}개")
+        return True
+    except Exception as e:
+        print(f"⚠️ Turso 반영 실패: {e}")
+        return False
+
 
 def load_words():
     if os.path.exists(WORDS_FILE):
@@ -81,8 +97,13 @@ def main():
         return
 
     data = load_words()
-    existing = data.get("words", [])
-    print(f"현재 단어 수: {len(existing)}개")
+    # 중복 판단 기준은 Turso(단일 소스). 실패 시 로컬 words.json.
+    try:
+        existing = requests.get(f"{API_BASE}/api/words", timeout=15).json().get("words", [])
+        print(f"현재 단어 수(Turso): {len(existing)}개")
+    except Exception as e:
+        existing = data.get("words", [])
+        print(f"⚠️ Turso 조회 실패, 로컬 기준 {len(existing)}개: {e}")
 
     new_words = generate_new_words(existing, count=50)
 
@@ -95,7 +116,11 @@ def main():
     data["total"] = len(data["words"])
 
     save_words(data)
-    print(f"✅ {len(filtered)}개 추가 완료. 총 {data['total']}개")
+    print(f"✅ words.json {len(filtered)}개 추가 완료. 총 {data['total']}개")
+
+    # Turso(단일 소스)에도 반영
+    if filtered:
+        push_words_to_turso(filtered)
 
 
 if __name__ == "__main__":

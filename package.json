@@ -1,0 +1,10 @@
+{
+  "name": "linzi-vocab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "오늘의 영단어 - Turso(libSQL) 백엔드",
+  "dependencies": {
+    "@libsql/client": "^0.14.0"
+  }
+}

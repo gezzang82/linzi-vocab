@@ -18,8 +18,30 @@ TRACKER_FILE = os.path.join(BASE_DIR, "vocab_tracker.json")
 WORDS_FILE   = os.path.join(BASE_DIR, "words.json")
 HTML_FILE    = os.path.join(BASE_DIR, "today_vocab.html")
 
-# ── 단어 DB 로드 (words.json) ──────────────────────────────────────────────
+# ── Turso 백엔드 API (웹앱과 동일한 단일 소스) ─────────────────────────────
+# 데이터(단어/학습기록)는 Vercel + Turso 의 /api 엔드포인트를 통해 읽고 씁니다.
+API_BASE = os.environ.get("VOCAB_API_BASE", "https://linzi-vocab.vercel.app").rstrip("/")
+API_USER = os.environ.get("VOCAB_USER", "linzi")
+
+def _api_get(path):
+    r = requests.get(f"{API_BASE}{path}", timeout=15)
+    r.raise_for_status()
+    return r.json()
+
+def _api_put(path, body):
+    r = requests.put(f"{API_BASE}{path}", json=body, timeout=15)
+    r.raise_for_status()
+    return r.json()
+
+# ── 단어 DB 로드 (Turso → 실패 시 words.json/하드코딩) ─────────────────────
 def load_vocab_list():
+    try:
+        words = _api_get("/api/words").get("words", [])
+        if words:
+            print(f"✅ 단어 {len(words)}개 Turso 에서 로드")
+            return words
+    except Exception as e:
+        print(f"⚠️ API 단어 로드 실패, 로컬 폴백: {e}")
     if os.path.exists(WORDS_FILE):
         with open(WORDS_FILE, encoding="utf-8") as f:
             data = json.load(f)
@@ -181,10 +203,18 @@ def send_kakao_notification(access_token, text, link_url):
     return resp.json()
 
 def load_tracker():
+    """Turso(API)에서 학습 추적 데이터 로드. 실패 시 로컬 파일/기본값."""
     default = {
         "week_start": "", "weekly_words": [],
         "studied_words": [], "wrong_answers": [], "quiz_history": []
     }
+    try:
+        t = _api_get(f"/api/tracker?user={API_USER}")
+        t.pop("progress", None)  # 서버 파생 필드 — 저장 시 불필요
+        print("✅ tracker Turso 에서 로드")
+        return t
+    except Exception as e:
+        print(f"⚠️ API tracker 로드 실패, 로컬 폴백: {e}")
     if not os.path.exists(TRACKER_FILE):
         return default
     with open(TRACKER_FILE, "r", encoding="utf-8") as f:
@@ -194,53 +224,26 @@ def load_tracker():
     return t
 
 def save_tracker(tracker):
-    with open(TRACKER_FILE, "w", encoding="utf-8") as f:
-        json.dump(tracker, f, indent=2, ensure_ascii=False)
+    """Turso(API)에 저장. 로컬에도 캐시 사본을 남김."""
+    body = {k: v for k, v in tracker.items() if k != "progress"}
+    try:
+        _api_put(f"/api/tracker?user={API_USER}", body)
+        print("✅ tracker Turso 에 저장")
+    except Exception as e:
+        print(f"⚠️ API tracker 저장 실패(로컬에만 기록): {e}")
+    try:
+        with open(TRACKER_FILE, "w", encoding="utf-8") as f:
+            json.dump(tracker, f, indent=2, ensure_ascii=False)
+    except Exception:
+        pass
 
 def fetch_tracker_from_github(tokens):
-    """GitHub에서 최신 tracker를 가져와 로컬에 저장 (로컬/원격 불일치 방지)"""
-    import base64
-    gh_token = tokens.get("github_token", "")
-    if not gh_token:
-        return False
-    gh_user = tokens.get("github_user", "gezzang82")
-    gh_repo = tokens.get("github_repo", "linzi-vocab")
-    api_url = f"https://api.github.com/repos/{gh_user}/{gh_repo}/contents/vocab_tracker.json"
-    headers = {"Authorization": f"token {gh_token}", "Accept": "application/vnd.github.v3+json"}
-    r = requests.get(api_url, headers=headers)
-    if r.status_code == 200:
-        content = base64.b64decode(r.json()["content"]).decode("utf-8")
-        with open(TRACKER_FILE, "w", encoding="utf-8") as f:
-            f.write(content)
-        print("✅ 원격 tracker 동기화 완료")
-        return True
-    print(f"⚠️ 원격 tracker 가져오기 실패: {r.status_code}")
-    return False
+    """[deprecated] Turso 단일 소스로 전환됨 — 더 이상 동작 불필요."""
+    return True
 
 def push_tracker_to_github(tracker, tokens):
-    """단어 선택 직후 tracker를 GitHub에 즉시 반영"""
-    import base64
-    gh_token = tokens.get("github_token", "")
-    if not gh_token:
-        return False
-    gh_user = tokens.get("github_user", "gezzang82")
-    gh_repo = tokens.get("github_repo", "linzi-vocab")
-    api_url = f"https://api.github.com/repos/{gh_user}/{gh_repo}/contents/vocab_tracker.json"
-    headers = {"Authorization": f"token {gh_token}", "Accept": "application/vnd.github.v3+json"}
-    r = requests.get(api_url, headers=headers)
-    sha = r.json().get("sha") if r.status_code == 200 else None
-    content_b64 = base64.b64encode(
-        json.dumps(tracker, indent=2, ensure_ascii=False).encode("utf-8")
-    ).decode("utf-8")
-    payload = {"message": f"chore: update vocab tracker {date.today().isoformat()}", "content": content_b64}
-    if sha:
-        payload["sha"] = sha
-    r = requests.put(api_url, headers=headers, json=payload)
-    if r.status_code in (200, 201):
-        print("✅ tracker GitHub 업로드 완료")
-        return True
-    print(f"⚠️ tracker GitHub 업로드 실패: {r.status_code} {r.json()}")
-    return False
+    """[deprecated] save_tracker() 가 이미 Turso 에 반영하므로 no-op."""
+    return True
 
 def get_week_start():
     today = date.today()
