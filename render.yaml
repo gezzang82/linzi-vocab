@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: linzi-vocab
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    autoDeploy: true
+    envVars:
+      - key: TURSO_DATABASE_URL
+        sync: false      # Render 대시보드에서 직접 입력 (비밀값)
+      - key: TURSO_AUTH_TOKEN
+        sync: false      # Render 대시보드에서 직접 입력 (비밀값)
