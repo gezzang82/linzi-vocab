@@ -962,8 +962,170 @@
       "example": "You should consider all your options.",
       "example_ko": "모든 선택지를 고려해야 해.",
       "tip": "consider는 '무엇을 깊이 생각하는 것'의 의미."
+    },
+    {
+      "word": "breathe",
+      "pronunciation": "/briːð/",
+      "pos": "v",
+      "meaning": "호흡하다",
+      "example": "Take a deep breath.",
+      "example_ko": "심호흡 해봐.",
+      "tip": "breathe는 '숨을 쉬다'라는 뜻으로, '호흡'과 관련이 깊습니다."
+    },
+    {
+      "word": "prepare",
+      "pronunciation": "/prɪˈpɛər/",
+      "pos": "v",
+      "meaning": "준비하다",
+      "example": "I need to prepare for the meeting.",
+      "example_ko": "나는 회의를 위해 준비해야 해.",
+      "tip": "prepare는 '미리 준비하다'라는 뜻입니다."
+    },
+    {
+      "word": "excited",
+      "pronunciation": "/ɪkˈsaɪtɪd/",
+      "pos": "adj",
+      "meaning": "신나는, 기대되는",
+      "example": "I am excited about the trip.",
+      "example_ko": "여행이 기대돼.",
+      "tip": "excite(흥분시키다)에서 파생된 형용사입니다."
+    },
+    {
+      "word": "wonder",
+      "pronunciation": "/ˈwʌndər/",
+      "pos": "v/n",
+      "meaning": "궁금하다 / 경이",
+      "example": "I wonder what he is doing.",
+      "example_ko": "그가 무엇을 하고 있는지 궁금해.",
+      "tip": "wonder는 '궁금하다'와 '경이'의 의미가 있습니다."
+    },
+    {
+      "word": "share",
+      "pronunciation": "/ʃɛr/",
+      "pos": "v",
+      "meaning": "공유하다",
+      "example": "Can you share your thoughts?",
+      "example_ko": "너의 생각을 공유해 줄 수 있어?",
+      "tip": "share는 '나누다', '공유하다'의 의미로 사용됩니다."
+    },
+    {
+      "word": "accept",
+      "pronunciation": "/əkˈsɛpt/",
+      "pos": "v",
+      "meaning": "받아들이다",
+      "example": "I accept your apology.",
+      "example_ko": "너의 사과를 받아들인다.",
+      "tip": "accept는 '받아들이다'와 관련이 있습니다."
+    },
+    {
+      "word": "imagine",
+      "pronunciation": "/ɪˈmædʒɪn/",
+      "pos": "v",
+      "meaning": "상상하다",
+      "example": "Can you imagine living in another country?",
+      "example_ko": "다른 나라에서 사는 걸 상상할 수 있어?",
+      "tip": "im(안으로)+agine(형상) → 마음속에 형상하다"
+    },
+    {
+      "word": "comfort",
+      "pronunciation": "/ˈkʌmfərt/",
+      "pos": "n/v",
+      "meaning": "위안 / 위로하다",
+      "example": "I want to comfort my friend.",
+      "example_ko": "친구를 위로하고 싶어.",
+      "tip": "comfort는 '편안함'과 '위로하다'의 의미가 있습니다."
+    },
+    {
+      "word": "create",
+      "pronunciation": "/kriˈeɪt/",
+      "pos": "v",
+      "meaning": "창조하다",
+      "example": "I want to create something new.",
+      "example_ko": "새로운 것을 창조하고 싶어.",
+      "tip": "create는 '만들다', '창조하다'의 의미입니다."
+    },
+    {
+      "word": "succeed",
+      "pronunciation": "/səkˈsiːd/",
+      "pos": "v",
+      "meaning": "성공하다",
+      "example": "I believe you will succeed.",
+      "example_ko": "너는 성공할 것이라고 믿어.",
+      "tip": "suc(아래에서)+ceed(가다) → 아래에서 올라가다"
+    },
+    {
+      "word": "respect",
+      "pronunciation": "/rɪˈspɛkt/",
+      "pos": "n/v",
+      "meaning": "존경 / 존경하다",
+      "example": "You should respect others.",
+      "example_ko": "다른 사람을 존경해야 해.",
+      "tip": "respect는 '존경'의 의미입니다."
+    },
+    {
+      "word": "arrive",
+      "pronunciation": "/əˈraɪv/",
+      "pos": "v",
+      "meaning": "도착하다",
+      "example": "What time do we arrive?",
+      "example_ko": "우리는 몇 시에 도착해?",
+      "tip": "arrive는 '도착하다'라는 의미로 사용됩니다."
+    },
+    {
+      "word": "trust",
+      "pronunciation": "/trʌst/",
+      "pos": "n/v",
+      "meaning": "신뢰 / 신뢰하다",
+      "example": "I trust you completely.",
+      "example_ko": "나는 너를 완전히 신뢰해.",
+      "tip": "trust는 '신뢰하다'라는 의미입니다."
+    },
+    {
+      "word": "engage",
+      "pronunciation": "/ɪnˈɡeɪdʒ/",
+      "pos": "v",
+      "meaning": "참여하다, 끌다",
+      "example": "We need to engage our audience.",
+      "example_ko": "우리는 청중을 참여시켜야 해.",
+      "tip": "engage는 '참여하다'라는 의미입니다."
+    },
+    {
+      "word": "treat",
+      "pronunciation": "/triːt/",
+      "pos": "v/n",
+      "meaning": "대하다 / 대접",
+      "example": "I will treat you to dinner.",
+      "example_ko": "내가 저녁을 대접할게.",
+      "tip": "treat는 '대접하다'와 '대하다'의 의미를 갖습니다."
+    },
+    {
+      "word": "present",
+      "pronunciation": "/ˈprɛzənt/",
+      "pos": "n/v",
+      "meaning": "선물 / 발표하다",
+      "example": "I will present my project tomorrow.",
+      "example_ko": "내일 프로젝트를 발표할 거야.",
+      "tip": "present는 '선물'과 '발표하다'의 의미를 갖습니다."
+    },
+    {
+      "word": "respond",
+      "pronunciation": "/rɪˈspɒnd/",
+      "pos": "v",
+      "meaning": "응답하다",
+      "example": "Please respond to my message.",
+      "example_ko": "내 메시지에 응답해 줘.",
+      "tip": "respond는 '응답하다'라는 의미입니다."
+    },
+    {
+      "word": "suggest",
+      "pronunciation": "/səɡˈdʒɛst/",
+      "pos": "v",
+      "meaning": "제안하다",
+      "example": "I suggest we take a break.",
+      "example_ko": "쉬는 게 좋겠다고 제안해.",
+      "tip": "suggest는 '제안하다'라는 의미입니다."
     }
   ],
-  "last_generated": "2026-06-22",
-  "total": 107
+  "last_generated": "2026-06-28",
+  "total": 125
 }
