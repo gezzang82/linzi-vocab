@@ -100,6 +100,56 @@
       "word": "bring up",
       "meaning": "화제를 꺼내다 / 키우다",
       "date": "2026-07-07"
+    },
+    {
+      "word": "deadline",
+      "meaning": "마감 기한",
+      "date": "2026-07-08"
+    },
+    {
+      "word": "commute",
+      "meaning": "통근하다 / 통근",
+      "date": "2026-07-08"
+    },
+    {
+      "word": "schedule",
+      "meaning": "일정 / 일정을 잡다",
+      "date": "2026-07-08"
+    },
+    {
+      "word": "routine",
+      "meaning": "일상, 루틴 / 일상적인",
+      "date": "2026-07-08"
+    },
+    {
+      "word": "overwhelmed",
+      "meaning": "압도된, 벅찬",
+      "date": "2026-07-08"
+    },
+    {
+      "word": "distracted",
+      "meaning": "집중이 안 되는, 산만한",
+      "date": "2026-07-08"
+    },
+    {
+      "word": "cancel",
+      "meaning": "취소하다",
+      "date": "2026-07-08"
+    },
+    {
+      "word": "remind",
+      "meaning": "상기시키다, 생각나게 하다",
+      "date": "2026-07-08"
+    },
+    {
+      "word": "recommend",
+      "meaning": "추천하다",
+      "date": "2026-07-08"
+    },
+    {
+      "word": "apologize",
+      "meaning": "사과하다",
+      "date": "2026-07-08"
     }
   ],
   "studied_words": [
@@ -122,7 +172,17 @@
     "give up",
     "keep in touch",
     "run into",
-    "bring up"
+    "bring up",
+    "deadline",
+    "commute",
+    "schedule",
+    "routine",
+    "overwhelmed",
+    "distracted",
+    "cancel",
+    "remind",
+    "recommend",
+    "apologize"
   ],
   "wrong_answers": [],
   "quiz_history": []
