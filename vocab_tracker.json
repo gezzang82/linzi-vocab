@@ -1,255 +1,55 @@
 {
-  "week_start": "2026-07-06",
+  "week_start": "2026-07-13",
   "weekly_words": [
     {
-      "word": "upset",
-      "meaning": "속상한 / 화나게 하다",
-      "date": "2026-07-06"
+      "word": "promote",
+      "meaning": "승진시키다, 홍보하다",
+      "date": "2026-07-13"
     },
     {
-      "word": "awkward",
-      "meaning": "어색한, 불편한",
-      "date": "2026-07-06"
+      "word": "resign",
+      "meaning": "사직하다, 사임하다",
+      "date": "2026-07-13"
     },
     {
-      "word": "grateful",
-      "meaning": "감사하는",
-      "date": "2026-07-06"
+      "word": "salary",
+      "meaning": "급여, 봉급",
+      "date": "2026-07-13"
     },
     {
-      "word": "annoyed",
-      "meaning": "짜증난, 성가신",
-      "date": "2026-07-06"
+      "word": "colleague",
+      "meaning": "동료",
+      "date": "2026-07-13"
     },
     {
-      "word": "confident",
-      "meaning": "자신감 있는",
-      "date": "2026-07-06"
+      "word": "feedback",
+      "meaning": "피드백, 의견",
+      "date": "2026-07-13"
     },
     {
-      "word": "exhausted",
-      "meaning": "완전히 지친, 탈진한",
-      "date": "2026-07-06"
+      "word": "presentation",
+      "meaning": "발표, 프레젠테이션",
+      "date": "2026-07-13"
     },
     {
-      "word": "relieved",
-      "meaning": "안도한",
-      "date": "2026-07-06"
+      "word": "negotiate",
+      "meaning": "협상하다",
+      "date": "2026-07-13"
     },
     {
-      "word": "jealous",
-      "meaning": "질투하는, 시기하는",
-      "date": "2026-07-06"
+      "word": "efficient",
+      "meaning": "효율적인",
+      "date": "2026-07-13"
     },
     {
-      "word": "embarrassed",
-      "meaning": "당황한, 창피한",
-      "date": "2026-07-06"
+      "word": "surprised",
+      "meaning": "놀란",
+      "date": "2026-07-13"
     },
     {
-      "word": "disappointed",
-      "meaning": "실망한",
-      "date": "2026-07-06"
-    },
-    {
-      "word": "avoid",
-      "meaning": "피하다, 회피하다",
-      "date": "2026-07-07"
-    },
-    {
-      "word": "manage",
-      "meaning": "해내다, 관리하다",
-      "date": "2026-07-07"
-    },
-    {
-      "word": "tend to",
-      "meaning": "~하는 경향이 있다",
-      "date": "2026-07-07"
-    },
-    {
-      "word": "hesitate",
-      "meaning": "망설이다, 주저하다",
-      "date": "2026-07-07"
-    },
-    {
-      "word": "handle",
-      "meaning": "다루다, 처리하다",
-      "date": "2026-07-07"
-    },
-    {
-      "word": "figure out",
-      "meaning": "알아내다, 이해하다",
-      "date": "2026-07-07"
-    },
-    {
-      "word": "give up",
-      "meaning": "포기하다",
-      "date": "2026-07-07"
-    },
-    {
-      "word": "keep in touch",
-      "meaning": "연락을 유지하다",
-      "date": "2026-07-07"
-    },
-    {
-      "word": "run into",
-      "meaning": "우연히 마주치다",
-      "date": "2026-07-07"
-    },
-    {
-      "word": "bring up",
-      "meaning": "화제를 꺼내다 / 키우다",
-      "date": "2026-07-07"
-    },
-    {
-      "word": "deadline",
-      "meaning": "마감 기한",
-      "date": "2026-07-08"
-    },
-    {
-      "word": "commute",
-      "meaning": "통근하다 / 통근",
-      "date": "2026-07-08"
-    },
-    {
-      "word": "schedule",
-      "meaning": "일정 / 일정을 잡다",
-      "date": "2026-07-08"
-    },
-    {
-      "word": "routine",
-      "meaning": "일상, 루틴 / 일상적인",
-      "date": "2026-07-08"
-    },
-    {
-      "word": "overwhelmed",
-      "meaning": "압도된, 벅찬",
-      "date": "2026-07-08"
-    },
-    {
-      "word": "distracted",
-      "meaning": "집중이 안 되는, 산만한",
-      "date": "2026-07-08"
-    },
-    {
-      "word": "cancel",
-      "meaning": "취소하다",
-      "date": "2026-07-08"
-    },
-    {
-      "word": "remind",
-      "meaning": "상기시키다, 생각나게 하다",
-      "date": "2026-07-08"
-    },
-    {
-      "word": "recommend",
-      "meaning": "추천하다",
-      "date": "2026-07-08"
-    },
-    {
-      "word": "apologize",
-      "meaning": "사과하다",
-      "date": "2026-07-08"
-    },
-    {
-      "word": "mention",
-      "meaning": "언급하다 / 언급",
-      "date": "2026-07-09"
-    },
-    {
-      "word": "assume",
-      "meaning": "추정하다, 가정하다",
-      "date": "2026-07-09"
-    },
-    {
-      "word": "agree",
-      "meaning": "동의하다",
-      "date": "2026-07-09"
-    },
-    {
-      "word": "disagree",
-      "meaning": "반대하다, 의견이 다르다",
-      "date": "2026-07-09"
-    },
-    {
-      "word": "prefer",
-      "meaning": "선호하다",
-      "date": "2026-07-09"
-    },
-    {
-      "word": "complain",
-      "meaning": "불평하다, 항의하다",
-      "date": "2026-07-09"
-    },
-    {
-      "word": "persuade",
-      "meaning": "설득하다",
-      "date": "2026-07-09"
-    },
-    {
-      "word": "argue",
-      "meaning": "주장하다, 논쟁하다",
-      "date": "2026-07-09"
-    },
-    {
-      "word": "admit",
-      "meaning": "인정하다, 고백하다",
-      "date": "2026-07-09"
-    },
-    {
-      "word": "insist",
-      "meaning": "주장하다, 고집하다",
-      "date": "2026-07-09"
-    },
-    {
-      "word": "improve",
-      "meaning": "향상되다, 발전하다",
-      "date": "2026-07-10"
-    },
-    {
-      "word": "review",
-      "meaning": "복습하다, 검토하다 / 복습",
-      "date": "2026-07-10"
-    },
-    {
-      "word": "memorize",
-      "meaning": "암기하다, 외우다",
-      "date": "2026-07-10"
-    },
-    {
-      "word": "concentrate",
-      "meaning": "집중하다",
-      "date": "2026-07-10"
-    },
-    {
-      "word": "practice",
-      "meaning": "연습하다 / 연습",
-      "date": "2026-07-10"
-    },
-    {
-      "word": "struggle",
-      "meaning": "애쓰다, 힘들어하다",
-      "date": "2026-07-10"
-    },
-    {
-      "word": "achieve",
-      "meaning": "성취하다, 달성하다",
-      "date": "2026-07-10"
-    },
-    {
-      "word": "challenge",
-      "meaning": "도전 / 도전하다",
-      "date": "2026-07-10"
-    },
-    {
-      "word": "depend on",
-      "meaning": "~에 달려있다, ~을 의존하다",
-      "date": "2026-07-10"
-    },
-    {
-      "word": "look forward to",
-      "meaning": "기대하다",
-      "date": "2026-07-10"
+      "word": "curious",
+      "meaning": "호기심 있는",
+      "date": "2026-07-13"
     }
   ],
   "studied_words": [
@@ -302,7 +102,17 @@
     "achieve",
     "challenge",
     "depend on",
-    "look forward to"
+    "look forward to",
+    "promote",
+    "resign",
+    "salary",
+    "colleague",
+    "feedback",
+    "presentation",
+    "negotiate",
+    "efficient",
+    "surprised",
+    "curious"
   ],
   "wrong_answers": [],
   "quiz_history": []
