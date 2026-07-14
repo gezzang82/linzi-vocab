@@ -50,6 +50,56 @@
       "word": "curious",
       "meaning": "호기심 있는",
       "date": "2026-07-13"
+    },
+    {
+      "word": "impress",
+      "meaning": "감명을 주다",
+      "date": "2026-07-14"
+    },
+    {
+      "word": "compliment",
+      "meaning": "칭찬 / 칭찬하다",
+      "date": "2026-07-14"
+    },
+    {
+      "word": "encourage",
+      "meaning": "격려하다",
+      "date": "2026-07-14"
+    },
+    {
+      "word": "organize",
+      "meaning": "조직하다",
+      "date": "2026-07-14"
+    },
+    {
+      "word": "satisfy",
+      "meaning": "만족시키다",
+      "date": "2026-07-14"
+    },
+    {
+      "word": "encounter",
+      "meaning": "만남 / 우연히 만나다",
+      "date": "2026-07-14"
+    },
+    {
+      "word": "gather",
+      "meaning": "모으다",
+      "date": "2026-07-14"
+    },
+    {
+      "word": "assist",
+      "meaning": "돕다",
+      "date": "2026-07-14"
+    },
+    {
+      "word": "conflict",
+      "meaning": "갈등 / 충돌하다",
+      "date": "2026-07-14"
+    },
+    {
+      "word": "establish",
+      "meaning": "설립하다",
+      "date": "2026-07-14"
     }
   ],
   "studied_words": [
@@ -112,7 +162,17 @@
     "negotiate",
     "efficient",
     "surprised",
-    "curious"
+    "curious",
+    "impress",
+    "compliment",
+    "encourage",
+    "organize",
+    "satisfy",
+    "encounter",
+    "gather",
+    "assist",
+    "conflict",
+    "establish"
   ],
   "wrong_answers": [],
   "quiz_history": []
