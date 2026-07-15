@@ -100,6 +100,56 @@
       "word": "establish",
       "meaning": "설립하다",
       "date": "2026-07-14"
+    },
+    {
+      "word": "navigate",
+      "meaning": "항해하다 / 길을 찾다",
+      "date": "2026-07-15"
+    },
+    {
+      "word": "inquire",
+      "meaning": "문의하다",
+      "date": "2026-07-15"
+    },
+    {
+      "word": "evaluate",
+      "meaning": "평가하다",
+      "date": "2026-07-15"
+    },
+    {
+      "word": "participate",
+      "meaning": "참여하다",
+      "date": "2026-07-15"
+    },
+    {
+      "word": "explore",
+      "meaning": "탐험하다",
+      "date": "2026-07-15"
+    },
+    {
+      "word": "adapt",
+      "meaning": "적응하다",
+      "date": "2026-07-15"
+    },
+    {
+      "word": "inspire",
+      "meaning": "영감을 주다",
+      "date": "2026-07-15"
+    },
+    {
+      "word": "volunteer",
+      "meaning": "자원봉사자 / 자원봉사하다",
+      "date": "2026-07-15"
+    },
+    {
+      "word": "discuss",
+      "meaning": "토론하다",
+      "date": "2026-07-15"
+    },
+    {
+      "word": "reflect",
+      "meaning": "반영하다",
+      "date": "2026-07-15"
     }
   ],
   "studied_words": [
@@ -172,7 +222,17 @@
     "gather",
     "assist",
     "conflict",
-    "establish"
+    "establish",
+    "navigate",
+    "inquire",
+    "evaluate",
+    "participate",
+    "explore",
+    "adapt",
+    "inspire",
+    "volunteer",
+    "discuss",
+    "reflect"
   ],
   "wrong_answers": [],
   "quiz_history": []
