@@ -150,6 +150,56 @@
       "word": "reflect",
       "meaning": "반영하다",
       "date": "2026-07-15"
+    },
+    {
+      "word": "support",
+      "meaning": "지원 / 지원하다",
+      "date": "2026-07-16"
+    },
+    {
+      "word": "celebrate",
+      "meaning": "축하하다",
+      "date": "2026-07-16"
+    },
+    {
+      "word": "communicate",
+      "meaning": "소통하다",
+      "date": "2026-07-16"
+    },
+    {
+      "word": "motivate",
+      "meaning": "동기를 부여하다",
+      "date": "2026-07-16"
+    },
+    {
+      "word": "connect",
+      "meaning": "연결하다",
+      "date": "2026-07-16"
+    },
+    {
+      "word": "influence",
+      "meaning": "영향 / 영향을 미치다",
+      "date": "2026-07-16"
+    },
+    {
+      "word": "balance",
+      "meaning": "균형 / 균형을 맞추다",
+      "date": "2026-07-16"
+    },
+    {
+      "word": "bother",
+      "meaning": "귀찮게 하다",
+      "date": "2026-07-16"
+    },
+    {
+      "word": "situation",
+      "meaning": "상황",
+      "date": "2026-07-16"
+    },
+    {
+      "word": "describe",
+      "meaning": "설명하다, 묘사하다",
+      "date": "2026-07-16"
     }
   ],
   "studied_words": [
@@ -232,7 +282,17 @@
     "inspire",
     "volunteer",
     "discuss",
-    "reflect"
+    "reflect",
+    "support",
+    "celebrate",
+    "communicate",
+    "motivate",
+    "connect",
+    "influence",
+    "balance",
+    "bother",
+    "situation",
+    "describe"
   ],
   "wrong_answers": [],
   "quiz_history": []
