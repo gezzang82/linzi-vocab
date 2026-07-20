@@ -1,255 +1,55 @@
 {
-  "week_start": "2026-07-13",
+  "week_start": "2026-07-20",
   "weekly_words": [
     {
-      "word": "promote",
-      "meaning": "승진시키다, 홍보하다",
-      "date": "2026-07-13"
+      "word": "express",
+      "meaning": "표현하다",
+      "date": "2026-07-20"
     },
     {
-      "word": "resign",
-      "meaning": "사직하다, 사임하다",
-      "date": "2026-07-13"
+      "word": "discover",
+      "meaning": "발견하다",
+      "date": "2026-07-20"
     },
     {
-      "word": "salary",
-      "meaning": "급여, 봉급",
-      "date": "2026-07-13"
+      "word": "confirm",
+      "meaning": "확인하다",
+      "date": "2026-07-20"
     },
     {
-      "word": "colleague",
-      "meaning": "동료",
-      "date": "2026-07-13"
+      "word": "process",
+      "meaning": "과정 / 처리하다",
+      "date": "2026-07-20"
     },
     {
-      "word": "feedback",
-      "meaning": "피드백, 의견",
-      "date": "2026-07-13"
+      "word": "compare",
+      "meaning": "비교하다",
+      "date": "2026-07-20"
     },
     {
-      "word": "presentation",
-      "meaning": "발표, 프레젠테이션",
-      "date": "2026-07-13"
+      "word": "consider",
+      "meaning": "숙고하다, 고려하다",
+      "date": "2026-07-20"
     },
     {
-      "word": "negotiate",
-      "meaning": "협상하다",
-      "date": "2026-07-13"
+      "word": "breathe",
+      "meaning": "호흡하다",
+      "date": "2026-07-20"
     },
     {
-      "word": "efficient",
-      "meaning": "효율적인",
-      "date": "2026-07-13"
+      "word": "prepare",
+      "meaning": "준비하다",
+      "date": "2026-07-20"
     },
     {
-      "word": "surprised",
-      "meaning": "놀란",
-      "date": "2026-07-13"
+      "word": "excited",
+      "meaning": "신나는, 기대되는",
+      "date": "2026-07-20"
     },
     {
-      "word": "curious",
-      "meaning": "호기심 있는",
-      "date": "2026-07-13"
-    },
-    {
-      "word": "impress",
-      "meaning": "감명을 주다",
-      "date": "2026-07-14"
-    },
-    {
-      "word": "compliment",
-      "meaning": "칭찬 / 칭찬하다",
-      "date": "2026-07-14"
-    },
-    {
-      "word": "encourage",
-      "meaning": "격려하다",
-      "date": "2026-07-14"
-    },
-    {
-      "word": "organize",
-      "meaning": "조직하다",
-      "date": "2026-07-14"
-    },
-    {
-      "word": "satisfy",
-      "meaning": "만족시키다",
-      "date": "2026-07-14"
-    },
-    {
-      "word": "encounter",
-      "meaning": "만남 / 우연히 만나다",
-      "date": "2026-07-14"
-    },
-    {
-      "word": "gather",
-      "meaning": "모으다",
-      "date": "2026-07-14"
-    },
-    {
-      "word": "assist",
-      "meaning": "돕다",
-      "date": "2026-07-14"
-    },
-    {
-      "word": "conflict",
-      "meaning": "갈등 / 충돌하다",
-      "date": "2026-07-14"
-    },
-    {
-      "word": "establish",
-      "meaning": "설립하다",
-      "date": "2026-07-14"
-    },
-    {
-      "word": "navigate",
-      "meaning": "항해하다 / 길을 찾다",
-      "date": "2026-07-15"
-    },
-    {
-      "word": "inquire",
-      "meaning": "문의하다",
-      "date": "2026-07-15"
-    },
-    {
-      "word": "evaluate",
-      "meaning": "평가하다",
-      "date": "2026-07-15"
-    },
-    {
-      "word": "participate",
-      "meaning": "참여하다",
-      "date": "2026-07-15"
-    },
-    {
-      "word": "explore",
-      "meaning": "탐험하다",
-      "date": "2026-07-15"
-    },
-    {
-      "word": "adapt",
-      "meaning": "적응하다",
-      "date": "2026-07-15"
-    },
-    {
-      "word": "inspire",
-      "meaning": "영감을 주다",
-      "date": "2026-07-15"
-    },
-    {
-      "word": "volunteer",
-      "meaning": "자원봉사자 / 자원봉사하다",
-      "date": "2026-07-15"
-    },
-    {
-      "word": "discuss",
-      "meaning": "토론하다",
-      "date": "2026-07-15"
-    },
-    {
-      "word": "reflect",
-      "meaning": "반영하다",
-      "date": "2026-07-15"
-    },
-    {
-      "word": "support",
-      "meaning": "지원 / 지원하다",
-      "date": "2026-07-16"
-    },
-    {
-      "word": "celebrate",
-      "meaning": "축하하다",
-      "date": "2026-07-16"
-    },
-    {
-      "word": "communicate",
-      "meaning": "소통하다",
-      "date": "2026-07-16"
-    },
-    {
-      "word": "motivate",
-      "meaning": "동기를 부여하다",
-      "date": "2026-07-16"
-    },
-    {
-      "word": "connect",
-      "meaning": "연결하다",
-      "date": "2026-07-16"
-    },
-    {
-      "word": "influence",
-      "meaning": "영향 / 영향을 미치다",
-      "date": "2026-07-16"
-    },
-    {
-      "word": "balance",
-      "meaning": "균형 / 균형을 맞추다",
-      "date": "2026-07-16"
-    },
-    {
-      "word": "bother",
-      "meaning": "귀찮게 하다",
-      "date": "2026-07-16"
-    },
-    {
-      "word": "situation",
-      "meaning": "상황",
-      "date": "2026-07-16"
-    },
-    {
-      "word": "describe",
-      "meaning": "설명하다, 묘사하다",
-      "date": "2026-07-16"
-    },
-    {
-      "word": "adventure",
-      "meaning": "모험",
-      "date": "2026-07-17"
-    },
-    {
-      "word": "attend",
-      "meaning": "참석하다",
-      "date": "2026-07-17"
-    },
-    {
-      "word": "focus",
-      "meaning": "집중하다 / 집중",
-      "date": "2026-07-17"
-    },
-    {
-      "word": "condition",
-      "meaning": "조건, 상태",
-      "date": "2026-07-17"
-    },
-    {
-      "word": "relationship",
-      "meaning": "관계",
-      "date": "2026-07-17"
-    },
-    {
-      "word": "interaction",
-      "meaning": "상호작용",
-      "date": "2026-07-17"
-    },
-    {
-      "word": "analyze",
-      "meaning": "분석하다",
-      "date": "2026-07-17"
-    },
-    {
-      "word": "arrange",
-      "meaning": "정리하다, 준비하다",
-      "date": "2026-07-17"
-    },
-    {
-      "word": "emphasize",
-      "meaning": "강조하다",
-      "date": "2026-07-17"
-    },
-    {
-      "word": "appreciate",
-      "meaning": "감사하다, 고마워하다",
-      "date": "2026-07-17"
+      "word": "wonder",
+      "meaning": "궁금하다 / 경이",
+      "date": "2026-07-20"
     }
   ],
   "studied_words": [
@@ -352,7 +152,17 @@
     "analyze",
     "arrange",
     "emphasize",
-    "appreciate"
+    "appreciate",
+    "express",
+    "discover",
+    "confirm",
+    "process",
+    "compare",
+    "consider",
+    "breathe",
+    "prepare",
+    "excited",
+    "wonder"
   ],
   "wrong_answers": [],
   "quiz_history": []
