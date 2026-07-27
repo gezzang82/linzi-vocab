@@ -1,225 +1,55 @@
 {
-  "week_start": "2026-07-20",
+  "week_start": "2026-07-27",
   "weekly_words": [
     {
-      "word": "express",
-      "meaning": "표현하다",
-      "date": "2026-07-20"
+      "word": "deadline",
+      "meaning": "마감 기한",
+      "date": "2026-07-27"
     },
     {
-      "word": "discover",
-      "meaning": "발견하다",
-      "date": "2026-07-20"
+      "word": "commute",
+      "meaning": "통근하다 / 통근",
+      "date": "2026-07-27"
     },
     {
-      "word": "confirm",
-      "meaning": "확인하다",
-      "date": "2026-07-20"
+      "word": "schedule",
+      "meaning": "일정 / 일정을 잡다",
+      "date": "2026-07-27"
     },
     {
-      "word": "process",
-      "meaning": "과정 / 처리하다",
-      "date": "2026-07-20"
+      "word": "routine",
+      "meaning": "일상, 루틴 / 일상적인",
+      "date": "2026-07-27"
     },
     {
-      "word": "compare",
-      "meaning": "비교하다",
-      "date": "2026-07-20"
+      "word": "overwhelmed",
+      "meaning": "압도된, 벅찬",
+      "date": "2026-07-27"
     },
     {
-      "word": "consider",
-      "meaning": "숙고하다, 고려하다",
-      "date": "2026-07-20"
+      "word": "distracted",
+      "meaning": "집중이 안 되는, 산만한",
+      "date": "2026-07-27"
     },
     {
-      "word": "breathe",
-      "meaning": "호흡하다",
-      "date": "2026-07-20"
+      "word": "cancel",
+      "meaning": "취소하다",
+      "date": "2026-07-27"
     },
     {
-      "word": "prepare",
-      "meaning": "준비하다",
-      "date": "2026-07-20"
+      "word": "remind",
+      "meaning": "상기시키다, 생각나게 하다",
+      "date": "2026-07-27"
     },
     {
-      "word": "excited",
-      "meaning": "신나는, 기대되는",
-      "date": "2026-07-20"
+      "word": "recommend",
+      "meaning": "추천하다",
+      "date": "2026-07-27"
     },
     {
-      "word": "wonder",
-      "meaning": "궁금하다 / 경이",
-      "date": "2026-07-20"
-    },
-    {
-      "word": "share",
-      "meaning": "공유하다",
-      "date": "2026-07-21"
-    },
-    {
-      "word": "accept",
-      "meaning": "받아들이다",
-      "date": "2026-07-21"
-    },
-    {
-      "word": "imagine",
-      "meaning": "상상하다",
-      "date": "2026-07-21"
-    },
-    {
-      "word": "comfort",
-      "meaning": "위안 / 위로하다",
-      "date": "2026-07-21"
-    },
-    {
-      "word": "create",
-      "meaning": "창조하다",
-      "date": "2026-07-21"
-    },
-    {
-      "word": "succeed",
-      "meaning": "성공하다",
-      "date": "2026-07-21"
-    },
-    {
-      "word": "respect",
-      "meaning": "존경 / 존경하다",
-      "date": "2026-07-21"
-    },
-    {
-      "word": "arrive",
-      "meaning": "도착하다",
-      "date": "2026-07-21"
-    },
-    {
-      "word": "trust",
-      "meaning": "신뢰 / 신뢰하다",
-      "date": "2026-07-21"
-    },
-    {
-      "word": "engage",
-      "meaning": "참여하다, 끌다",
-      "date": "2026-07-21"
-    },
-    {
-      "word": "treat",
-      "meaning": "대하다 / 대접",
-      "date": "2026-07-22"
-    },
-    {
-      "word": "present",
-      "meaning": "선물 / 발표하다",
-      "date": "2026-07-22"
-    },
-    {
-      "word": "respond",
-      "meaning": "응답하다",
-      "date": "2026-07-22"
-    },
-    {
-      "word": "suggest",
-      "meaning": "제안하다",
-      "date": "2026-07-22"
-    },
-    {
-      "word": "upset",
-      "meaning": "속상한 / 화나게 하다",
-      "date": "2026-07-23"
-    },
-    {
-      "word": "awkward",
-      "meaning": "어색한, 불편한",
-      "date": "2026-07-23"
-    },
-    {
-      "word": "grateful",
-      "meaning": "감사하는",
-      "date": "2026-07-23"
-    },
-    {
-      "word": "annoyed",
-      "meaning": "짜증난, 성가신",
-      "date": "2026-07-23"
-    },
-    {
-      "word": "confident",
-      "meaning": "자신감 있는",
-      "date": "2026-07-23"
-    },
-    {
-      "word": "exhausted",
-      "meaning": "완전히 지친, 탈진한",
-      "date": "2026-07-23"
-    },
-    {
-      "word": "relieved",
-      "meaning": "안도한",
-      "date": "2026-07-23"
-    },
-    {
-      "word": "jealous",
-      "meaning": "질투하는, 시기하는",
-      "date": "2026-07-23"
-    },
-    {
-      "word": "embarrassed",
-      "meaning": "당황한, 창피한",
-      "date": "2026-07-23"
-    },
-    {
-      "word": "disappointed",
-      "meaning": "실망한",
-      "date": "2026-07-23"
-    },
-    {
-      "word": "avoid",
-      "meaning": "피하다, 회피하다",
-      "date": "2026-07-24"
-    },
-    {
-      "word": "manage",
-      "meaning": "해내다, 관리하다",
-      "date": "2026-07-24"
-    },
-    {
-      "word": "tend to",
-      "meaning": "~하는 경향이 있다",
-      "date": "2026-07-24"
-    },
-    {
-      "word": "hesitate",
-      "meaning": "망설이다, 주저하다",
-      "date": "2026-07-24"
-    },
-    {
-      "word": "handle",
-      "meaning": "다루다, 처리하다",
-      "date": "2026-07-24"
-    },
-    {
-      "word": "figure out",
-      "meaning": "알아내다, 이해하다",
-      "date": "2026-07-24"
-    },
-    {
-      "word": "give up",
-      "meaning": "포기하다",
-      "date": "2026-07-24"
-    },
-    {
-      "word": "keep in touch",
-      "meaning": "연락을 유지하다",
-      "date": "2026-07-24"
-    },
-    {
-      "word": "run into",
-      "meaning": "우연히 마주치다",
-      "date": "2026-07-24"
-    },
-    {
-      "word": "bring up",
-      "meaning": "화제를 꺼내다 / 키우다",
-      "date": "2026-07-24"
+      "word": "apologize",
+      "meaning": "사과하다",
+      "date": "2026-07-27"
     }
   ],
   "studied_words": [
@@ -242,7 +72,17 @@
     "give up",
     "keep in touch",
     "run into",
-    "bring up"
+    "bring up",
+    "deadline",
+    "commute",
+    "schedule",
+    "routine",
+    "overwhelmed",
+    "distracted",
+    "cancel",
+    "remind",
+    "recommend",
+    "apologize"
   ],
   "wrong_answers": [],
   "quiz_history": []
