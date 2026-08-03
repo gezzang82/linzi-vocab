@@ -1,255 +1,55 @@
 {
-  "week_start": "2026-07-27",
+  "week_start": "2026-08-03",
   "weekly_words": [
     {
-      "word": "deadline",
-      "meaning": "마감 기한",
-      "date": "2026-07-27"
+      "word": "navigate",
+      "meaning": "항해하다 / 길을 찾다",
+      "date": "2026-08-03"
     },
     {
-      "word": "commute",
-      "meaning": "통근하다 / 통근",
-      "date": "2026-07-27"
+      "word": "inquire",
+      "meaning": "문의하다",
+      "date": "2026-08-03"
     },
     {
-      "word": "schedule",
-      "meaning": "일정 / 일정을 잡다",
-      "date": "2026-07-27"
+      "word": "evaluate",
+      "meaning": "평가하다",
+      "date": "2026-08-03"
     },
     {
-      "word": "routine",
-      "meaning": "일상, 루틴 / 일상적인",
-      "date": "2026-07-27"
+      "word": "participate",
+      "meaning": "참여하다",
+      "date": "2026-08-03"
     },
     {
-      "word": "overwhelmed",
-      "meaning": "압도된, 벅찬",
-      "date": "2026-07-27"
+      "word": "explore",
+      "meaning": "탐험하다",
+      "date": "2026-08-03"
     },
     {
-      "word": "distracted",
-      "meaning": "집중이 안 되는, 산만한",
-      "date": "2026-07-27"
+      "word": "adapt",
+      "meaning": "적응하다",
+      "date": "2026-08-03"
     },
     {
-      "word": "cancel",
-      "meaning": "취소하다",
-      "date": "2026-07-27"
+      "word": "inspire",
+      "meaning": "영감을 주다",
+      "date": "2026-08-03"
     },
     {
-      "word": "remind",
-      "meaning": "상기시키다, 생각나게 하다",
-      "date": "2026-07-27"
+      "word": "volunteer",
+      "meaning": "자원봉사자 / 자원봉사하다",
+      "date": "2026-08-03"
     },
     {
-      "word": "recommend",
-      "meaning": "추천하다",
-      "date": "2026-07-27"
+      "word": "discuss",
+      "meaning": "토론하다",
+      "date": "2026-08-03"
     },
     {
-      "word": "apologize",
-      "meaning": "사과하다",
-      "date": "2026-07-27"
-    },
-    {
-      "word": "mention",
-      "meaning": "언급하다 / 언급",
-      "date": "2026-07-28"
-    },
-    {
-      "word": "assume",
-      "meaning": "추정하다, 가정하다",
-      "date": "2026-07-28"
-    },
-    {
-      "word": "agree",
-      "meaning": "동의하다",
-      "date": "2026-07-28"
-    },
-    {
-      "word": "disagree",
-      "meaning": "반대하다, 의견이 다르다",
-      "date": "2026-07-28"
-    },
-    {
-      "word": "prefer",
-      "meaning": "선호하다",
-      "date": "2026-07-28"
-    },
-    {
-      "word": "complain",
-      "meaning": "불평하다, 항의하다",
-      "date": "2026-07-28"
-    },
-    {
-      "word": "persuade",
-      "meaning": "설득하다",
-      "date": "2026-07-28"
-    },
-    {
-      "word": "argue",
-      "meaning": "주장하다, 논쟁하다",
-      "date": "2026-07-28"
-    },
-    {
-      "word": "admit",
-      "meaning": "인정하다, 고백하다",
-      "date": "2026-07-28"
-    },
-    {
-      "word": "insist",
-      "meaning": "주장하다, 고집하다",
-      "date": "2026-07-28"
-    },
-    {
-      "word": "improve",
-      "meaning": "향상되다, 발전하다",
-      "date": "2026-07-29"
-    },
-    {
-      "word": "review",
-      "meaning": "복습하다, 검토하다 / 복습",
-      "date": "2026-07-29"
-    },
-    {
-      "word": "memorize",
-      "meaning": "암기하다, 외우다",
-      "date": "2026-07-29"
-    },
-    {
-      "word": "concentrate",
-      "meaning": "집중하다",
-      "date": "2026-07-29"
-    },
-    {
-      "word": "practice",
-      "meaning": "연습하다 / 연습",
-      "date": "2026-07-29"
-    },
-    {
-      "word": "struggle",
-      "meaning": "애쓰다, 힘들어하다",
-      "date": "2026-07-29"
-    },
-    {
-      "word": "achieve",
-      "meaning": "성취하다, 달성하다",
-      "date": "2026-07-29"
-    },
-    {
-      "word": "challenge",
-      "meaning": "도전 / 도전하다",
-      "date": "2026-07-29"
-    },
-    {
-      "word": "depend on",
-      "meaning": "~에 달려있다, ~을 의존하다",
-      "date": "2026-07-29"
-    },
-    {
-      "word": "look forward to",
-      "meaning": "기대하다",
-      "date": "2026-07-29"
-    },
-    {
-      "word": "promote",
-      "meaning": "승진시키다, 홍보하다",
-      "date": "2026-07-30"
-    },
-    {
-      "word": "resign",
-      "meaning": "사직하다, 사임하다",
-      "date": "2026-07-30"
-    },
-    {
-      "word": "salary",
-      "meaning": "급여, 봉급",
-      "date": "2026-07-30"
-    },
-    {
-      "word": "colleague",
-      "meaning": "동료",
-      "date": "2026-07-30"
-    },
-    {
-      "word": "feedback",
-      "meaning": "피드백, 의견",
-      "date": "2026-07-30"
-    },
-    {
-      "word": "presentation",
-      "meaning": "발표, 프레젠테이션",
-      "date": "2026-07-30"
-    },
-    {
-      "word": "negotiate",
-      "meaning": "협상하다",
-      "date": "2026-07-30"
-    },
-    {
-      "word": "efficient",
-      "meaning": "효율적인",
-      "date": "2026-07-30"
-    },
-    {
-      "word": "surprised",
-      "meaning": "놀란",
-      "date": "2026-07-30"
-    },
-    {
-      "word": "curious",
-      "meaning": "호기심 있는",
-      "date": "2026-07-30"
-    },
-    {
-      "word": "impress",
-      "meaning": "감명을 주다",
-      "date": "2026-07-31"
-    },
-    {
-      "word": "compliment",
-      "meaning": "칭찬 / 칭찬하다",
-      "date": "2026-07-31"
-    },
-    {
-      "word": "encourage",
-      "meaning": "격려하다",
-      "date": "2026-07-31"
-    },
-    {
-      "word": "organize",
-      "meaning": "조직하다",
-      "date": "2026-07-31"
-    },
-    {
-      "word": "satisfy",
-      "meaning": "만족시키다",
-      "date": "2026-07-31"
-    },
-    {
-      "word": "encounter",
-      "meaning": "만남 / 우연히 만나다",
-      "date": "2026-07-31"
-    },
-    {
-      "word": "gather",
-      "meaning": "모으다",
-      "date": "2026-07-31"
-    },
-    {
-      "word": "assist",
-      "meaning": "돕다",
-      "date": "2026-07-31"
-    },
-    {
-      "word": "conflict",
-      "meaning": "갈등 / 충돌하다",
-      "date": "2026-07-31"
-    },
-    {
-      "word": "establish",
-      "meaning": "설립하다",
-      "date": "2026-07-31"
+      "word": "reflect",
+      "meaning": "반영하다",
+      "date": "2026-08-03"
     }
   ],
   "studied_words": [
@@ -322,7 +122,17 @@
     "gather",
     "assist",
     "conflict",
-    "establish"
+    "establish",
+    "navigate",
+    "inquire",
+    "evaluate",
+    "participate",
+    "explore",
+    "adapt",
+    "inspire",
+    "volunteer",
+    "discuss",
+    "reflect"
   ],
   "wrong_answers": [],
   "quiz_history": []
