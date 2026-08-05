@@ -100,6 +100,56 @@
       "word": "describe",
       "meaning": "설명하다, 묘사하다",
       "date": "2026-08-04"
+    },
+    {
+      "word": "adventure",
+      "meaning": "모험",
+      "date": "2026-08-05"
+    },
+    {
+      "word": "attend",
+      "meaning": "참석하다",
+      "date": "2026-08-05"
+    },
+    {
+      "word": "focus",
+      "meaning": "집중하다 / 집중",
+      "date": "2026-08-05"
+    },
+    {
+      "word": "condition",
+      "meaning": "조건, 상태",
+      "date": "2026-08-05"
+    },
+    {
+      "word": "relationship",
+      "meaning": "관계",
+      "date": "2026-08-05"
+    },
+    {
+      "word": "interaction",
+      "meaning": "상호작용",
+      "date": "2026-08-05"
+    },
+    {
+      "word": "analyze",
+      "meaning": "분석하다",
+      "date": "2026-08-05"
+    },
+    {
+      "word": "arrange",
+      "meaning": "정리하다, 준비하다",
+      "date": "2026-08-05"
+    },
+    {
+      "word": "emphasize",
+      "meaning": "강조하다",
+      "date": "2026-08-05"
+    },
+    {
+      "word": "appreciate",
+      "meaning": "감사하다, 고마워하다",
+      "date": "2026-08-05"
     }
   ],
   "studied_words": [
@@ -192,7 +242,17 @@
     "balance",
     "bother",
     "situation",
-    "describe"
+    "describe",
+    "adventure",
+    "attend",
+    "focus",
+    "condition",
+    "relationship",
+    "interaction",
+    "analyze",
+    "arrange",
+    "emphasize",
+    "appreciate"
   ],
   "wrong_answers": [],
   "quiz_history": []
