@@ -150,6 +150,56 @@
       "word": "appreciate",
       "meaning": "감사하다, 고마워하다",
       "date": "2026-08-05"
+    },
+    {
+      "word": "express",
+      "meaning": "표현하다",
+      "date": "2026-08-06"
+    },
+    {
+      "word": "discover",
+      "meaning": "발견하다",
+      "date": "2026-08-06"
+    },
+    {
+      "word": "confirm",
+      "meaning": "확인하다",
+      "date": "2026-08-06"
+    },
+    {
+      "word": "process",
+      "meaning": "과정 / 처리하다",
+      "date": "2026-08-06"
+    },
+    {
+      "word": "compare",
+      "meaning": "비교하다",
+      "date": "2026-08-06"
+    },
+    {
+      "word": "consider",
+      "meaning": "숙고하다, 고려하다",
+      "date": "2026-08-06"
+    },
+    {
+      "word": "breathe",
+      "meaning": "호흡하다",
+      "date": "2026-08-06"
+    },
+    {
+      "word": "prepare",
+      "meaning": "준비하다",
+      "date": "2026-08-06"
+    },
+    {
+      "word": "excited",
+      "meaning": "신나는, 기대되는",
+      "date": "2026-08-06"
+    },
+    {
+      "word": "wonder",
+      "meaning": "궁금하다 / 경이",
+      "date": "2026-08-06"
     }
   ],
   "studied_words": [
@@ -252,7 +302,17 @@
     "analyze",
     "arrange",
     "emphasize",
-    "appreciate"
+    "appreciate",
+    "express",
+    "discover",
+    "confirm",
+    "process",
+    "compare",
+    "consider",
+    "breathe",
+    "prepare",
+    "excited",
+    "wonder"
   ],
   "wrong_answers": [],
   "quiz_history": []
