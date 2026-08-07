@@ -200,6 +200,56 @@
       "word": "wonder",
       "meaning": "궁금하다 / 경이",
       "date": "2026-08-06"
+    },
+    {
+      "word": "share",
+      "meaning": "공유하다",
+      "date": "2026-08-07"
+    },
+    {
+      "word": "accept",
+      "meaning": "받아들이다",
+      "date": "2026-08-07"
+    },
+    {
+      "word": "imagine",
+      "meaning": "상상하다",
+      "date": "2026-08-07"
+    },
+    {
+      "word": "comfort",
+      "meaning": "위안 / 위로하다",
+      "date": "2026-08-07"
+    },
+    {
+      "word": "create",
+      "meaning": "창조하다",
+      "date": "2026-08-07"
+    },
+    {
+      "word": "succeed",
+      "meaning": "성공하다",
+      "date": "2026-08-07"
+    },
+    {
+      "word": "respect",
+      "meaning": "존경 / 존경하다",
+      "date": "2026-08-07"
+    },
+    {
+      "word": "arrive",
+      "meaning": "도착하다",
+      "date": "2026-08-07"
+    },
+    {
+      "word": "trust",
+      "meaning": "신뢰 / 신뢰하다",
+      "date": "2026-08-07"
+    },
+    {
+      "word": "engage",
+      "meaning": "참여하다, 끌다",
+      "date": "2026-08-07"
     }
   ],
   "studied_words": [
@@ -312,7 +362,17 @@
     "breathe",
     "prepare",
     "excited",
-    "wonder"
+    "wonder",
+    "share",
+    "accept",
+    "imagine",
+    "comfort",
+    "create",
+    "succeed",
+    "respect",
+    "arrive",
+    "trust",
+    "engage"
   ],
   "wrong_answers": [],
   "quiz_history": []
