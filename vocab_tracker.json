@@ -170,6 +170,56 @@
       "word": "apologize",
       "meaning": "사과하다",
       "date": "2026-08-13"
+    },
+    {
+      "word": "mention",
+      "meaning": "언급하다 / 언급",
+      "date": "2026-08-14"
+    },
+    {
+      "word": "assume",
+      "meaning": "추정하다, 가정하다",
+      "date": "2026-08-14"
+    },
+    {
+      "word": "agree",
+      "meaning": "동의하다",
+      "date": "2026-08-14"
+    },
+    {
+      "word": "disagree",
+      "meaning": "반대하다, 의견이 다르다",
+      "date": "2026-08-14"
+    },
+    {
+      "word": "prefer",
+      "meaning": "선호하다",
+      "date": "2026-08-14"
+    },
+    {
+      "word": "complain",
+      "meaning": "불평하다, 항의하다",
+      "date": "2026-08-14"
+    },
+    {
+      "word": "persuade",
+      "meaning": "설득하다",
+      "date": "2026-08-14"
+    },
+    {
+      "word": "argue",
+      "meaning": "주장하다, 논쟁하다",
+      "date": "2026-08-14"
+    },
+    {
+      "word": "admit",
+      "meaning": "인정하다, 고백하다",
+      "date": "2026-08-14"
+    },
+    {
+      "word": "insist",
+      "meaning": "주장하다, 고집하다",
+      "date": "2026-08-14"
     }
   ],
   "studied_words": [
@@ -202,7 +252,17 @@
     "cancel",
     "remind",
     "recommend",
-    "apologize"
+    "apologize",
+    "mention",
+    "assume",
+    "agree",
+    "disagree",
+    "prefer",
+    "complain",
+    "persuade",
+    "argue",
+    "admit",
+    "insist"
   ],
   "wrong_answers": [],
   "quiz_history": []
