@@ -1,205 +1,55 @@
 {
-  "week_start": "2026-08-17",
+  "week_start": "2026-08-24",
   "weekly_words": [
     {
-      "word": "improve",
-      "meaning": "향상되다, 발전하다",
-      "date": "2026-08-18"
+      "word": "support",
+      "meaning": "지원 / 지원하다",
+      "date": "2026-08-24"
     },
     {
-      "word": "review",
-      "meaning": "복습하다, 검토하다 / 복습",
-      "date": "2026-08-18"
+      "word": "celebrate",
+      "meaning": "축하하다",
+      "date": "2026-08-24"
     },
     {
-      "word": "memorize",
-      "meaning": "암기하다, 외우다",
-      "date": "2026-08-18"
+      "word": "communicate",
+      "meaning": "소통하다",
+      "date": "2026-08-24"
     },
     {
-      "word": "concentrate",
-      "meaning": "집중하다",
-      "date": "2026-08-18"
+      "word": "motivate",
+      "meaning": "동기를 부여하다",
+      "date": "2026-08-24"
     },
     {
-      "word": "practice",
-      "meaning": "연습하다 / 연습",
-      "date": "2026-08-18"
+      "word": "connect",
+      "meaning": "연결하다",
+      "date": "2026-08-24"
     },
     {
-      "word": "struggle",
-      "meaning": "애쓰다, 힘들어하다",
-      "date": "2026-08-18"
+      "word": "influence",
+      "meaning": "영향 / 영향을 미치다",
+      "date": "2026-08-24"
     },
     {
-      "word": "achieve",
-      "meaning": "성취하다, 달성하다",
-      "date": "2026-08-18"
+      "word": "balance",
+      "meaning": "균형 / 균형을 맞추다",
+      "date": "2026-08-24"
     },
     {
-      "word": "challenge",
-      "meaning": "도전 / 도전하다",
-      "date": "2026-08-18"
+      "word": "bother",
+      "meaning": "귀찮게 하다",
+      "date": "2026-08-24"
     },
     {
-      "word": "depend on",
-      "meaning": "~에 달려있다, ~을 의존하다",
-      "date": "2026-08-18"
+      "word": "situation",
+      "meaning": "상황",
+      "date": "2026-08-24"
     },
     {
-      "word": "look forward to",
-      "meaning": "기대하다",
-      "date": "2026-08-18"
-    },
-    {
-      "word": "promote",
-      "meaning": "승진시키다, 홍보하다",
-      "date": "2026-08-19"
-    },
-    {
-      "word": "resign",
-      "meaning": "사직하다, 사임하다",
-      "date": "2026-08-19"
-    },
-    {
-      "word": "salary",
-      "meaning": "급여, 봉급",
-      "date": "2026-08-19"
-    },
-    {
-      "word": "colleague",
-      "meaning": "동료",
-      "date": "2026-08-19"
-    },
-    {
-      "word": "feedback",
-      "meaning": "피드백, 의견",
-      "date": "2026-08-19"
-    },
-    {
-      "word": "presentation",
-      "meaning": "발표, 프레젠테이션",
-      "date": "2026-08-19"
-    },
-    {
-      "word": "negotiate",
-      "meaning": "협상하다",
-      "date": "2026-08-19"
-    },
-    {
-      "word": "efficient",
-      "meaning": "효율적인",
-      "date": "2026-08-19"
-    },
-    {
-      "word": "surprised",
-      "meaning": "놀란",
-      "date": "2026-08-19"
-    },
-    {
-      "word": "curious",
-      "meaning": "호기심 있는",
-      "date": "2026-08-19"
-    },
-    {
-      "word": "impress",
-      "meaning": "감명을 주다",
-      "date": "2026-08-20"
-    },
-    {
-      "word": "compliment",
-      "meaning": "칭찬 / 칭찬하다",
-      "date": "2026-08-20"
-    },
-    {
-      "word": "encourage",
-      "meaning": "격려하다",
-      "date": "2026-08-20"
-    },
-    {
-      "word": "organize",
-      "meaning": "조직하다",
-      "date": "2026-08-20"
-    },
-    {
-      "word": "satisfy",
-      "meaning": "만족시키다",
-      "date": "2026-08-20"
-    },
-    {
-      "word": "encounter",
-      "meaning": "만남 / 우연히 만나다",
-      "date": "2026-08-20"
-    },
-    {
-      "word": "gather",
-      "meaning": "모으다",
-      "date": "2026-08-20"
-    },
-    {
-      "word": "assist",
-      "meaning": "돕다",
-      "date": "2026-08-20"
-    },
-    {
-      "word": "conflict",
-      "meaning": "갈등 / 충돌하다",
-      "date": "2026-08-20"
-    },
-    {
-      "word": "establish",
-      "meaning": "설립하다",
-      "date": "2026-08-20"
-    },
-    {
-      "word": "navigate",
-      "meaning": "항해하다 / 길을 찾다",
-      "date": "2026-08-21"
-    },
-    {
-      "word": "inquire",
-      "meaning": "문의하다",
-      "date": "2026-08-21"
-    },
-    {
-      "word": "evaluate",
-      "meaning": "평가하다",
-      "date": "2026-08-21"
-    },
-    {
-      "word": "participate",
-      "meaning": "참여하다",
-      "date": "2026-08-21"
-    },
-    {
-      "word": "explore",
-      "meaning": "탐험하다",
-      "date": "2026-08-21"
-    },
-    {
-      "word": "adapt",
-      "meaning": "적응하다",
-      "date": "2026-08-21"
-    },
-    {
-      "word": "inspire",
-      "meaning": "영감을 주다",
-      "date": "2026-08-21"
-    },
-    {
-      "word": "volunteer",
-      "meaning": "자원봉사자 / 자원봉사하다",
-      "date": "2026-08-21"
-    },
-    {
-      "word": "discuss",
-      "meaning": "토론하다",
-      "date": "2026-08-21"
-    },
-    {
-      "word": "reflect",
-      "meaning": "반영하다",
-      "date": "2026-08-21"
+      "word": "describe",
+      "meaning": "설명하다, 묘사하다",
+      "date": "2026-08-24"
     }
   ],
   "studied_words": [
@@ -282,7 +132,17 @@
     "inspire",
     "volunteer",
     "discuss",
-    "reflect"
+    "reflect",
+    "support",
+    "celebrate",
+    "communicate",
+    "motivate",
+    "connect",
+    "influence",
+    "balance",
+    "bother",
+    "situation",
+    "describe"
   ],
   "wrong_answers": [],
   "quiz_history": []
