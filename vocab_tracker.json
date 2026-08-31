@@ -1,225 +1,55 @@
 {
-  "week_start": "2026-08-24",
+  "week_start": "2026-08-31",
   "weekly_words": [
     {
-      "word": "support",
-      "meaning": "지원 / 지원하다",
-      "date": "2026-08-24"
+      "word": "upset",
+      "meaning": "속상한 / 화나게 하다",
+      "date": "2026-08-31"
     },
     {
-      "word": "celebrate",
-      "meaning": "축하하다",
-      "date": "2026-08-24"
+      "word": "awkward",
+      "meaning": "어색한, 불편한",
+      "date": "2026-08-31"
     },
     {
-      "word": "communicate",
-      "meaning": "소통하다",
-      "date": "2026-08-24"
+      "word": "grateful",
+      "meaning": "감사하는",
+      "date": "2026-08-31"
     },
     {
-      "word": "motivate",
-      "meaning": "동기를 부여하다",
-      "date": "2026-08-24"
+      "word": "annoyed",
+      "meaning": "짜증난, 성가신",
+      "date": "2026-08-31"
     },
     {
-      "word": "connect",
-      "meaning": "연결하다",
-      "date": "2026-08-24"
+      "word": "confident",
+      "meaning": "자신감 있는",
+      "date": "2026-08-31"
     },
     {
-      "word": "influence",
-      "meaning": "영향 / 영향을 미치다",
-      "date": "2026-08-24"
+      "word": "exhausted",
+      "meaning": "완전히 지친, 탈진한",
+      "date": "2026-08-31"
     },
     {
-      "word": "balance",
-      "meaning": "균형 / 균형을 맞추다",
-      "date": "2026-08-24"
+      "word": "relieved",
+      "meaning": "안도한",
+      "date": "2026-08-31"
     },
     {
-      "word": "bother",
-      "meaning": "귀찮게 하다",
-      "date": "2026-08-24"
+      "word": "jealous",
+      "meaning": "질투하는, 시기하는",
+      "date": "2026-08-31"
     },
     {
-      "word": "situation",
-      "meaning": "상황",
-      "date": "2026-08-24"
+      "word": "embarrassed",
+      "meaning": "당황한, 창피한",
+      "date": "2026-08-31"
     },
     {
-      "word": "describe",
-      "meaning": "설명하다, 묘사하다",
-      "date": "2026-08-24"
-    },
-    {
-      "word": "adventure",
-      "meaning": "모험",
-      "date": "2026-08-25"
-    },
-    {
-      "word": "attend",
-      "meaning": "참석하다",
-      "date": "2026-08-25"
-    },
-    {
-      "word": "focus",
-      "meaning": "집중하다 / 집중",
-      "date": "2026-08-25"
-    },
-    {
-      "word": "condition",
-      "meaning": "조건, 상태",
-      "date": "2026-08-25"
-    },
-    {
-      "word": "relationship",
-      "meaning": "관계",
-      "date": "2026-08-25"
-    },
-    {
-      "word": "interaction",
-      "meaning": "상호작용",
-      "date": "2026-08-25"
-    },
-    {
-      "word": "analyze",
-      "meaning": "분석하다",
-      "date": "2026-08-25"
-    },
-    {
-      "word": "arrange",
-      "meaning": "정리하다, 준비하다",
-      "date": "2026-08-25"
-    },
-    {
-      "word": "emphasize",
-      "meaning": "강조하다",
-      "date": "2026-08-25"
-    },
-    {
-      "word": "appreciate",
-      "meaning": "감사하다, 고마워하다",
-      "date": "2026-08-25"
-    },
-    {
-      "word": "express",
-      "meaning": "표현하다",
-      "date": "2026-08-26"
-    },
-    {
-      "word": "discover",
-      "meaning": "발견하다",
-      "date": "2026-08-26"
-    },
-    {
-      "word": "confirm",
-      "meaning": "확인하다",
-      "date": "2026-08-26"
-    },
-    {
-      "word": "process",
-      "meaning": "과정 / 처리하다",
-      "date": "2026-08-26"
-    },
-    {
-      "word": "compare",
-      "meaning": "비교하다",
-      "date": "2026-08-26"
-    },
-    {
-      "word": "consider",
-      "meaning": "숙고하다, 고려하다",
-      "date": "2026-08-26"
-    },
-    {
-      "word": "breathe",
-      "meaning": "호흡하다",
-      "date": "2026-08-26"
-    },
-    {
-      "word": "prepare",
-      "meaning": "준비하다",
-      "date": "2026-08-26"
-    },
-    {
-      "word": "excited",
-      "meaning": "신나는, 기대되는",
-      "date": "2026-08-26"
-    },
-    {
-      "word": "wonder",
-      "meaning": "궁금하다 / 경이",
-      "date": "2026-08-26"
-    },
-    {
-      "word": "share",
-      "meaning": "공유하다",
-      "date": "2026-08-27"
-    },
-    {
-      "word": "accept",
-      "meaning": "받아들이다",
-      "date": "2026-08-27"
-    },
-    {
-      "word": "imagine",
-      "meaning": "상상하다",
-      "date": "2026-08-27"
-    },
-    {
-      "word": "comfort",
-      "meaning": "위안 / 위로하다",
-      "date": "2026-08-27"
-    },
-    {
-      "word": "create",
-      "meaning": "창조하다",
-      "date": "2026-08-27"
-    },
-    {
-      "word": "succeed",
-      "meaning": "성공하다",
-      "date": "2026-08-27"
-    },
-    {
-      "word": "respect",
-      "meaning": "존경 / 존경하다",
-      "date": "2026-08-27"
-    },
-    {
-      "word": "arrive",
-      "meaning": "도착하다",
-      "date": "2026-08-27"
-    },
-    {
-      "word": "trust",
-      "meaning": "신뢰 / 신뢰하다",
-      "date": "2026-08-27"
-    },
-    {
-      "word": "engage",
-      "meaning": "참여하다, 끌다",
-      "date": "2026-08-27"
-    },
-    {
-      "word": "treat",
-      "meaning": "대하다 / 대접",
-      "date": "2026-08-28"
-    },
-    {
-      "word": "present",
-      "meaning": "선물 / 발표하다",
-      "date": "2026-08-28"
-    },
-    {
-      "word": "respond",
-      "meaning": "응답하다",
-      "date": "2026-08-28"
-    },
-    {
-      "word": "suggest",
-      "meaning": "제안하다",
-      "date": "2026-08-28"
+      "word": "disappointed",
+      "meaning": "실망한",
+      "date": "2026-08-31"
     }
   ],
   "studied_words": [
@@ -232,121 +62,7 @@
     "relieved",
     "jealous",
     "embarrassed",
-    "disappointed",
-    "avoid",
-    "manage",
-    "tend to",
-    "hesitate",
-    "handle",
-    "figure out",
-    "give up",
-    "keep in touch",
-    "run into",
-    "bring up",
-    "deadline",
-    "commute",
-    "schedule",
-    "routine",
-    "overwhelmed",
-    "distracted",
-    "cancel",
-    "remind",
-    "recommend",
-    "apologize",
-    "mention",
-    "assume",
-    "agree",
-    "disagree",
-    "prefer",
-    "complain",
-    "persuade",
-    "argue",
-    "admit",
-    "insist",
-    "improve",
-    "review",
-    "memorize",
-    "concentrate",
-    "practice",
-    "struggle",
-    "achieve",
-    "challenge",
-    "depend on",
-    "look forward to",
-    "promote",
-    "resign",
-    "salary",
-    "colleague",
-    "feedback",
-    "presentation",
-    "negotiate",
-    "efficient",
-    "surprised",
-    "curious",
-    "impress",
-    "compliment",
-    "encourage",
-    "organize",
-    "satisfy",
-    "encounter",
-    "gather",
-    "assist",
-    "conflict",
-    "establish",
-    "navigate",
-    "inquire",
-    "evaluate",
-    "participate",
-    "explore",
-    "adapt",
-    "inspire",
-    "volunteer",
-    "discuss",
-    "reflect",
-    "support",
-    "celebrate",
-    "communicate",
-    "motivate",
-    "connect",
-    "influence",
-    "balance",
-    "bother",
-    "situation",
-    "describe",
-    "adventure",
-    "attend",
-    "focus",
-    "condition",
-    "relationship",
-    "interaction",
-    "analyze",
-    "arrange",
-    "emphasize",
-    "appreciate",
-    "express",
-    "discover",
-    "confirm",
-    "process",
-    "compare",
-    "consider",
-    "breathe",
-    "prepare",
-    "excited",
-    "wonder",
-    "share",
-    "accept",
-    "imagine",
-    "comfort",
-    "create",
-    "succeed",
-    "respect",
-    "arrive",
-    "trust",
-    "engage",
-    "treat",
-    "present",
-    "respond",
-    "suggest"
+    "disappointed"
   ],
   "wrong_answers": [],
   "quiz_history": []
