@@ -200,6 +200,56 @@
       "word": "insist",
       "meaning": "주장하다, 고집하다",
       "date": "2026-09-03"
+    },
+    {
+      "word": "improve",
+      "meaning": "향상되다, 발전하다",
+      "date": "2026-09-04"
+    },
+    {
+      "word": "review",
+      "meaning": "복습하다, 검토하다 / 복습",
+      "date": "2026-09-04"
+    },
+    {
+      "word": "memorize",
+      "meaning": "암기하다, 외우다",
+      "date": "2026-09-04"
+    },
+    {
+      "word": "concentrate",
+      "meaning": "집중하다",
+      "date": "2026-09-04"
+    },
+    {
+      "word": "practice",
+      "meaning": "연습하다 / 연습",
+      "date": "2026-09-04"
+    },
+    {
+      "word": "struggle",
+      "meaning": "애쓰다, 힘들어하다",
+      "date": "2026-09-04"
+    },
+    {
+      "word": "achieve",
+      "meaning": "성취하다, 달성하다",
+      "date": "2026-09-04"
+    },
+    {
+      "word": "challenge",
+      "meaning": "도전 / 도전하다",
+      "date": "2026-09-04"
+    },
+    {
+      "word": "depend on",
+      "meaning": "~에 달려있다, ~을 의존하다",
+      "date": "2026-09-04"
+    },
+    {
+      "word": "look forward to",
+      "meaning": "기대하다",
+      "date": "2026-09-04"
     }
   ],
   "studied_words": [
@@ -242,7 +292,17 @@
     "persuade",
     "argue",
     "admit",
-    "insist"
+    "insist",
+    "improve",
+    "review",
+    "memorize",
+    "concentrate",
+    "practice",
+    "struggle",
+    "achieve",
+    "challenge",
+    "depend on",
+    "look forward to"
   ],
   "wrong_answers": [],
   "quiz_history": []
