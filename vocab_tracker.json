@@ -200,6 +200,56 @@
       "word": "look forward to",
       "meaning": "기대하다",
       "date": "2026-10-15"
+    },
+    {
+      "word": "promote",
+      "meaning": "승진시키다, 홍보하다",
+      "date": "2026-10-16"
+    },
+    {
+      "word": "resign",
+      "meaning": "사직하다, 사임하다",
+      "date": "2026-10-16"
+    },
+    {
+      "word": "salary",
+      "meaning": "급여, 봉급",
+      "date": "2026-10-16"
+    },
+    {
+      "word": "colleague",
+      "meaning": "동료",
+      "date": "2026-10-16"
+    },
+    {
+      "word": "feedback",
+      "meaning": "피드백, 의견",
+      "date": "2026-10-16"
+    },
+    {
+      "word": "presentation",
+      "meaning": "발표, 프레젠테이션",
+      "date": "2026-10-16"
+    },
+    {
+      "word": "negotiate",
+      "meaning": "협상하다",
+      "date": "2026-10-16"
+    },
+    {
+      "word": "efficient",
+      "meaning": "효율적인",
+      "date": "2026-10-16"
+    },
+    {
+      "word": "surprised",
+      "meaning": "놀란",
+      "date": "2026-10-16"
+    },
+    {
+      "word": "curious",
+      "meaning": "호기심 있는",
+      "date": "2026-10-16"
     }
   ],
   "studied_words": [
@@ -252,7 +302,17 @@
     "achieve",
     "challenge",
     "depend on",
-    "look forward to"
+    "look forward to",
+    "promote",
+    "resign",
+    "salary",
+    "colleague",
+    "feedback",
+    "presentation",
+    "negotiate",
+    "efficient",
+    "surprised",
+    "curious"
   ],
   "wrong_answers": [],
   "quiz_history": []
