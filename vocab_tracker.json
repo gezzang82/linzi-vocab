@@ -1,255 +1,55 @@
 {
-  "week_start": "2026-10-19",
+  "week_start": "2026-10-26",
   "weekly_words": [
     {
-      "word": "impress",
-      "meaning": "감명을 주다",
-      "date": "2026-10-19"
+      "word": "share",
+      "meaning": "공유하다",
+      "date": "2026-10-26"
     },
     {
-      "word": "compliment",
-      "meaning": "칭찬 / 칭찬하다",
-      "date": "2026-10-19"
+      "word": "accept",
+      "meaning": "받아들이다",
+      "date": "2026-10-26"
     },
     {
-      "word": "encourage",
-      "meaning": "격려하다",
-      "date": "2026-10-19"
+      "word": "imagine",
+      "meaning": "상상하다",
+      "date": "2026-10-26"
     },
     {
-      "word": "organize",
-      "meaning": "조직하다",
-      "date": "2026-10-19"
+      "word": "comfort",
+      "meaning": "위안 / 위로하다",
+      "date": "2026-10-26"
     },
     {
-      "word": "satisfy",
-      "meaning": "만족시키다",
-      "date": "2026-10-19"
+      "word": "create",
+      "meaning": "창조하다",
+      "date": "2026-10-26"
     },
     {
-      "word": "encounter",
-      "meaning": "만남 / 우연히 만나다",
-      "date": "2026-10-19"
+      "word": "succeed",
+      "meaning": "성공하다",
+      "date": "2026-10-26"
     },
     {
-      "word": "gather",
-      "meaning": "모으다",
-      "date": "2026-10-19"
+      "word": "respect",
+      "meaning": "존경 / 존경하다",
+      "date": "2026-10-26"
     },
     {
-      "word": "assist",
-      "meaning": "돕다",
-      "date": "2026-10-19"
+      "word": "arrive",
+      "meaning": "도착하다",
+      "date": "2026-10-26"
     },
     {
-      "word": "conflict",
-      "meaning": "갈등 / 충돌하다",
-      "date": "2026-10-19"
+      "word": "trust",
+      "meaning": "신뢰 / 신뢰하다",
+      "date": "2026-10-26"
     },
     {
-      "word": "establish",
-      "meaning": "설립하다",
-      "date": "2026-10-19"
-    },
-    {
-      "word": "navigate",
-      "meaning": "항해하다 / 길을 찾다",
-      "date": "2026-10-20"
-    },
-    {
-      "word": "inquire",
-      "meaning": "문의하다",
-      "date": "2026-10-20"
-    },
-    {
-      "word": "evaluate",
-      "meaning": "평가하다",
-      "date": "2026-10-20"
-    },
-    {
-      "word": "participate",
-      "meaning": "참여하다",
-      "date": "2026-10-20"
-    },
-    {
-      "word": "explore",
-      "meaning": "탐험하다",
-      "date": "2026-10-20"
-    },
-    {
-      "word": "adapt",
-      "meaning": "적응하다",
-      "date": "2026-10-20"
-    },
-    {
-      "word": "inspire",
-      "meaning": "영감을 주다",
-      "date": "2026-10-20"
-    },
-    {
-      "word": "volunteer",
-      "meaning": "자원봉사자 / 자원봉사하다",
-      "date": "2026-10-20"
-    },
-    {
-      "word": "discuss",
-      "meaning": "토론하다",
-      "date": "2026-10-20"
-    },
-    {
-      "word": "reflect",
-      "meaning": "반영하다",
-      "date": "2026-10-20"
-    },
-    {
-      "word": "support",
-      "meaning": "지원 / 지원하다",
-      "date": "2026-10-21"
-    },
-    {
-      "word": "celebrate",
-      "meaning": "축하하다",
-      "date": "2026-10-21"
-    },
-    {
-      "word": "communicate",
-      "meaning": "소통하다",
-      "date": "2026-10-21"
-    },
-    {
-      "word": "motivate",
-      "meaning": "동기를 부여하다",
-      "date": "2026-10-21"
-    },
-    {
-      "word": "connect",
-      "meaning": "연결하다",
-      "date": "2026-10-21"
-    },
-    {
-      "word": "influence",
-      "meaning": "영향 / 영향을 미치다",
-      "date": "2026-10-21"
-    },
-    {
-      "word": "balance",
-      "meaning": "균형 / 균형을 맞추다",
-      "date": "2026-10-21"
-    },
-    {
-      "word": "bother",
-      "meaning": "귀찮게 하다",
-      "date": "2026-10-21"
-    },
-    {
-      "word": "situation",
-      "meaning": "상황",
-      "date": "2026-10-21"
-    },
-    {
-      "word": "describe",
-      "meaning": "설명하다, 묘사하다",
-      "date": "2026-10-21"
-    },
-    {
-      "word": "adventure",
-      "meaning": "모험",
-      "date": "2026-10-22"
-    },
-    {
-      "word": "attend",
-      "meaning": "참석하다",
-      "date": "2026-10-22"
-    },
-    {
-      "word": "focus",
-      "meaning": "집중하다 / 집중",
-      "date": "2026-10-22"
-    },
-    {
-      "word": "condition",
-      "meaning": "조건, 상태",
-      "date": "2026-10-22"
-    },
-    {
-      "word": "relationship",
-      "meaning": "관계",
-      "date": "2026-10-22"
-    },
-    {
-      "word": "interaction",
-      "meaning": "상호작용",
-      "date": "2026-10-22"
-    },
-    {
-      "word": "analyze",
-      "meaning": "분석하다",
-      "date": "2026-10-22"
-    },
-    {
-      "word": "arrange",
-      "meaning": "정리하다, 준비하다",
-      "date": "2026-10-22"
-    },
-    {
-      "word": "emphasize",
-      "meaning": "강조하다",
-      "date": "2026-10-22"
-    },
-    {
-      "word": "appreciate",
-      "meaning": "감사하다, 고마워하다",
-      "date": "2026-10-22"
-    },
-    {
-      "word": "express",
-      "meaning": "표현하다",
-      "date": "2026-10-23"
-    },
-    {
-      "word": "discover",
-      "meaning": "발견하다",
-      "date": "2026-10-23"
-    },
-    {
-      "word": "confirm",
-      "meaning": "확인하다",
-      "date": "2026-10-23"
-    },
-    {
-      "word": "process",
-      "meaning": "과정 / 처리하다",
-      "date": "2026-10-23"
-    },
-    {
-      "word": "compare",
-      "meaning": "비교하다",
-      "date": "2026-10-23"
-    },
-    {
-      "word": "consider",
-      "meaning": "숙고하다, 고려하다",
-      "date": "2026-10-23"
-    },
-    {
-      "word": "breathe",
-      "meaning": "호흡하다",
-      "date": "2026-10-23"
-    },
-    {
-      "word": "prepare",
-      "meaning": "준비하다",
-      "date": "2026-10-23"
-    },
-    {
-      "word": "excited",
-      "meaning": "신나는, 기대되는",
-      "date": "2026-10-23"
-    },
-    {
-      "word": "wonder",
-      "meaning": "궁금하다 / 경이",
-      "date": "2026-10-23"
+      "word": "engage",
+      "meaning": "참여하다, 끌다",
+      "date": "2026-10-26"
     }
   ],
   "studied_words": [
@@ -362,7 +162,17 @@
     "breathe",
     "prepare",
     "excited",
-    "wonder"
+    "wonder",
+    "share",
+    "accept",
+    "imagine",
+    "comfort",
+    "create",
+    "succeed",
+    "respect",
+    "arrive",
+    "trust",
+    "engage"
   ],
   "wrong_answers": [],
   "quiz_history": []
