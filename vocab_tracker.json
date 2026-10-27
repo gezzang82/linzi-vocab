@@ -50,6 +50,26 @@
       "word": "engage",
       "meaning": "참여하다, 끌다",
       "date": "2026-10-26"
+    },
+    {
+      "word": "treat",
+      "meaning": "대하다 / 대접",
+      "date": "2026-10-27"
+    },
+    {
+      "word": "present",
+      "meaning": "선물 / 발표하다",
+      "date": "2026-10-27"
+    },
+    {
+      "word": "respond",
+      "meaning": "응답하다",
+      "date": "2026-10-27"
+    },
+    {
+      "word": "suggest",
+      "meaning": "제안하다",
+      "date": "2026-10-27"
     }
   ],
   "studied_words": [
@@ -172,7 +192,11 @@
     "respect",
     "arrive",
     "trust",
-    "engage"
+    "engage",
+    "treat",
+    "present",
+    "respond",
+    "suggest"
   ],
   "wrong_answers": [],
   "quiz_history": []
